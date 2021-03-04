@@ -6,11 +6,11 @@ using System;
 public class ConfigFase1Data
 {
 
-    static int numMicrojuegosJugados = 0;
-    static int vidasRestantes = 4;
+    static int numMicrojuegosJugados;
+    static int vidasRestantes;
     static Microjuego microjuegoActual;
     static List<Microjuego> microjuegosAJugar;
-    static int duracionMicrojuegos = 10;
+    static int duracionMicrojuegos;
 
     public int NumMicroJuegosJugados
     {
@@ -42,10 +42,22 @@ public class ConfigFase1Data
 
     public ConfigFase1Data()
     {
+        numMicrojuegosJugados = 0;
+        vidasRestantes = 4;
+        duracionMicrojuegos = 10;
+
+
         //asignar dificultad de los juegos
+        JacksesUtils.dificil();
 
 
+
+
+
+        //agregar microjuegos a jugar a la lista de microjuegos
         microjuegosAJugar = new List<Microjuego>();
+        microjuegosAJugar.Add(Microjuego.Jackses);
+
         try
         {
             //recuperar datos
@@ -56,7 +68,7 @@ public class ConfigFase1Data
         }
         finally
         {
-
+            
         }
     }
     

@@ -8,8 +8,7 @@ public class JuegoJacks : MonoBehaviour
     float posJacksMin = -8;
     float posJacksMax = 3;
     float posYJacks = -3.4f;
-    int cantidadJacks = 10;
-    bool victoria = false;
+    int cantidadJacks = JacksesUtils.NumeroJacks;
     GameObject[] jacks;
     string prefabLocation = "Microjuegos/Jackses/Prefabs/";
 
@@ -21,14 +20,9 @@ public class JuegoJacks : MonoBehaviour
 
     GameObject mano;
 
-    bool empezo = false;
     BackwardsTimer timerJuego;
-    float duracionJuego = 20;
+    float duracionJuego = JacksesUtils.Duracion;
 
-    public bool Victoria
-    {
-        get { return victoria; }
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -58,61 +52,48 @@ public class JuegoJacks : MonoBehaviour
         timerJuego = gameObject.AddComponent<BackwardsTimer>();
         timerJuego.Duration = duracionJuego;
         HUD.ActualizarTiempo(duracionJuego);
+        timerJuego.Run();
     }
 
     // Update is called once per frame
     void Update()
     {
+        jacks = GameObject.FindGameObjectsWithTag("Jack");
         bola = GameObject.FindGameObjectWithTag("Bola");
         bolaScript = bola.GetComponent<Bola>();
-        
-        if (!empezo && bolaScript.Soltado)
+        if (jacks.Length == 0)
         {
-            jacks = GameObject.FindGameObjectsWithTag("Jack");
-            empezo = true;
-            BloquearJacks(true, jacks);
-            timerJuego.Run();
-            
-        }
-        if(empezo && !bolaScript.Soltado)
-        {
-            jacks = GameObject.FindGameObjectsWithTag("Jack");
-            BloquearJacks(false, jacks);
-        }
-        if (bolaScript.Soltado)
-        {
-            jacks = GameObject.FindGameObjectsWithTag("Jack");
-            BloquearJacks(true, jacks);
-        }
-        if (bolaScript.SegundoRebote || timerJuego.Finished)
-        {
-            victoria = false;
-            empezo = false;
-            bolaScript.Detener();
-            timerJuego.Stop();
-            HUD.Perder();
-            jacks = GameObject.FindGameObjectsWithTag("Jack");
-            BloquearJacks(false, jacks);
-        }
-        if(HUD.jacksRecolectados == cantidadJacks && !bolaScript.Soltado && !bolaScript.SegundoRebote)
-        {
-            empezo = false;
-            bolaScript.Detener();
-            timerJuego.Stop();
-            HUD.Ganar();
+            bolaScript.Agarrable = true;
         }
         if (timerJuego.Running)
         {
             HUD.ActualizarTiempo(timerJuego.SecondsRemaining);
+            if (bolaScript.Agarrada)
+            {
+                Ganar();
+            }
+        }
+        if(timerJuego.Finished)
+        {
+            Perder();
         }
         
     }
 
-    private void BloquearJacks(bool bloqueo, GameObject[] jacks)
+    private void Ganar()
     {
-        foreach (GameObject jack in jacks)
-        {
-            jack.GetComponent<Jack>().EnJuego = bloqueo;
-        }
+        timerJuego.Stop();
+        ManejadorFase1.AumentarMicrojuegosJugados();
+        ManejadorFase1.RevisarFinFase();
     }
+
+    private void Perder()
+    {
+        timerJuego.Stop();
+        jacks = GameObject.FindGameObjectsWithTag("Jack");
+        ManejadorFase1.PerderVida();
+        ManejadorFase1.AumentarMicrojuegosJugados();
+        ManejadorFase1.RevisarFinFase();
+    }
+
 }

@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 869074066}
   m_Layer: 5
   m_Name: BotonFase2
-  m_TagString: Untagged
+  m_TagString: BotonSegundaFase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 1080773332}
   m_Layer: 5
   m_Name: BotonFase3
-  m_TagString: Untagged
+  m_TagString: BotonTerceraFase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

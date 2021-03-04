@@ -5,7 +5,6 @@ using UnityEngine;
 public class Jack : MonoBehaviour
 {
     Sprite sprite;
-    bool enJuego = false;
     SpriteRenderer spriteRenderer;
     string spritesLocation = "Microjuegos/Jackses/Sprites/";
     // Start is called before the first frame update
@@ -42,10 +41,6 @@ public class Jack : MonoBehaviour
         }
     }
 
-    public bool EnJuego
-    {
-        set { enJuego = value; }
-    }
 
     // Update is called once per frame
     void Update()
@@ -55,10 +50,8 @@ public class Jack : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (enJuego)
-        {
-            HUD.IncrementarJacks();
-            Destroy(gameObject);
-        }
+        
+        Destroy(gameObject);
+        
     }
 }

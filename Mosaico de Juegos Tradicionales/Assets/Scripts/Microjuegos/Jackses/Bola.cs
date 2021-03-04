@@ -5,70 +5,56 @@ using UnityEngine;
 public class Bola : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    bool segundoRebote = false;
-    bool soltado;
-    int rebotes = 0;
+    float alturaMaxima = 3, alturaMinima = -2.53f;
+    float distancia;
+    float tiempoRecorrido = JacksesUtils.Duracion;
+    float velocidad;
+    bool agarrable = false, agarrada = false;
+
+    public bool Agarrable
+    {
+        set { agarrable = value; }
+    }
+
+    public bool Agarrada
+    {
+        get { return agarrada; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         gameObject.transform.position = new Vector3(6, 3, 0);
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         rb2d.gravityScale = 0;
-        soltado = false;
-    }
+        distancia = alturaMaxima - alturaMinima;
+        float totalDistanciaRecorrido = 3 * distancia;
+        velocidad = totalDistanciaRecorrido / tiempoRecorrido;
+        rb2d.velocity = new Vector2(0, -velocidad);
 
-
-
-    public bool Soltado
-    {
-        get { return soltado; }
-    }
-
-    public bool SegundoRebote
-    {
-        get { return segundoRebote; }
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-    }
-    public void Detener()
-    {
-        rb2d.velocity = new Vector2(0, 0);
-        rb2d.gravityScale = 0;
-        rebotes = 0;
-        soltado = false;
+        Vector3 pos = transform.position;
+        if(pos.y <= alturaMinima)
+        {
+            rb2d.velocity = new Vector2(0, velocidad);
+        }
+        if (pos.y >= alturaMaxima)
+        {
+            rb2d.velocity = new Vector2(0, -velocidad);
+        }
     }
 
     private void OnMouseDown()
     {
-        if (!soltado)
+        if (agarrable)
         {
-            DejarCaer();
-        }   
-        if(rebotes == 1)
-        {
-            rb2d.velocity = new Vector2(0, 0);
-            rb2d.gravityScale = 0;
-            rebotes = 0;
-            soltado = false;
+            agarrada = true;
         }
     }
 
-    private void DejarCaer()
-    {
-        soltado = true;
-        rb2d.gravityScale = 1;
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        rebotes++;
-        if (rebotes >= 2)
-        {
-            segundoRebote = true;
-        }
-    }
 }

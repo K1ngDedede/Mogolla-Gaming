@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/menuModoHistoria.unity
     guid: 61bf719bcde332048b3dd8734281e9f0
+  - enabled: 1
+    path: Assets/Scenes/fase1.unity
+    guid: 26f54cf21a1c6a64ab9f958e386be19b
+  - enabled: 1
+    path: Assets/Scenes/jackses.unity
+    guid: b336279ed1c16224c82a9c9f20511a1d
+  - enabled: 1
+    path: Assets/Scenes/escenaIntermediaFase1.unity
+    guid: bf20b8a89c9e52e48ac051d91dfeef02
   m_configObjects: {}

@@ -47,4 +47,6 @@ public static class ConfigFase1Utils
     {
         configFase1Data = new ConfigFase1Data();
     }
+
+   
 }

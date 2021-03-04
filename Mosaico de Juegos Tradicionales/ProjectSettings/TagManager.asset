@@ -8,6 +8,9 @@ TagManager:
   - Bola
   - TextoJacks
   - TextoTimer
+  - TextoPirinola
+  - BotonSegundaFase
+  - BotonTerceraFase
   layers:
   - Default
   - TransparentFX
