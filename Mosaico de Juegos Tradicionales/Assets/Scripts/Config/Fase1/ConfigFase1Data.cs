@@ -48,7 +48,7 @@ public class ConfigFase1Data
 
 
         //asignar dificultad de los juegos
-        JacksesUtils.dificil();
+        JacksesUtils.facil();
 
 
 
@@ -56,6 +56,11 @@ public class ConfigFase1Data
 
         //agregar microjuegos a jugar a la lista de microjuegos
         microjuegosAJugar = new List<Microjuego>();
+        microjuegosAJugar.Add(Microjuego.Jackses);
+        microjuegosAJugar.Add(Microjuego.Jackses);
+        microjuegosAJugar.Add(Microjuego.Jackses);
+        microjuegosAJugar.Add(Microjuego.Jackses);
+        microjuegosAJugar.Add(Microjuego.Jackses);
         microjuegosAJugar.Add(Microjuego.Jackses);
 
         try

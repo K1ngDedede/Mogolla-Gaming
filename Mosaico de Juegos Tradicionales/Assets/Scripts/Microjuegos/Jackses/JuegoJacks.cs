@@ -23,6 +23,10 @@ public class JuegoJacks : MonoBehaviour
     BackwardsTimer timerJuego;
     float duracionJuego = JacksesUtils.Duracion;
 
+    bool tutorial = JacksesUtils.Tutorial;
+    GameObject flechaTutorial;
+    bool flechaInstanciada = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +68,13 @@ public class JuegoJacks : MonoBehaviour
         if (jacks.Length == 0)
         {
             bolaScript.Agarrable = true;
+            if (!flechaInstanciada)
+            {
+                flechaInstanciada = true;
+                flechaTutorial = Resources.Load<GameObject>(prefabLocation + "Flecha Tutorial");
+                Instantiate(flechaTutorial);
+            }
+            
         }
         if (timerJuego.Running)
         {
