@@ -101,7 +101,6 @@ public class JuegoJacks : MonoBehaviour
     private void Perder()
     {
         timerJuego.Stop();
-        jacks = GameObject.FindGameObjectsWithTag("Jack");
         ManejadorFase1.PerderVida();
         ManejadorFase1.AumentarMicrojuegosJugados();
         ManejadorFase1.RevisarFinFase();
