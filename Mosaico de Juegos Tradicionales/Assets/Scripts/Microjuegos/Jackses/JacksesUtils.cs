@@ -8,6 +8,7 @@ public static class JacksesUtils
     static int numeroJacks = 5;
     static int duracion = 10;
     static bool tutorial = false;
+    static Fase fase = Fase.FASE1;
 
     public static int NumeroJacks
     {
@@ -24,11 +25,17 @@ public static class JacksesUtils
         get { return tutorial; }
     }
 
+    public static Fase Fase
+    {
+        get { return fase; }
+    }
+
     public static void facil()
     {
         numeroJacks = 5;
         duracion = 10;
         tutorial = true;
+        fase = Fase.FASE1;
     }
 
     public static void dificil()

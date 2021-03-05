@@ -1,0 +1,57 @@
+Pasos para agregar un microjuego al proyecto:
+
+-Copiar la escena a la carpeta de escenas del proyecto
+-Copiar assets en donde corresponda en la estructura de archivos del proyecto
+-Relacionar nuevamente componentes a objetos (estas relaciones se perdien a pasar vainas al proyecto)
+-Cada microjuego debe tener una clase estatica similar a Scripts/Microjuegos/Jackses/JacksesUtil.cs en donde se definen las
+dificultades como métodos y los atributos que se modifican para modificar la dificultad del microjuego. En esta clase es posible 
+declarar una variable tutorial por si el juego necesita una funcionalidad adicional en su versión tutorial. Aqui tambien debe haber
+un atributo de tipo Fase y cada dificultad debe definir a qué fase pertenece.
+-En el script del microjuego, los atributos se declaran usando la clase estática mencionada en el paso anterior. Se puede ver esto
+en Scripts/Microjuegos/Jackses/JuegoJacks.cs y con el atributo tutorial se pueden hacer funcionalidades de tutorial en el juego. En esta clase
+también debe haber un atributo de tipo Fase llamado fase que se obtiene a partir de la clase estática. Este atributo sirve para llamar al Manejador de fase
+correspondiente.
+-En el script del microjuego deben haber dos métodos fundamentales:
+private void Ganar()
+    {
+        //detener timers
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
+    }
+private void Perder()
+    {
+        //detener timers
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.PerderVida();
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
+    }
+
+
+Agregar un microjuego a una fase X:
+1. Agregar el microjuego al enum Microjuego.cs
+2. En la clase ConfigFaseXData.cs se define la dificultad del microjuego usando la clase estática definida previamente.
+3. En esta misma clase se agrega el microjuego a la lista microJuegosAJugar.
+4. En el script EscenaIntermediaFaseX, en el método DatosSiguienteMicrojuego, asignarle a la variable nombreSiguienteMicrojuego
+el nombre que saldrá en la pirinola y a la variable escenaACargar el nombre de la escena principal del microjuego.

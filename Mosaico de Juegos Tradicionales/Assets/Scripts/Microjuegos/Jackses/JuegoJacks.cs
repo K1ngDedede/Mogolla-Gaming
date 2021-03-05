@@ -27,6 +27,8 @@ public class JuegoJacks : MonoBehaviour
     GameObject flechaTutorial;
     bool flechaInstanciada = false;
 
+    Fase fase = JacksesUtils.Fase;
+
 
     // Start is called before the first frame update
     void Start()
@@ -94,16 +96,39 @@ public class JuegoJacks : MonoBehaviour
     private void Ganar()
     {
         timerJuego.Stop();
-        ManejadorFase1.AumentarMicrojuegosJugados();
-        ManejadorFase1.RevisarFinFase();
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
     }
 
     private void Perder()
     {
         timerJuego.Stop();
-        ManejadorFase1.PerderVida();
-        ManejadorFase1.AumentarMicrojuegosJugados();
-        ManejadorFase1.RevisarFinFase();
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.PerderVida();
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
+        
     }
 
 }
