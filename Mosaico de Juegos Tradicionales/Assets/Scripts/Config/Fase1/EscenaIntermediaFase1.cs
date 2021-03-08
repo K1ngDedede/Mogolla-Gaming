@@ -10,6 +10,7 @@ public class EscenaIntermediaFase1 : MonoBehaviour
     string nombreSiguienteMicrojuego;
     Text textoPirinola;
     string escenaACargar;
+    Timer timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +21,21 @@ public class EscenaIntermediaFase1 : MonoBehaviour
 
 
         //Animacion
+        timer = Camera.main.gameObject.AddComponent<Timer>();
+        timer.Duration = 3;
+        timer.Run();
 
         //cuando termine la animacion se carga la escena
-        SceneManager.LoadScene(escenaACargar);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer.Finished)
+        {
+            SceneManager.LoadScene(escenaACargar);
+        }
     }
 
     private void DatosSiguienteMicrojuego(Microjuego microjuego)
