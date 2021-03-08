@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/escenaIntermediaFase1.unity
     guid: bf20b8a89c9e52e48ac051d91dfeef02
+  - enabled: 1
+    path: Assets/Scenes/Trompo.unity
+    guid: 7dd061442f4457640a113f414e66162d
   m_configObjects: {}

@@ -41,7 +41,7 @@ public class EscenaIntermediaFase1 : MonoBehaviour
         else if (microjuego == Microjuego.Trompo)
         {
             nombreSiguienteMicrojuego = "Trompo";
-            //cargar escena de trompo
+            escenaACargar = "Trompo";
         }
         else if (microjuego == Microjuego.Fuchi)
         {
