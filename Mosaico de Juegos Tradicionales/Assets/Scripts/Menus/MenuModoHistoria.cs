@@ -39,6 +39,6 @@ public class MenuModoHistoria : MonoBehaviour
 
     public void Atras()
     {
-        SceneManager.LoadScene("menu1");
+        SceneManager.LoadScene("menu0");
     }
 }

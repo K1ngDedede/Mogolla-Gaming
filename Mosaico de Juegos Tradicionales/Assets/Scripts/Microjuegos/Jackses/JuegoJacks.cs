@@ -83,7 +83,13 @@ public class JuegoJacks : MonoBehaviour
             HUD.ActualizarTiempo(timerJuego.SecondsRemaining);
             if (bolaScript.Agarrada)
             {
-                Ganar();
+                timerJuego.Stop();
+                Destroy(bola);
+                if (flechaInstanciada)
+                {
+                    Destroy(GameObject.FindGameObjectWithTag("flechaTutorial"));
+                }
+                Invoke("Ganar", timerJuego.SecondsRemaining);              
             }
         }
         if(timerJuego.Finished)
@@ -95,7 +101,6 @@ public class JuegoJacks : MonoBehaviour
 
     private void Ganar()
     {
-        timerJuego.Stop();
         switch (fase)
         {
             case Fase.FASE1:

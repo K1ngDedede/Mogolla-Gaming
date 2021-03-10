@@ -31,7 +31,7 @@ public static class ManejadorFase1
         if(ConfigFase1Utils.VidasRestantes <= 0)
         {
             //cargar escena de derrota
-            SceneManager.LoadScene("menuModoHistoria");
+            SceneManager.LoadScene("menu1");
         }
 
         //revisar si gano la fase
@@ -43,7 +43,7 @@ public static class ManejadorFase1
                 ConfigUtils.Fase = 2;
             }
             
-            SceneManager.LoadScene("menuModoHistoria");
+            SceneManager.LoadScene("menu1");
         }
         else
         {

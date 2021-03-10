@@ -75,7 +75,7 @@ public class trombo : MonoBehaviour
         n.Stop();
         //aplicar fondo de derrota
         bg.halt();
-        Invoke("returnDef",3);
+        Invoke("returnDef",n.SecondsRemaining);
     }
 
     protected void returnDef()

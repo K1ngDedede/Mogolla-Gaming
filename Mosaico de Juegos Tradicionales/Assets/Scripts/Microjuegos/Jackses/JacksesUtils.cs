@@ -33,7 +33,7 @@ public static class JacksesUtils
     public static void facil()
     {
         numeroJacks = 5;
-        duracion = 10;
+        duracion = 12;
         tutorial = true;
         fase = Fase.FASE1;
     }

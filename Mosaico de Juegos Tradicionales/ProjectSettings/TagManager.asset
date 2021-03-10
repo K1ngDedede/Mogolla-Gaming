@@ -11,6 +11,9 @@ TagManager:
   - TextoPirinola
   - BotonSegundaFase
   - BotonTerceraFase
+  - temptimer
+  - bg
+  - flechaTutorial
   layers:
   - Default
   - TransparentFX

@@ -32,7 +32,7 @@ public static class TrompoUtils
     {
         torqueR = 0.3f;
         torqueP = 10;
-        duracion = 10;
+        duracion = 12;
         mov = false;
         teach = false;
         fase = Fase.FASE1;
