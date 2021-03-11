@@ -66,7 +66,11 @@ public class JuegoJacks : MonoBehaviour
     {
         jacks = GameObject.FindGameObjectsWithTag("Jack");
         bola = GameObject.FindGameObjectWithTag("Bola");
-        bolaScript = bola.GetComponent<Bola>();
+        if(bola != null)
+        {
+            bolaScript = bola.GetComponent<Bola>();
+        }
+        
         if (jacks.Length == 0)
         {
             bolaScript.Agarrable = true;
