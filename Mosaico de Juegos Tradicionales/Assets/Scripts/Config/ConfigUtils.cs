@@ -6,6 +6,11 @@ public static class ConfigUtils
 {
     static ConfigData configData;
 
+    public static string Fecha
+    {
+        get { return configData.Fecha; }
+    }
+
     public static int Fase
     {
         get { return configData.Fase; }

@@ -30,6 +30,8 @@ public static class ManejadorFase1
         //revisar si perdio la fase
         if(ConfigFase1Utils.VidasRestantes <= 0)
         {
+            //persistir sesion
+            ManejadorPersistencia.PersistirSesionFase1();
             //cargar escena de derrota
             SceneManager.LoadScene("menu1");
         }
@@ -42,7 +44,9 @@ public static class ManejadorFase1
             {
                 ConfigUtils.Fase = 2;
             }
-            
+            //persistir sesion
+            ManejadorPersistencia.PersistirSesionFase1();
+
             SceneManager.LoadScene("menu1");
         }
         else

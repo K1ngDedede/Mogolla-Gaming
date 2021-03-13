@@ -9,6 +9,13 @@ public static class JacksesUtils
     static int duracion = 10;
     static bool tutorial = false;
     static Fase fase = Fase.FASE1;
+    static float tiempoRestante = 0;
+
+    public static float TiempoRestante
+    {
+        set { tiempoRestante = value; }
+        get { return tiempoRestante; }
+    }
 
     public static int NumeroJacks
     {
@@ -36,6 +43,7 @@ public static class JacksesUtils
         duracion = 12;
         tutorial = true;
         fase = Fase.FASE1;
+        tiempoRestante = 0;
     }
 
     public static void dificil()

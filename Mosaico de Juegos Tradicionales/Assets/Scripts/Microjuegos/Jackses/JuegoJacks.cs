@@ -93,6 +93,7 @@ public class JuegoJacks : MonoBehaviour
                 {
                     Destroy(GameObject.FindGameObjectWithTag("flechaTutorial"));
                 }
+                JacksesUtils.TiempoRestante = timerJuego.SecondsRemaining;
                 Invoke("Ganar", timerJuego.SecondsRemaining);              
             }
         }

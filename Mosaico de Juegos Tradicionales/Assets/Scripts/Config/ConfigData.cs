@@ -12,6 +12,14 @@ public class ConfigData
     static string gamerTag = "Anon";
     static int puntuacionMaximaFase3 = 0;
 
+    //persistencia
+    static string fecha;
+
+    public string Fecha
+    {
+        get { return fecha; }
+    }
+
     public int Fase
     {
         get { return fase; }
@@ -45,7 +53,16 @@ public class ConfigData
 
     public ConfigData()
     {
+        fecha = DateTime.Now.ToString().Replace(" ","_");
+        fecha = fecha.Replace("/", "-");
+        fecha = fecha.Replace(":", "-");
+        fecha = fecha.Replace(".", "");
         microjuegosDesbloqueados = new List<Microjuego>();
+
+
+    
+        
+
         try
         {
             //Recuperar datos

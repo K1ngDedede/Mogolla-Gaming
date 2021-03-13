@@ -7,10 +7,17 @@ public class ConfigFase1Data
 {
 
     static int numMicrojuegosJugados;
+    static int vidasTotales;
     static int vidasRestantes;
     static Microjuego microjuegoActual;
     static List<Microjuego> microjuegosAJugar;
     static int duracionMicrojuegos;
+    static int intentosTutorial;
+
+    public int VidasTotales
+    {
+        get { return vidasTotales; }
+    }
 
     public int NumMicroJuegosJugados
     {
@@ -40,11 +47,19 @@ public class ConfigFase1Data
         get { return duracionMicrojuegos; }
     }
 
+    public int IntentosTutorial
+    {
+        get { return intentosTutorial; }
+        set { intentosTutorial = value; }
+    }
+
     public ConfigFase1Data()
     {
         numMicrojuegosJugados = 0;
-        vidasRestantes = 4;
+        vidasTotales = 4;
+        vidasRestantes = vidasTotales;
         duracionMicrojuegos = 10;
+        intentosTutorial = 0;
 
 
         //asignar dificultad de los juegos

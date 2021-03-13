@@ -6,6 +6,16 @@ public static class ConfigFase1Utils
 {
     static ConfigFase1Data configFase1Data;
 
+    public static int VidasTotales
+    {
+        get { return configFase1Data.VidasTotales; }
+    }
+
+    public static int IntentosTutorial
+    {
+        get { return configFase1Data.IntentosTutorial; }
+    }
+
     public static int NumMicrojuegosJugados
     {
         get { return configFase1Data.NumMicroJuegosJugados; }
@@ -46,6 +56,11 @@ public static class ConfigFase1Utils
     public static void Inicializar()
     {
         configFase1Data = new ConfigFase1Data();
+    }
+
+    public static void AumentarIntentosTutorial()
+    {
+        configFase1Data.IntentosTutorial += 1;
     }
 
    
