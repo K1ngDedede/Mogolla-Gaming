@@ -94,7 +94,11 @@ public class JuegoJacks : MonoBehaviour
                     Destroy(GameObject.FindGameObjectWithTag("flechaTutorial"));
                 }
                 JacksesUtils.TiempoRestante = timerJuego.SecondsRemaining;
-                Invoke("Ganar", timerJuego.SecondsRemaining);              
+                Invoke("Ganar", timerJuego.SecondsRemaining);
+                for(int i = 0; i < timerJuego.SecondsRemaining; i++)
+                {
+                    Invoke("SpawnPolvora", i);
+                }
             }
         }
         if(timerJuego.Finished)
@@ -119,6 +123,17 @@ public class JuegoJacks : MonoBehaviour
                 //llamar manejador de fase 3
                 break;
         }
+    }
+
+    private void SpawnPolvora()
+    {
+        GameObject polvora = Resources.Load<GameObject>(prefabLocation + "Polvora");
+        float posX = Random.Range(ScreenUtils.ScreenLeft, ScreenUtils.ScreenRight);
+        float posY = Random.Range(ScreenUtils.ScreenBottom, ScreenUtils.ScreenTop);
+        polvora.transform.position = new Vector3(posX, posY, 0);
+        Instantiate(polvora);
+        
+
     }
 
     private void Perder()
