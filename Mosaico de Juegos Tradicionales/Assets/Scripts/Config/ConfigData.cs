@@ -11,9 +11,17 @@ public class ConfigData
     static List<Microjuego> microjuegosDesbloqueados;
     static string gamerTag = "Anon";
     static int puntuacionMaximaFase3 = 0;
+    static bool juegoCargado = false;
 
     //persistencia
     static string fecha;
+
+    
+    public bool JuegoCargado
+    {
+        get { return juegoCargado; }
+        set { juegoCargado = value; }
+    }
 
     public string Fecha
     {
@@ -59,6 +67,7 @@ public class ConfigData
         fecha = fecha.Replace(".", "");
         microjuegosDesbloqueados = new List<Microjuego>();
 
+        juegoCargado = true;
 
     
         

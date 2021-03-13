@@ -6,7 +6,12 @@ public class InicializadorJuego : MonoBehaviour
 {
     private void Awake()
     {
-        ConfigUtils.Inicializar();
-        ManejadorPersistencia.PersistirSesionJuego();
+        if (!ConfigUtils.JuegoCargado)
+        {
+            ConfigUtils.Inicializar();
+            ManejadorPersistencia.PersistirSesionJuego();
+        }
+        
     }
+    
 }

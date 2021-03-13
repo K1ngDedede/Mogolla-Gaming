@@ -6,6 +6,20 @@ public static class ConfigUtils
 {
     static ConfigData configData;
 
+    public static bool JuegoCargado
+    {
+        get { if (configData == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return configData.JuegoCargado;
+                }
+            }
+        set { configData.JuegoCargado = value; }
+    }
+
     public static string Fecha
     {
         get { return configData.Fecha; }
