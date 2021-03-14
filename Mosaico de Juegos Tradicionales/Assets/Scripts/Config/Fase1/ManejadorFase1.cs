@@ -33,7 +33,7 @@ public static class ManejadorFase1
             //persistir sesion
             ManejadorPersistencia.PersistirSesionFase1();
             //cargar escena de derrota
-            SceneManager.LoadScene("menu1");
+            SceneManager.LoadScene("derrotaFase1");
         }
 
         //revisar si gano la fase
@@ -47,7 +47,7 @@ public static class ManejadorFase1
             //persistir sesion
             ManejadorPersistencia.PersistirSesionFase1();
 
-            SceneManager.LoadScene("menu1");
+            SceneManager.LoadScene("victoriaFase1");
         }
         else
         {

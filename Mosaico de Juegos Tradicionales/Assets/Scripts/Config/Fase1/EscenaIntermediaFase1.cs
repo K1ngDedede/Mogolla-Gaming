@@ -22,7 +22,7 @@ public class EscenaIntermediaFase1 : MonoBehaviour
 
         //Animacion
         timer = Camera.main.gameObject.AddComponent<Timer>();
-        timer.Duration = 3;
+        timer.Duration = 5;
         timer.Run();
 
         //cuando termine la animacion se carga la escena
