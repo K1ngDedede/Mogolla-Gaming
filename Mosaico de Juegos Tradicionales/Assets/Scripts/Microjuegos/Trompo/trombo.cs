@@ -12,17 +12,26 @@ public class trombo : MonoBehaviour
 
     private int vCond;
 
+    private float sapasso;
+
     private BackwardsTimer n;
 
     private Text temptimer;
 
     private BGScroller bg;
 
+    private sHand sh;
+
+    private float prevs;
+
     private float torqueR = TrompoUtils.TorqueR;
 
     private float torqueP = TrompoUtils.TorqueP;
 
     protected Fase fase = TrompoUtils.Fase;
+
+    protected bool teach = TrompoUtils.Teach;
+    
 
     void Start()
     {
@@ -35,9 +44,24 @@ public class trombo : MonoBehaviour
         n.Duration = TrompoUtils.Duracion;
         GameObject tt = GameObject.FindGameObjectWithTag("temptimer");
         temptimer = tt.GetComponent<Text>();
-        temptimer.text = "10";
+        temptimer.text = "lmao";
         GameObject bgObject = GameObject.FindGameObjectWithTag("bg");
         bg = bgObject.GetComponent<BGScroller>();
+        if (teach)
+        {
+            //línea de guia
+            GameObject vert = new GameObject("vert");
+            vert.AddComponent(typeof(SpriteRenderer));
+            vert.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Microjuegos/Trompo/Sprites/vert");
+            vert.transform.position = new Vector3(0,-2,0);
+            vert.transform.localScale = new Vector3(1, 2, 1);
+            //las manos de fermin
+            sh = gameObject.AddComponent(typeof(sHand)) as sHand;
+            //impulso inicial
+            sapo.AddTorque(0.18f, ForceMode2D.Impulse);
+        }
+
+        prevs = Mathf.Sign(gameObject.transform.eulerAngles.z);
         n.Run();
     }
 
@@ -47,8 +71,18 @@ public class trombo : MonoBehaviour
         temptimer.text = n.SecondsRemaining.ToString();
         if (vCond == 0)
         {
-            //Torque aleatorio
-            float sapasso = Random.Range(-torqueP, torqueP);
+            if (!teach)
+            {
+                //Torque aleatorio
+                sapasso = Random.Range(-torqueP, torqueP); 
+            }
+            else if(Mathf.Sign(gameObject.transform.rotation.z)!=prevs)
+            {
+                //print("lmao "+prevs+" "+gameObject.transform.rotation.z);
+                //Las manos de fermín
+                sh.switchHand();
+                prevs = Mathf.Sign(gameObject.transform.rotation.z);
+            }
             if (sapasso >= -torqueR && sapasso <= torqueR)
             {
                 sapo.AddTorque(sapasso, ForceMode2D.Impulse);
@@ -75,8 +109,11 @@ public class trombo : MonoBehaviour
         n.Stop();
         //aplicar fondo de derrota
         bg.halt();
+        //parar manos, si las hay
+        if(teach) sh.halt();
         Invoke("returnDef",n.SecondsRemaining);
     }
+    
 
     protected void returnDef()
     {
@@ -101,6 +138,7 @@ public class trombo : MonoBehaviour
     {
         vCond = 1;
         sapo.freezeRotation = true;
+        if(teach) sh.halt();
         //Invocar al manejador de fase
         switch (fase)
         {

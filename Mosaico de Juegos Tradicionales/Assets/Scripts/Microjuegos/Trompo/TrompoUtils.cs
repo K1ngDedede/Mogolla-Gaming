@@ -7,8 +7,13 @@ public static class TrompoUtils
     static float torqueR = 0.3f;
     static float torqueP = 10;
     static int duracion = 10;
-    private static bool mov = false;
-    private static bool teach = false;
+    static bool mov = false;
+    static bool teach = false;
+
+    public static bool Mov => mov;
+
+    public static bool Teach => teach;
+
     static Fase fase = Fase.FASE1;
 
     public static float TorqueR => torqueR;
@@ -21,8 +26,8 @@ public static class TrompoUtils
 
     public static void tutorial()
     {
-        torqueR = 0.2f;
-        torqueP = 12;
+        torqueR = 0f;
+        torqueP = 0;
         duracion = 12;
         mov = false;
         teach = true;
