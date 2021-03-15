@@ -7,6 +7,13 @@ public class InicializadorFase1 : MonoBehaviour
     private void Awake()
     {
         ConfigFase1Utils.Inicializar();
-        ManejadorFase1.EmpezarMicrojuegosFase();
+        if (ConfigUtils.Fase > 1)
+        {
+            ManejadorFase1.EmpezarMicrojuegosFase();
+        }
+        else
+        {
+            ManejadorFase1.EmpezarTutorial();
+        }
     }
 }

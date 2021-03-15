@@ -59,7 +59,7 @@ public class ConfigFase1Data
         vidasTotales = 4;
         vidasRestantes = vidasTotales;
         duracionMicrojuegos = 10;
-        intentosTutorial = 0;
+        intentosTutorial = 1;
 
 
         //asignar dificultad de los juegos

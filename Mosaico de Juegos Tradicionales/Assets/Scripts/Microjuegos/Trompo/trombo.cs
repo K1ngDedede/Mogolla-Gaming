@@ -121,9 +121,18 @@ public class trombo : MonoBehaviour
         switch (fase)
         {
             case Fase.FASE1:
-                ManejadorFase1.PerderVida();
-                ManejadorFase1.AumentarMicrojuegosJugados();
-                ManejadorFase1.RevisarFinFase();
+                if (teach)
+                {
+                    ConfigFase1Utils.AumentarIntentosTutorial();
+                    ManejadorFase1.ReintentarTutorial();
+                }
+                else
+                {
+                    ManejadorFase1.PerderVida();
+                    ManejadorFase1.AumentarMicrojuegosJugados();
+                    ManejadorFase1.RevisarFinFase();
+                }
+                
                 break;
             case Fase.FASE2:
                 //llamar manejador de fase 2
@@ -136,23 +145,32 @@ public class trombo : MonoBehaviour
 
     protected void returnVict()
     {
-        vCond = 1;
-        sapo.freezeRotation = true;
-        if(teach) sh.halt();
-        //Invocar al manejador de fase
-        switch (fase)
+        if (teach)
         {
-            case Fase.FASE1:
-                ManejadorFase1.AumentarMicrojuegosJugados();
-                ManejadorFase1.RevisarFinFase();
-                break;
-            case Fase.FASE2:
-                //llamar manejador de fase 2
-                break;
-            case Fase.FASE3:
-                //llamar manejador de fase 3
-                break;
+            TrompoUtils.facilito();
+            ManejadorFase1.EmpezarMicrojuegosFase();
         }
+        else
+        {
+            vCond = 1;
+            sapo.freezeRotation = true;
+            if (teach) sh.halt();
+            //Invocar al manejador de fase
+            switch (fase)
+            {
+                case Fase.FASE1:
+                    ManejadorFase1.AumentarMicrojuegosJugados();
+                    ManejadorFase1.RevisarFinFase();
+                    break;
+                case Fase.FASE2:
+                    //llamar manejador de fase 2
+                    break;
+                case Fase.FASE3:
+                    //llamar manejador de fase 3
+                    break;
+            }
+        }
+        
     }
     
 }

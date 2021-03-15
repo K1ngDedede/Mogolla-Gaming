@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public static class ManejadorFase1
 {
+    public static void EmpezarTutorial()
+    {
+        TrompoUtils.tutorial();
+        SceneManager.LoadScene("Trompo");
+    }
+
+    public static void ReintentarTutorial()
+    {
+        SceneManager.LoadScene("Trompo");
+    }
+
     public static void EmpezarMicrojuegosFase()
     {
         SceneManager.LoadScene("escenaIntermediaFase1");
