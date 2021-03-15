@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/derrotaFase1.unity
     guid: 3bac72c34cf2ab8499be969101ba3b0f
+  - enabled: 1
+    path: Assets/Scenes/Fuchi.unity
+    guid: f48283aa15075824fbd0de1f076f4c14
   m_configObjects: {}

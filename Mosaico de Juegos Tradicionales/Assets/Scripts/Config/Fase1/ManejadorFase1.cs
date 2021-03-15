@@ -43,6 +43,7 @@ public static class ManejadorFase1
         {
             //persistir sesion
             ManejadorPersistencia.PersistirSesionFase1();
+            Cursor.visible = true;
             //cargar escena de derrota
             SceneManager.LoadScene("derrotaFase1");
         }
@@ -57,7 +58,7 @@ public static class ManejadorFase1
             }
             //persistir sesion
             ManejadorPersistencia.PersistirSesionFase1();
-
+            Cursor.visible = true;
             SceneManager.LoadScene("victoriaFase1");
         }
         else
