@@ -14,7 +14,7 @@ public class trombo : MonoBehaviour
 
     private float sapasso;
 
-    private BackwardsTimer n;
+    private LeTimer n;
 
     private Text temptimer;
 
@@ -40,7 +40,7 @@ public class trombo : MonoBehaviour
         sapo.centerOfMass = new Vector2(0, -2.2f);
         sapo.freezeRotation = false;
         gameObject.AddComponent(typeof(BackwardsTimer));
-        n = gameObject.GetComponent<BackwardsTimer>();
+        n = GameObject.FindGameObjectWithTag("ttimer").GetComponent<LeTimer>();
         n.Duration = TrompoUtils.Duracion;
         GameObject tt = GameObject.FindGameObjectWithTag("temptimer");
         temptimer = tt.GetComponent<Text>();
@@ -68,7 +68,7 @@ public class trombo : MonoBehaviour
 
     void Update()
     {
-        temptimer.text = n.SecondsRemaining.ToString();
+        temptimer.text = n.SecondsRemaining().ToString();
         if (vCond == 0)
         {
             if (!teach)
@@ -78,7 +78,6 @@ public class trombo : MonoBehaviour
             }
             else if(Mathf.Sign(gameObject.transform.rotation.z)!=prevs)
             {
-                //print("lmao "+prevs+" "+gameObject.transform.rotation.z);
                 //Las manos de fermín
                 sh.switchHand();
                 prevs = Mathf.Sign(gameObject.transform.rotation.z);
@@ -96,7 +95,7 @@ public class trombo : MonoBehaviour
                 sapo.AddTorque(xinput, ForceMode2D.Impulse);
             }
             //Condición de victoria
-            if (n.Finished && vCond == 0)
+            if (n.Finished() && vCond == 0)
             {
                 returnVict();
             }
@@ -111,7 +110,7 @@ public class trombo : MonoBehaviour
         bg.halt();
         //parar manos, si las hay
         if(teach) sh.halt();
-        Invoke("returnDef",n.SecondsRemaining);
+        Invoke("returnDef",n.SecondsRemaining());
     }
     
 
@@ -145,16 +144,17 @@ public class trombo : MonoBehaviour
 
     protected void returnVict()
     {
+        vCond = 1;
+        sapo.freezeRotation = true;
         if (teach)
         {
+            sh.halt();
             TrompoUtils.facilito();
             ManejadorFase1.EmpezarMicrojuegosFase();
         }
         else
         {
-            vCond = 1;
-            sapo.freezeRotation = true;
-            if (teach) sh.halt();
+            
             //Invocar al manejador de fase
             switch (fase)
             {

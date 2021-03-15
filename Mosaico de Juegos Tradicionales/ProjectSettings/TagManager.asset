@@ -15,6 +15,7 @@ TagManager:
   - bg
   - flechaTutorial
   - tHand
+  - ttimer
   layers:
   - Default
   - TransparentFX
