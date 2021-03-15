@@ -53,6 +53,7 @@ public class EscenaIntermediaFase1 : MonoBehaviour
         else if (microjuego == Microjuego.Fuchi)
         {
             nombreSiguienteMicrojuego = "Fuchi";
+			escenaACargar = "Fuchi";
             //cargar escena de fuchi
         }
     }
