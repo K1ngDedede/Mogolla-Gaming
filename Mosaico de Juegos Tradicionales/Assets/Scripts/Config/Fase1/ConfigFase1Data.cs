@@ -13,6 +13,7 @@ public class ConfigFase1Data
     static List<Microjuego> microjuegosAJugar;
     static int duracionMicrojuegos;
     static int intentosTutorial;
+    static System.Random rng = new System.Random();
 
     public int VidasTotales
     {
@@ -53,6 +54,19 @@ public class ConfigFase1Data
         set { intentosTutorial = value; }
     }
 
+    public static void RandomizarMicrojuegos()
+    {
+        int n = microjuegosAJugar.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            Microjuego microjuego = microjuegosAJugar[k];
+            microjuegosAJugar[k] = microjuegosAJugar[n];
+            microjuegosAJugar[n] = microjuego;
+        }
+    }
+
     public ConfigFase1Data()
     {
         numMicrojuegosJugados = 0;
@@ -75,6 +89,10 @@ public class ConfigFase1Data
         microjuegosAJugar.Add(Microjuego.Jackses);
         microjuegosAJugar.Add(Microjuego.Trompo);
 		microjuegosAJugar.Add(Microjuego.Fuchi);
+
+        //randomizar lista de microjuegos
+        RandomizarMicrojuegos();
+
 
         try
         {
