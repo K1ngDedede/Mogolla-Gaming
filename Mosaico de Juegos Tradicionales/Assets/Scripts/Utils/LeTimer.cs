@@ -29,6 +29,11 @@ public class LeTimer : MonoBehaviour
         StartCoroutine(cogotinho);
     }
 
+    public bool Running()
+    {
+        return n.Running;
+    }
+
     public void Stop()
     {
         n.Stop();
