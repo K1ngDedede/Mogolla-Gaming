@@ -33,6 +33,7 @@ public class JuegoJacks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         jacks = new GameObject[cantidadJacks];
         //sapwnear jacks
         for(int i = 0; i < cantidadJacks; i++)
@@ -110,6 +111,7 @@ public class JuegoJacks : MonoBehaviour
 
     private void Ganar()
     {
+        Cursor.visible = true;
         switch (fase)
         {
             case Fase.FASE1:
@@ -138,6 +140,7 @@ public class JuegoJacks : MonoBehaviour
 
     private void Perder()
     {
+        Cursor.visible = true;
         timerJuego.Stop();
         switch (fase)
         {
