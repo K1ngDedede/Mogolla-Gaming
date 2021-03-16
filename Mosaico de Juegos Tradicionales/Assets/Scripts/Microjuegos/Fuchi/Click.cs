@@ -54,11 +54,14 @@ public class Click : MonoBehaviour
             case Fase.FASE1:
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
+				Cursor.visible = true;
                 break;
             case Fase.FASE2:
+			Cursor.visible = true;
                 //llamar manejador de fase 2
                 break;
             case Fase.FASE3:
+			Cursor.visible = true;
                 //llamar manejador de fase 3
                 break;
         }
@@ -73,12 +76,15 @@ public class Click : MonoBehaviour
                 ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
+				Cursor.visible = true;
                 break;
             case Fase.FASE2:
                 //llamar manejador de fase 2
+				Cursor.visible = true;
                 break;
             case Fase.FASE3:
                 //llamar manejador de fase 3
+				Cursor.visible = true;
                 break;
         }
         
