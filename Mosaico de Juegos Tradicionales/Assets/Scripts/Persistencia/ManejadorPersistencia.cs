@@ -18,14 +18,12 @@ public static class ManejadorPersistencia
     
     public static void PersistirSesionFase1()
     {
-        string fecha = DateTime.Now.ToString().Replace(" ", "_");
-        fecha = fecha.Replace("/", "-");
-        fecha = fecha.Replace(":", "-");
-        fecha = fecha.Replace(".", "");
-        RestClient.Put(endpoint + "sesiones/" + ConfigUtils.Fecha+"/statsF1/"+fecha+"/.json", new SesionFase1 {vidasRestantes = ConfigFase1Utils.VidasRestantes, 
+        
+        RestClient.Put(endpoint + "sesiones/" + ConfigUtils.Fecha+"/statsF1/"+ ConfigFase1Utils.Fecha +"/.json", new SesionFase1 {vidasRestantes = ConfigFase1Utils.VidasRestantes, 
             juegosPerdidos = ConfigFase1Utils.VidasTotales - ConfigFase1Utils.VidasRestantes, 
             tiempoRestanteJackses = JacksesUtils.TiempoRestante, 
-            intentosTutorial = ConfigFase1Utils.IntentosTutorial }).Then(response => {
+            intentosTutorial = ConfigFase1Utils.IntentosTutorial,
+            faseTerminada = ConfigFase1Utils.SesionFase1Terminada}).Then(response => {
             });
     }
 

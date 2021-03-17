@@ -13,7 +13,20 @@ public class ConfigFase1Data
     static List<Microjuego> microjuegosAJugar;
     static int duracionMicrojuegos;
     static int intentosTutorial;
+    static bool sesionFase1Terminada;
     static System.Random rng = new System.Random();
+    static string fecha;
+
+    public string Fecha
+    {
+        get { return fecha; }
+    }
+
+    public bool SesionFase1Terminada
+    {
+        get { return sesionFase1Terminada; }
+        set { sesionFase1Terminada = value; }
+    }
 
     public int VidasTotales
     {
@@ -74,6 +87,12 @@ public class ConfigFase1Data
         vidasRestantes = vidasTotales;
         duracionMicrojuegos = 10;
         intentosTutorial = 1;
+        sesionFase1Terminada = false;
+
+        fecha = DateTime.Now.ToString().Replace(" ", "_");
+        fecha = fecha.Replace("/", "-");
+        fecha = fecha.Replace(":", "-");
+        fecha = fecha.Replace(".", "");
 
 
         //asignar dificultad de los juegos

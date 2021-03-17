@@ -13,11 +13,13 @@ public static class ManejadorFase1
 
     public static void ReintentarTutorial()
     {
+        ManejadorPersistencia.PersistirSesionFase1();
         SceneManager.LoadScene("Trompo");
     }
 
     public static void EmpezarMicrojuegosFase()
     {
+        ManejadorPersistencia.PersistirSesionFase1();
         SceneManager.LoadScene("escenaIntermediaFase1");
     }
 
@@ -42,8 +44,8 @@ public static class ManejadorFase1
         if(ConfigFase1Utils.VidasRestantes <= 0)
         {
             //persistir sesion
+            ConfigFase1Utils.SesionFase1Terminada = true;
             ManejadorPersistencia.PersistirSesionFase1();
-            Cursor.visible = true;
             //cargar escena de derrota
             SceneManager.LoadScene("derrotaFase1");
         }
@@ -57,12 +59,13 @@ public static class ManejadorFase1
                 ConfigUtils.Fase = 2;
             }
             //persistir sesion
+            ConfigFase1Utils.SesionFase1Terminada = true;
             ManejadorPersistencia.PersistirSesionFase1();
-            Cursor.visible = true;
             SceneManager.LoadScene("victoriaFase1");
         }
         else
         {
+            ManejadorPersistencia.PersistirSesionFase1();
             SiguienteMicroJuego();
         }
     }

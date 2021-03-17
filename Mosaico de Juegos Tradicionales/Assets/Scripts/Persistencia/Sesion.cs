@@ -8,10 +8,4 @@ public class Sesion
 {
     public string fecha;
 
-    //public Sesion(string fecha, int vidas)
-    //{
-    //    this.fecha = fecha;
-    //    this.vidas = vidas;
-    //}
-
 }

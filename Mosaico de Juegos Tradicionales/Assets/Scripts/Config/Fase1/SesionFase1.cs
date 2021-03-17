@@ -10,4 +10,5 @@ public class SesionFase1
     public int juegosPerdidos;
     public float tiempoRestanteJackses;
     public int intentosTutorial;
+    public bool faseTerminada;
 }

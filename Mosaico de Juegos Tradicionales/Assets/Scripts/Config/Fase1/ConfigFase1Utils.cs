@@ -6,6 +6,17 @@ public static class ConfigFase1Utils
 {
     static ConfigFase1Data configFase1Data;
 
+    public static string Fecha
+    {
+        get { return configFase1Data.Fecha; }
+    }
+
+    public static bool SesionFase1Terminada
+    {
+        get { return configFase1Data.SesionFase1Terminada; }
+        set { configFase1Data.SesionFase1Terminada = value; }
+    }
+
     public static int VidasTotales
     {
         get { return configFase1Data.VidasTotales; }
