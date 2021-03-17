@@ -16,6 +16,7 @@ TagManager:
   - flechaTutorial
   - tHand
   - ttimer
+  - abuela
   layers:
   - Default
   - TransparentFX
