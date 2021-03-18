@@ -145,6 +145,7 @@ public class JuegoJacks : MonoBehaviour
         switch (fase)
         {
             case Fase.FASE1:
+                ManejadorFase1.RegistrarPerdidaMicrojuego("Jackses");
                 ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();

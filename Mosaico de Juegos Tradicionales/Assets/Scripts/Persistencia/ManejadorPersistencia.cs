@@ -23,7 +23,8 @@ public static class ManejadorPersistencia
             juegosPerdidos = ConfigFase1Utils.VidasTotales - ConfigFase1Utils.VidasRestantes, 
             tiempoRestanteJackses = JacksesUtils.TiempoRestante, 
             intentosTutorial = ConfigFase1Utils.IntentosTutorial,
-            faseTerminada = ConfigFase1Utils.SesionFase1Terminada}).Then(response => {
+            faseTerminada = ConfigFase1Utils.SesionFase1Terminada,
+            microjuegosPerdidos = ConfigFase1Utils.MicrojuegosPerdidos.ToArray()}).Then(response => {
             });
     }
 

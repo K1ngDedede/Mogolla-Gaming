@@ -11,4 +11,5 @@ public class SesionFase1
     public float tiempoRestanteJackses;
     public int intentosTutorial;
     public bool faseTerminada;
+    public string[] microjuegosPerdidos;
 }
