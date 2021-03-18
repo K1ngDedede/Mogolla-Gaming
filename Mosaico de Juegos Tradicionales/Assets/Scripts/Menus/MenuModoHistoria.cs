@@ -29,7 +29,7 @@ public class MenuModoHistoria : MonoBehaviour
 
     public void EntrarFase2()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("fase2");
     }
 
     public void EntrarFase3()
