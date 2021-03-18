@@ -14,4 +14,9 @@ public class PantallaInicio : MonoBehaviour
     {
         SceneManager.LoadScene("menu1");
     }
+
+    public void Creditos()
+    {
+        SceneManager.LoadScene("creditos");
+    }
 }

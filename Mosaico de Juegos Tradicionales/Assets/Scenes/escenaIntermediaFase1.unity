@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 194677865}
   - component: {fileID: 194677864}
+  - component: {fileID: 194677866}
   m_Layer: 0
   m_Name: Abuelita
   m_TagString: abuela
@@ -202,6 +203,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &194677866
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194677863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42c5c6a0ee7132644ba242f1a8699a90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &870799653
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +604,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c3460d5aa86560b4da78df9fdd97ccf4, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
