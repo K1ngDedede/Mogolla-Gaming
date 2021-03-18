@@ -28,15 +28,13 @@ public class BGScroller : MonoBehaviour
         bgm.mainTextureScale = new Vector2(5f, 5f);
         vic.wrapMode = TextureWrapMode.Repeat;
         def.wrapMode = TextureWrapMode.Repeat;
-        state = false;
         state = true;
         offX = 0;
         offY = 0;
         sX = 0.1f;
         sY = 0.15f;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (state)
