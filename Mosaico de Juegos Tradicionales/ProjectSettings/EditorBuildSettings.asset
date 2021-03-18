@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fuchi.unity
     guid: f48283aa15075824fbd0de1f076f4c14
+  - enabled: 1
+    path: Assets/Scenes/explicacionPirinola.unity
+    guid: 89ed39ba310c9e8439d03d6b2de6790c
   m_configObjects: {}

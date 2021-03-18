@@ -17,6 +17,11 @@ public static class ManejadorFase1
         SceneManager.LoadScene("Trompo");
     }
 
+    public static void ExplicacionPirinola()
+    {
+        SceneManager.LoadScene("explicacionPirinola");
+    }
+
     public static void EmpezarMicrojuegosFase()
     {
         ManejadorPersistencia.PersistirSesionFase1();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InicializadorFase1 : MonoBehaviour
 {
-    private void Awake()
+    public void EmpezarTutorial()
     {
         ConfigFase1Utils.Inicializar();
         if (ConfigUtils.Fase > 1)

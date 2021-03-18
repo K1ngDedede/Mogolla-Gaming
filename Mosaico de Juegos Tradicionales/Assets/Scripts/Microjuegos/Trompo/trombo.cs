@@ -150,7 +150,7 @@ public class trombo : MonoBehaviour
         {
             sh.halt();
             TrompoUtils.facilito();
-            ManejadorFase1.EmpezarMicrojuegosFase();
+            ManejadorFase1.ExplicacionPirinola();
         }
         else
         {
