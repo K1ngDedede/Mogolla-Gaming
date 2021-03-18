@@ -15,7 +15,18 @@ public class ConfigFase1Data
     static int intentosTutorial;
     static bool sesionFase1Terminada;
     static System.Random rng = new System.Random();
+    static List<string> microjuegosPerdidos;
     static string fecha;
+
+    public List<string> MicrojuegosPerdidos
+    {
+        get { return microjuegosPerdidos; }
+    }
+
+    public void RegistrarPerdidaMicrojuego(String microjuego)
+    {
+        microjuegosPerdidos.Add(microjuego);
+    }
 
     public string Fecha
     {
@@ -73,11 +84,31 @@ public class ConfigFase1Data
         while (n > 1)
         {
             n--;
-            int k = rng.Next(n + 1);
+            int k = GenerarNumeroAleatorio(n);
             Microjuego microjuego = microjuegosAJugar[k];
-            microjuegosAJugar[k] = microjuegosAJugar[n];
-            microjuegosAJugar[n] = microjuego;
+            if(n == microjuegosAJugar.Count - 1)
+            {
+                microjuegosAJugar[k] = microjuegosAJugar[n];
+                microjuegosAJugar[n] = microjuego;
+            }
+            else
+            {
+                while (microjuegosAJugar[n + 1] == microjuego)
+                {
+                    k = GenerarNumeroAleatorio(n);
+                    microjuego = microjuegosAJugar[k];
+                }
+                microjuegosAJugar[k] = microjuegosAJugar[n];
+                microjuegosAJugar[n] = microjuego;
+            }
+            
+            
         }
+    }
+
+     private static int GenerarNumeroAleatorio(int max)
+    {
+        return rng.Next(max + 1);
     }
 
     public ConfigFase1Data()
@@ -88,6 +119,7 @@ public class ConfigFase1Data
         duracionMicrojuegos = 10;
         intentosTutorial = 1;
         sesionFase1Terminada = false;
+        microjuegosPerdidos = new List<string>();
 
         fecha = DateTime.Now.ToString().Replace(" ", "_");
         fecha = fecha.Replace("/", "-");
@@ -108,6 +140,9 @@ public class ConfigFase1Data
         microjuegosAJugar.Add(Microjuego.Jackses);
         microjuegosAJugar.Add(Microjuego.Trompo);
 		microjuegosAJugar.Add(Microjuego.Fuchi);
+        microjuegosAJugar.Add(Microjuego.Jackses);
+        microjuegosAJugar.Add(Microjuego.Trompo);
+        microjuegosAJugar.Add(Microjuego.Fuchi);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();

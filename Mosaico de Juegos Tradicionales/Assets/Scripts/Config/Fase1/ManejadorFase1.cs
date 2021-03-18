@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public static class ManejadorFase1
 {
+    public static void RegistrarPerdidaMicrojuego(string microjuego)
+    {
+        ConfigFase1Utils.RegistrarPerdidaMicrojuego(microjuego);
+    }
+
     public static void EmpezarTutorial()
     {
         TrompoUtils.tutorial();

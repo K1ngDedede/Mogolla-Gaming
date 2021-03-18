@@ -127,6 +127,7 @@ public class trombo : MonoBehaviour
                 }
                 else
                 {
+                    ManejadorFase1.RegistrarPerdidaMicrojuego("Trompo");   
                     ManejadorFase1.PerderVida();
                     ManejadorFase1.AumentarMicrojuegosJugados();
                     ManejadorFase1.RevisarFinFase();

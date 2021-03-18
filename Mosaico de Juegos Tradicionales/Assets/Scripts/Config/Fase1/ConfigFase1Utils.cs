@@ -6,6 +6,11 @@ public static class ConfigFase1Utils
 {
     static ConfigFase1Data configFase1Data;
 
+    public static List<string> MicrojuegosPerdidos
+    {
+        get { return configFase1Data.MicrojuegosPerdidos; }
+    }
+
     public static string Fecha
     {
         get { return configFase1Data.Fecha; }
@@ -51,6 +56,11 @@ public static class ConfigFase1Utils
     public static int DuracionMicrojuegos
     {
         get { return configFase1Data.DuracionMicrojuegos; }
+    }
+
+    public static void RegistrarPerdidaMicrojuego(string microjuego)
+    {
+        configFase1Data.RegistrarPerdidaMicrojuego(microjuego);
     }
 
     public static void PerderVida()
