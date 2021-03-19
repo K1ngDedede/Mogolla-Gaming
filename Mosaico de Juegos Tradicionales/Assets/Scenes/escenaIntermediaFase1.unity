@@ -775,6 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1352860089}
   - component: {fileID: 1352860088}
+  - component: {fileID: 1352860090}
   m_Layer: 0
   m_Name: barra
   m_TagString: barraPaciencia
@@ -822,7 +823,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 59482db717cb743449077dc529545afb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.65098, g: 0.690196, b: 0.141176, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -840,12 +841,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352860087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.667, y: 2.761, z: 0}
-  m_LocalScale: {x: 0.35371026, y: 0.2241068, z: 1}
+  m_LocalPosition: {x: 0.003, y: 2.761, z: 0}
+  m_LocalScale: {x: 1.3965623, y: 0.2241068, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &1352860090
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352860087}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 8f722f10b70a9314e9838ba3c545c5de, type: 2}
+  - {fileID: 7400000, guid: c251da4ba747df54aa54145a94263a44, type: 2}
+  - {fileID: 7400000, guid: 4b01346b8f3acab42add1eeabceeef50, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1610900602
 GameObject:
   m_ObjectHideFlags: 0
