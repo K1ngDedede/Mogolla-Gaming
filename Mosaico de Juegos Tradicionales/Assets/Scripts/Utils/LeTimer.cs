@@ -37,6 +37,11 @@ public class LeTimer : MonoBehaviour
     public void Stop()
     {
         n.Stop();
+        Invoke("YepClock",n.SecondsRemaining);
+    }
+    
+    private void YepClock()
+    {
         StopCoroutine(cogotinho);
     }
 
@@ -52,12 +57,12 @@ public class LeTimer : MonoBehaviour
     
     IEnumerator Timer() {
         float sI = 360/Duration;
-        while (true) {
-            //fhRender.sprite = fhSprites[sI%2];
-            //sI++;
-            print(SecondsRemaining()+", "+n.SecondsRemaining);
-            yield return new WaitForSeconds(1);
+        float s = 0;
+        while (s<360) {
+            //print(SecondsRemaining()+", "+n.SecondsRemaining);
             circ.Rotate(new Vector3(0,0,sI));
+            s += sI;
+            yield return new WaitForSeconds(1);
         }
     }
 }
