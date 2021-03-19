@@ -14,7 +14,7 @@ public class trombo : MonoBehaviour
 
     private float sapasso;
 
-    private LeTimer n;
+    private BackwardsTimer n;
 
     private Text temptimer;
 
@@ -40,7 +40,7 @@ public class trombo : MonoBehaviour
         sapo.centerOfMass = new Vector2(0, -2.2f);
         sapo.freezeRotation = false;
         gameObject.AddComponent(typeof(BackwardsTimer));
-        n = GameObject.FindGameObjectWithTag("ttimer").GetComponent<LeTimer>();
+        n = gameObject.AddComponent<BackwardsTimer>();
         n.Duration = TrompoUtils.Duracion;
         GameObject tt = GameObject.FindGameObjectWithTag("temptimer");
         temptimer = tt.GetComponent<Text>();
@@ -68,7 +68,7 @@ public class trombo : MonoBehaviour
 
     void Update()
     {
-        temptimer.text = n.SecondsRemaining().ToString();
+        temptimer.text = n.SecondsRemaining.ToString();
         if (vCond == 0)
         {
             if (!teach)
@@ -95,7 +95,7 @@ public class trombo : MonoBehaviour
                 sapo.AddTorque(xinput, ForceMode2D.Impulse);
             }
             //Condición de victoria
-            if (n.Finished() && vCond == 0)
+            if (n.Finished && vCond == 0)
             {
                 returnVict();
             }
@@ -110,7 +110,7 @@ public class trombo : MonoBehaviour
         bg.halt();
         //parar manos, si las hay
         if(teach) sh.halt();
-        Invoke("returnDef",n.SecondsRemaining());
+        Invoke("returnDef",n.SecondsRemaining);
     }
     
 

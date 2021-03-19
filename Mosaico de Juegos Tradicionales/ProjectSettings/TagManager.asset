@@ -19,6 +19,7 @@ TagManager:
   - abuela
   - barraPaciencia
   - RelojitoTimer
+  - textoToques
   layers:
   - Default
   - TransparentFX
