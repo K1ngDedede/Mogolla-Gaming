@@ -25,8 +25,8 @@ public class GameControlScript : MonoBehaviour
 		}
 		else{
 			objectToDisable2.SetActive(false);
-
 		}
+		
         if(disabled){
 			objectToDisable.SetActive(false);
 

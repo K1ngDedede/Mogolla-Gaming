@@ -18,6 +18,7 @@ TagManager:
   - ttimer
   - abuela
   - barraPaciencia
+  - RelojitoTimer
   layers:
   - Default
   - TransparentFX

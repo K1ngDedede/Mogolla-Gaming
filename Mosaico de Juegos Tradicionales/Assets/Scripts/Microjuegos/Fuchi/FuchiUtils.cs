@@ -4,14 +4,16 @@ using UnityEngine;
 
 public static class FuchiUtils 
 {
-	public static float thrust = 13.0f;
+	public static float thrust = 12.0f;
     public static int counter = 0;
+	public static float currentTime = 0f;
+	public static float startingTime = 11f;
+	//GameObject objectToDisable = GameControlScript.objectToDisable;
     //static float rot = 0.0f;
 	public static float x0 = -3.0f;
 	public static float x1 = 3.0f;
 	public static float y0 = 1.5f;
 	public static float y1 = 5.0f;
-    static int duracion = 10;
     static bool tutorial = false;
     static Fase fase = Fase.FASE1;
     static float tiempoRestante = 0;
@@ -23,9 +25,9 @@ public static class FuchiUtils
     }
 
 
-    public static int Duracion
+    public static float Duracion
     {
-        get { return duracion; }
+        get { return startingTime; }
     }
 
     public static bool Tutorial
@@ -40,11 +42,14 @@ public static class FuchiUtils
 
     public static void facil()
     {
-        duracion = 12;
+		//objectToDisable.SetActive(true);
+		counter = 0;
+		currentTime = 0f;
+        startingTime = 11f;
         tutorial = true;
         fase = Fase.FASE1;
         tiempoRestante = 0;
-		thrust = 13.0f;
+		thrust = 12.0f;
 		x0 = -3.0f;
 		x1 = 3.0f;
 		y0 = 1.5f;
@@ -53,9 +58,12 @@ public static class FuchiUtils
 
     public static void dificil()
     {
-        duracion = 10;
+		//objectToDisable.SetActive(true);
+		counter = 0;
+		currentTime = 0f;
+        startingTime = 8;
         tutorial = false;
-		thrust = 20.0f;
+		thrust = 15.0f;
 		x0 = -3.0f;
 		x1 = 3.0f;
 		y0 = 1.5f;
