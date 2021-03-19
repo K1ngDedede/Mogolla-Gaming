@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 1492205682}
   - component: {fileID: 1492205684}
   - component: {fileID: 1492205683}
-  - component: {fileID: 1492205685}
+  - component: {fileID: 1492205686}
   m_Layer: 5
   m_Name: TextoAbuela
   m_TagString: Untagged
@@ -723,7 +723,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492205681}
   m_CullTransparentMesh: 0
---- !u!114 &1492205685
+--- !u!114 &1492205686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -732,10 +732,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492205681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d78bf617f83cb84ba34f9a6804d143d, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e24473ffb3dfb468aa1b98144d2db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo: 16
+  tiempoAparicion: 16
+  duracionCaracter: 0.06
 --- !u!1 &1493741730
 GameObject:
   m_ObjectHideFlags: 0
