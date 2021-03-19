@@ -20,7 +20,7 @@ public class JuegoJacks : MonoBehaviour
 
     GameObject mano;
 
-    LeTimer timerJuego;
+    BackwardsTimer timerJuego;
     float duracionJuego = JacksesUtils.Duracion;
 
     bool tutorial = JacksesUtils.Tutorial;
@@ -56,7 +56,8 @@ public class JuegoJacks : MonoBehaviour
         mesa.transform.position = posMesa;
         mesa.transform.localScale = new Vector3(0.96f, 0.93f, 0);
 
-        timerJuego = GameObject.FindGameObjectWithTag("ttimer").GetComponent<LeTimer>();
+        timerJuego = gameObject.AddComponent<BackwardsTimer>();
+        //timerJuego = GameObject.FindGameObjectWithTag("ttimer").GetComponent<LeTimer>();
         timerJuego.Duration = duracionJuego;
         HUD.ActualizarTiempo(duracionJuego);
         timerJuego.Run();
@@ -83,9 +84,9 @@ public class JuegoJacks : MonoBehaviour
             }
             
         }
-        if (timerJuego.Running())
+        if (timerJuego.Running)
         {
-            HUD.ActualizarTiempo(timerJuego.SecondsRemaining());
+            HUD.ActualizarTiempo(timerJuego.SecondsRemaining);
             if (bolaScript.Agarrada)
             {
                 timerJuego.Stop();
@@ -94,15 +95,15 @@ public class JuegoJacks : MonoBehaviour
                 {
                     Destroy(GameObject.FindGameObjectWithTag("flechaTutorial"));
                 }
-                JacksesUtils.TiempoRestante = timerJuego.SecondsRemaining();
-                Invoke("Ganar", timerJuego.SecondsRemaining());
-                for(int i = 0; i < timerJuego.SecondsRemaining(); i++)
+                JacksesUtils.TiempoRestante = timerJuego.SecondsRemaining;
+                Invoke("Ganar", timerJuego.SecondsRemaining);
+                for(int i = 0; i < timerJuego.SecondsRemaining; i++)
                 {
                     Invoke("SpawnPolvora", i);
                 }
             }
         }
-        if(timerJuego.Finished())
+        if(timerJuego.Finished)
         {
             Perder();
         }

@@ -8,7 +8,7 @@ public class MenuModoHistoria : MonoBehaviour
 {
     Button botonSegundaFase, botonTerceraFase;
 
-    private void Start()
+    private void Awake()
     {
         botonSegundaFase = GameObject.FindGameObjectWithTag("BotonSegundaFase").GetComponent<Button>();
         botonTerceraFase = GameObject.FindGameObjectWithTag("BotonTerceraFase").GetComponent<Button>();

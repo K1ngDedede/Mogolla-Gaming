@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1629770318690740343}
   - component: {fileID: 1629770318690740342}
-  - component: {fileID: 1629770318690740329}
   - component: {fileID: 465154243554598909}
   - component: {fileID: 8470210424517336838}
+  - component: {fileID: -5039491407376435876}
   m_Layer: 0
   m_Name: Interrogacion
   m_TagString: Untagged
@@ -84,25 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1629770318690740329
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629770318690740328}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 42c5c6a0ee7132644ba242f1a8699a90, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &465154243554598909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +110,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempo: 16
+--- !u!95 &-5039491407376435876
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629770318690740328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42c5c6a0ee7132644ba242f1a8699a90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

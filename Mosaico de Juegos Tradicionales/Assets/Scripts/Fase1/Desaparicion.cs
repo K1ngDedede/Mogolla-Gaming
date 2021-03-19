@@ -8,7 +8,7 @@ public class Desaparicion : MonoBehaviour
     float tiempo;
     private void Awake()
     {
-
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,15 @@ public class Desaparicion : MonoBehaviour
 
     public void Invisibilizar()
     {
-        gameObject.SetActive(false);
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        Animator anim = GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.enabled = false;
+        }
+        if(spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
     }
 }

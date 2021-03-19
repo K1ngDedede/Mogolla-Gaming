@@ -15,8 +15,8 @@ public class LeTimer : MonoBehaviour
     
     void Start()
     {
-        gameObject.AddComponent(typeof(BackwardsTimer));
-        n = gameObject.GetComponent<BackwardsTimer>();
+        n = gameObject.AddComponent(typeof(BackwardsTimer)) as BackwardsTimer;
+        //n = gameObject.GetComponent<BackwardsTimer>();
         circ = gameObject.transform.GetChild(0);
         n.Duration = Duration;
         cogotinho = Timer();
