@@ -11,7 +11,7 @@ public static class ManejadorPersistencia
 
     public static void PersistirSesionJuego()
     {
-        RestClient.Put(endpoint + "sesiones/" + ConfigUtils.Fecha + "/.json", new Sesion { fecha = ConfigUtils.Fecha}).Then(response =>
+        RestClient.Put(endpoint + "sesiones_prueba/" + ConfigUtils.Fecha + "/.json", new Sesion { fecha = ConfigUtils.Fecha}).Then(response =>
         {
         });
     }
@@ -19,7 +19,7 @@ public static class ManejadorPersistencia
     public static void PersistirSesionFase1()
     {
         
-        RestClient.Put(endpoint + "sesiones/" + ConfigUtils.Fecha+"/statsF1/"+ ConfigFase1Utils.Fecha +"/.json", new SesionFase1 {vidasRestantes = ConfigFase1Utils.VidasRestantes, 
+        RestClient.Put(endpoint + "sesiones_prueba/" + ConfigUtils.Fecha+"/statsF1/"+ ConfigFase1Utils.Fecha +"/.json", new SesionFase1 {vidasRestantes = ConfigFase1Utils.VidasRestantes, 
             juegosPerdidos = ConfigFase1Utils.VidasTotales - ConfigFase1Utils.VidasRestantes, 
             tiempoRestanteJackses = JacksesUtils.TiempoRestante, 
             intentosTutorial = ConfigFase1Utils.IntentosTutorial,
