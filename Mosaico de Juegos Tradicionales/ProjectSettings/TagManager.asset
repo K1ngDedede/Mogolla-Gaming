@@ -20,6 +20,10 @@ TagManager:
   - barraPaciencia
   - RelojitoTimer
   - textoToques
+  - bolaYermis
+  - bordeYermis
+  - flechaRotatoria
+  - tapaYermis
   layers:
   - Default
   - TransparentFX
@@ -33,8 +37,8 @@ TagManager:
   - Bola
   - Mano
   - Mesa
-  - 
-  - 
+  - BordeYermis
+  - BolaYermis
   - 
   - 
   - 
