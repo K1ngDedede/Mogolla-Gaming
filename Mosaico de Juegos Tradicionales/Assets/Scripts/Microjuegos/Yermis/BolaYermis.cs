@@ -6,7 +6,17 @@ public class BolaYermis : MonoBehaviour
 {
     float fuerza = 60;
     Rigidbody2D rb2d;
+    bool disparada = false;
 
+    public float Fuerza
+    {
+        set { fuerza = value; }
+    }
+
+    public bool Disparada
+    {
+        get { return disparada; }
+    }
 
     private void Awake()
     {
@@ -26,6 +36,7 @@ public class BolaYermis : MonoBehaviour
 
     public void Disparar(Vector3 rotacion)
     {
+        disparada = true;
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.gravityScale = 0;
         float anguloRad = rotacion.z * Mathf.Deg2Rad;
@@ -39,5 +50,10 @@ public class BolaYermis : MonoBehaviour
         {
             Camera.main.GetComponent<TorreTapas>().TorreTumbada = true;
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

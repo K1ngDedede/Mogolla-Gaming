@@ -41,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/victoriaFase1.unity
     guid: 867f376d67c80c542b16936285a84f50
+  - enabled: 1
+    path: Assets/Scenes/yermisTorre.unity
+    guid: bf5798d6eaeb8b44f8a4cbac8f8e2df1
+  - enabled: 1
+    path: Assets/Scenes/yermisAtaque.unity
+    guid: 8983595796d41564e9ebadb08775a16c
+  - enabled: 1
+    path: Assets/Scenes/yermisDefensa.unity
+    guid: 2dc7baf858de5b349969d38020d2c549
   m_configObjects: {}

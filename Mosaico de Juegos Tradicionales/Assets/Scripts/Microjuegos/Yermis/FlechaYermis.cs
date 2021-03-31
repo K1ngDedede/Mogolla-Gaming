@@ -33,12 +33,13 @@ public class FlechaYermis : MonoBehaviour
             anguloActual += multiplicador * incrementoAngulo * Time.deltaTime;
             rotacion = new Vector3(0, 0, anguloActual);
             gameObject.transform.rotation = Quaternion.Euler(0, 0, anguloActual);
+            if (Input.GetMouseButtonDown(0))
+            {
+
+                DispararBola();
+            }
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            
-            DispararBola();
-        }
+        
     }
 
     public void DispararBola()
@@ -52,7 +53,5 @@ public class FlechaYermis : MonoBehaviour
         bolaYermis = GameObject.FindGameObjectWithTag("bolaYermis");
         BolaYermis bolaScript = bolaYermis.GetComponent<BolaYermis>();
         bolaScript.Disparar(rotacion);
-
-
     }
 }

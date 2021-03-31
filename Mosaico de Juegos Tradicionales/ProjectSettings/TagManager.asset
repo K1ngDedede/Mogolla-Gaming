@@ -24,6 +24,7 @@ TagManager:
   - bordeYermis
   - flechaRotatoria
   - tapaYermis
+  - textoDisparos
   layers:
   - Default
   - TransparentFX
