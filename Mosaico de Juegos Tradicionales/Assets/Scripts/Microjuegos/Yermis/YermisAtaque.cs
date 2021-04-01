@@ -11,6 +11,10 @@ public class YermisAtaque : MonoBehaviour
     int disparosTotales = 5;
     int disparosDisponibles;
 
+    int numeroBlancos = 3;
+    string ubicacionPrefabs = "Microjuegos/Yermis/Prefabs/";
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,14 @@ public class YermisAtaque : MonoBehaviour
 
         disparosDisponibles = disparosTotales;
         HUDYermisAtaque.ActualizarDisparos(disparosTotales, disparosDisponibles);
+
+        //Cargar blancos
+        GameObject persona;
+        for(int i = 0; i < numeroBlancos; i++)
+        {
+            persona = Resources.Load<GameObject>(ubicacionPrefabs + "Persona");
+            Instantiate(persona);
+        }
 
         //correr temporizador
         timer.Run();
@@ -33,7 +45,7 @@ public class YermisAtaque : MonoBehaviour
             ActualizarTiempo();
         }
         RevisarDisparo();
-        
+        RevisarPonchados();
     }
 
     private void ActualizarTiempo()
@@ -49,5 +61,41 @@ public class YermisAtaque : MonoBehaviour
             disparosDisponibles--;
             HUDYermisAtaque.ActualizarDisparos(disparosTotales, disparosDisponibles);
         }
+    }
+
+    private void RevisarPonchados()
+    {
+        GameObject[] personas = GameObject.FindGameObjectsWithTag("personaYermis");
+        int ponchados = 0;
+        foreach(GameObject persona in personas)
+        {
+            if (persona.GetComponent<PersonaYermis>().Ponchado)
+            {
+                ponchados++;
+            }
+        }
+        if(timer.Running && ponchados == numeroBlancos)
+        {
+            timer.Stop();
+            Ganar();
+        }
+        if(disparosDisponibles == 0 && ponchados < numeroBlancos)
+        {
+            Perder();
+        }
+        if(timer.Finished && ponchados < numeroBlancos)
+        {
+            Perder();
+        }
+    }
+
+    private void Ganar()
+    {
+        print("victoria");
+    }
+
+    private void Perder()
+    {
+        print("derrota");
     }
 }

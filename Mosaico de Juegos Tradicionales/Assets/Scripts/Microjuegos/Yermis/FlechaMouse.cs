@@ -36,6 +36,7 @@ public class FlechaMouse : MonoBehaviour
     public void DispararBola()
     {
         GameObject bolaYermis = Resources.Load<GameObject>("Microjuegos/Yermis/Prefabs/BolaYermis");
+        bolaYermis.transform.localScale = new Vector3(0.4f, 0.4f, 0);
         Instantiate(bolaYermis);
         bolaYermis.transform.position = new Vector3(0, -4.5f, 0);
         GameObject[] bolas;
