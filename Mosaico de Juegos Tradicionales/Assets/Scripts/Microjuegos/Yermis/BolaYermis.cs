@@ -16,6 +16,7 @@ public class BolaYermis : MonoBehaviour
     public bool Disparada
     {
         get { return disparada; }
+        set { disparada = value; }
     }
 
     private void Awake()
