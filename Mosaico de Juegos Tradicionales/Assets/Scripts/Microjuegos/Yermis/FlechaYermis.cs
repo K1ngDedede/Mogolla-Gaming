@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlechaYermis : MonoBehaviour
 {
-    float incrementoAngulo = 80;
+    float incrementoAngulo = YermisUtils.IncrementoAnguloFlecha;
     float anguloActual = 90, anguloMaximo = 180, anguloMinimo = 0;
     int multiplicador = 1;
     Vector3 rotacion;

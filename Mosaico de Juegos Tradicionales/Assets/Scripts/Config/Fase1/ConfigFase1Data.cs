@@ -131,7 +131,7 @@ public class ConfigFase1Data
         JacksesUtils.facil();
         TrompoUtils.facilito();
 		FuchiUtils.facil();
-
+        YermisUtils.facil();
 
 
 
@@ -143,6 +143,8 @@ public class ConfigFase1Data
         microjuegosAJugar.Add(Microjuego.Jackses);
         microjuegosAJugar.Add(Microjuego.Trompo);
         microjuegosAJugar.Add(Microjuego.Fuchi);
+        microjuegosAJugar.Add(Microjuego.Yermis);
+        microjuegosAJugar.Add(Microjuego.Yermis);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();

@@ -107,5 +107,10 @@ public class EscenaIntermediaFase1 : MonoBehaviour
             nombreSiguienteMicrojuego = "Fuchi";
 			escenaACargar = "Fuchi";
         }
+        else if (microjuego == Microjuego.Yermis)
+        {
+            nombreSiguienteMicrojuego = "Yermis";
+            escenaACargar = "yermisTorre";
+        }
     }
 }

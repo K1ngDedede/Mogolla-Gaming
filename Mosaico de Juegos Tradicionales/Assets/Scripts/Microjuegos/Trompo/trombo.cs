@@ -110,9 +110,15 @@ public class trombo : MonoBehaviour
         bg.halt();
         //parar manos, si las hay
         if(teach) sh.halt();
-        Invoke("returnDef",n.SecondsRemaining);
+        FadeMusica(2);
+        Invoke("returnDef",3);
     }
     
+    private void FadeMusica(int duracionFade)
+    {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        StartCoroutine(FadeAudioSource.StartFade(musica.GetComponent<AudioSource>(), duracionFade, 0));
+    }
 
     protected void returnDef()
     {

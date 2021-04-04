@@ -9,11 +9,13 @@ public class YermisDefensa : MonoBehaviour
     string ubicacionPrefabs = "Microjuegos/Yermis/Prefabs/";
     SpriteRenderer spriteRenderer;
 
-    int numeroBolas = 5;
+    int numeroBolas = YermisUtils.NumeroBolasDefensa;
     int bolasDisparadas = 0;
-    float duracionJuego = 12, intervaloBolas;
-    float fuerzaMinBolas = 5, fuerzaMaxBolas = 10;
-    float anguloMaxDisparo = 45;
+    float duracionJuego = 8, intervaloBolas;
+    float fuerzaMinBolas = YermisUtils.MinFuerzaBolasDefensa, fuerzaMaxBolas = YermisUtils.MaxFuerzaBolasAtaque;
+    float anguloMaxDisparo = YermisUtils.AnguloDisparoDefensa;
+
+    Fase fase = YermisUtils.Fase;
 
     //Timers
     Timer timerBolas;
@@ -200,8 +202,14 @@ public class YermisDefensa : MonoBehaviour
             Color color = gameObject.GetComponent<SpriteRenderer>().color;
             color.a = 0.5f;
             gameObject.GetComponent<SpriteRenderer>().color = color;
-            Perder();
+            FadeMusica(2);
+            Invoke("Perder", 3);
         }
+    }
+    private void FadeMusica(int duracionFade)
+    {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        StartCoroutine(FadeAudioSource.StartFade(musica.GetComponent<AudioSource>(), duracionFade, 0));
     }
 
     private void ActualizarHUD()
@@ -212,11 +220,43 @@ public class YermisDefensa : MonoBehaviour
     private void Perder()
     {
         timer.Stop();
-        print("derrota");
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        Destroy(musica);
+        Cursor.visible = true;
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.RegistrarPerdidaMicrojuego("YermisDefensa");
+                ManejadorFase1.PerderVida();
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
     }
 
     private void Ganar()
     {
-        print("victoria");
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        Destroy(musica);
+        Cursor.visible = true;
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
     }
 }

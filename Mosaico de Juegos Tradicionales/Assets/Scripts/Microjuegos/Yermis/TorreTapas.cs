@@ -30,6 +30,9 @@ public class TorreTapas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        DontDestroyOnLoad(musica);
+
         timer = gameObject.AddComponent<BackwardsTimer>();
         timer.Duration = duracion;
         HUD.ActualizarTiempo(duracion);
@@ -62,8 +65,12 @@ public class TorreTapas : MonoBehaviour
             {
                 bolaDisparada = true;
                 GameObject.FindGameObjectWithTag("flechaRotatoria").GetComponent<FlechaYermis>().DispararBola();
+                Invoke("EvaluarSiguienteFase", 1);
             }
-            Invoke("EvaluarSiguienteFase", 2);
+            else
+            {
+                EvaluarSiguienteFase();
+            }
         }
     }
 

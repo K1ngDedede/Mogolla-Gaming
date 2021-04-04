@@ -5,16 +5,16 @@ using UnityEngine;
 public class YermisAtaque : MonoBehaviour
 {
     //Tiempo
-    float duracion = 10;
+    float duracion = 8;
     BackwardsTimer timer;
 
-    int disparosTotales = 5;
+    int disparosTotales = YermisUtils.DisparosAtaque;
     int disparosDisponibles;
 
-    int numeroBlancos = 3;
+    int numeroBlancos = YermisUtils.NumeroBlancosAtaque;
     string ubicacionPrefabs = "Microjuegos/Yermis/Prefabs/";
 
-
+    Fase fase = YermisUtils.Fase;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,11 +77,7 @@ public class YermisAtaque : MonoBehaviour
         if(timer.Running && ponchados == numeroBlancos)
         {
             timer.Stop();
-            Ganar();
-        }
-        if(disparosDisponibles == 0 && ponchados < numeroBlancos)
-        {
-            Perder();
+            Invoke("Ganar", timer.SecondsRemaining);
         }
         if(timer.Finished && ponchados < numeroBlancos)
         {
@@ -91,11 +87,41 @@ public class YermisAtaque : MonoBehaviour
 
     private void Ganar()
     {
-        print("victoria");
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        Destroy(musica);
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
     }
 
     private void Perder()
     {
-        print("derrota");
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        Destroy(musica);
+        switch (fase)
+        {
+            case Fase.FASE1:
+                ManejadorFase1.RegistrarPerdidaMicrojuego("YermisAtaque");
+                ManejadorFase1.PerderVida();
+                ManejadorFase1.AumentarMicrojuegosJugados();
+                ManejadorFase1.RevisarFinFase();
+                break;
+            case Fase.FASE2:
+                //llamar manejador de fase 2
+                break;
+            case Fase.FASE3:
+                //llamar manejador de fase 3
+                break;
+        }
     }
 }

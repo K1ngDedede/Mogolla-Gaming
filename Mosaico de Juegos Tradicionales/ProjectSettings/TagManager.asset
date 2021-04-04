@@ -26,6 +26,7 @@ TagManager:
   - tapaYermis
   - textoDisparos
   - personaYermis
+  - musica
   layers:
   - Default
   - TransparentFX
