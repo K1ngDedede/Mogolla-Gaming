@@ -199,6 +199,7 @@ public class YermisDefensa : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bolaYermis"))
         {
+            timer.Stop();
             Color color = gameObject.GetComponent<SpriteRenderer>().color;
             color.a = 0.5f;
             gameObject.GetComponent<SpriteRenderer>().color = color;
@@ -219,7 +220,6 @@ public class YermisDefensa : MonoBehaviour
 
     private void Perder()
     {
-        timer.Stop();
         GameObject musica = GameObject.FindGameObjectWithTag("musica");
         Destroy(musica);
         Cursor.visible = true;

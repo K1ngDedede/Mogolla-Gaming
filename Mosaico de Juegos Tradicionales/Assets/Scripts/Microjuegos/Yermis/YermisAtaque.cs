@@ -77,12 +77,27 @@ public class YermisAtaque : MonoBehaviour
         if(timer.Running && ponchados == numeroBlancos)
         {
             timer.Stop();
-            Invoke("Ganar", timer.SecondsRemaining);
+            float segundosRestantes = timer.SecondsRemaining;
+            if (segundosRestantes > 2)
+            {
+                FadeVolumen(2);
+                Invoke("Ganar", 2);
+            }
+            else
+            {
+                Invoke("Ganar", segundosRestantes);
+            }
         }
         if(timer.Finished && ponchados < numeroBlancos)
         {
             Perder();
         }
+    }
+
+    private void FadeVolumen(float duracionFade)
+    {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        StartCoroutine(FadeAudioSource.StartFadeVolumen(musica.GetComponent<AudioSource>(), duracionFade, 0));
     }
 
     private void Ganar()

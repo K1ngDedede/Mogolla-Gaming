@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JuegoJacks : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class JuegoJacks : MonoBehaviour
     float posJacksMax = 3;
     float posYJacks = -3.4f;
     int cantidadJacks = JacksesUtils.NumeroJacks;
+    int jacksRecolectados = 0;
     GameObject[] jacks;
     string prefabLocation = "Microjuegos/Jackses/Prefabs/";
 
@@ -33,6 +35,10 @@ public class JuegoJacks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventManagerJackses.AgregarListenerPerderSegundoRebote(InvocarPerder);
+        EventManagerJackses.AgregarListenerRevisarVictoria(RevisarVictoria);
+        EventManagerJackses.AgregarListenerAgarrarJack(AgarrarJack);
+
         Cursor.visible = false;
         jacks = new GameObject[cantidadJacks];
         //sapwnear jacks
@@ -51,6 +57,9 @@ public class JuegoJacks : MonoBehaviour
         mano = Resources.Load<GameObject>(prefabLocation + "Mano");
         Instantiate(mano);
 
+        flechaTutorial = Resources.Load<GameObject>(prefabLocation + "FlechaTutorial");
+        Instantiate(flechaTutorial);
+
         mesa = Resources.Load<GameObject>(prefabLocation + "Mesa");
         Instantiate(mesa);
         mesa.transform.position = posMesa;
@@ -66,48 +75,91 @@ public class JuegoJacks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jacks = GameObject.FindGameObjectsWithTag("Jack");
-        bola = GameObject.FindGameObjectWithTag("Bola");
-        if(bola != null)
-        {
-            bolaScript = bola.GetComponent<Bola>();
-        }
-        
-        if (jacks.Length == 0)
-        {
-            bolaScript.Agarrable = true;
-            if (!flechaInstanciada)
-            {
-                flechaInstanciada = true;
-                flechaTutorial = Resources.Load<GameObject>(prefabLocation + "Flecha Tutorial");
-                Instantiate(flechaTutorial);
-            }
-            
-        }
-        if (timerJuego.Running)
-        {
-            HUD.ActualizarTiempo(timerJuego.SecondsRemaining);
-            if (bolaScript.Agarrada)
-            {
-                timerJuego.Stop();
-                Destroy(bola);
-                if (flechaInstanciada)
-                {
-                    Destroy(GameObject.FindGameObjectWithTag("flechaTutorial"));
-                }
-                JacksesUtils.TiempoRestante = timerJuego.SecondsRemaining;
-                Invoke("Ganar", timerJuego.SecondsRemaining);
-                for(int i = 0; i < timerJuego.SecondsRemaining; i++)
-                {
-                    Invoke("SpawnPolvora", i);
-                }
-            }
-        }
+        ActualizarTiempo();
         if(timerJuego.Finished)
         {
             Perder();
         }
         
+    }
+
+    public void RevisarRecoleccion()
+    {
+        if(jacksRecolectados == cantidadJacks)
+        {
+            GameObject.FindGameObjectWithTag("flechaTutorial").GetComponent<FlechaTutorial>().Habilitar();
+        }
+    }
+
+    private void RevisarVictoria()
+    {
+        float segundosRestantes = timerJuego.SecondsRemaining;
+        if(jacksRecolectados == cantidadJacks)
+        {
+            timerJuego.Stop();
+            if (segundosRestantes > 2)
+            {
+                FadeVolumen(2);
+                Invoke("Ganar", 2);
+                for (int i = 0; i < 2; i++)
+                {
+                    Invoke("SpawnPolvora", i);
+                }
+            }
+            else
+            {
+                Invoke("Ganar", segundosRestantes);
+            }
+        }
+        else
+        {
+            InvocarPerder();
+        }
+    }
+
+    private void ActualizarTiempo()
+    {
+        HUD.ActualizarTiempo(timerJuego.SecondsRemaining);
+    }
+
+    private void AgarrarJack()
+    {
+        jacksRecolectados++;
+        RevisarRecoleccion();
+    }
+
+    private void InvocarPerder()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("flechaTutorial"));
+        GameObject bola = GameObject.FindGameObjectWithTag("Bola");
+        Color color = bola.GetComponent<SpriteRenderer>().color;
+        color.a = 0.5f;
+        bola.GetComponent<SpriteRenderer>().color = color;
+        timerJuego.Stop();
+        FadeMusica(2);
+        Invoke("Perder", 3);
+    }
+
+    private void FadeMusica(float duracionFade)
+    {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        StartCoroutine(FadeAudioSource.StartFade(musica.GetComponent<AudioSource>(), duracionFade, 0));
+    }
+
+    private void FadeVolumen(float duracionFade)
+    {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        StartCoroutine(FadeAudioSource.StartFadeVolumen(musica.GetComponent<AudioSource>(), duracionFade, 0));
+    }
+
+
+    private void SpawnPolvora()
+    {
+        GameObject polvora = Resources.Load<GameObject>(prefabLocation + "Polvora");
+        float posX = Random.Range(ScreenUtils.ScreenLeft, ScreenUtils.ScreenRight);
+        float posY = Random.Range(ScreenUtils.ScreenBottom, ScreenUtils.ScreenTop);
+        polvora.transform.position = new Vector3(posX, posY, 0);
+        Instantiate(polvora);
     }
 
     private void Ganar()
@@ -128,21 +180,9 @@ public class JuegoJacks : MonoBehaviour
         }
     }
 
-    private void SpawnPolvora()
-    {
-        GameObject polvora = Resources.Load<GameObject>(prefabLocation + "Polvora");
-        float posX = Random.Range(ScreenUtils.ScreenLeft, ScreenUtils.ScreenRight);
-        float posY = Random.Range(ScreenUtils.ScreenBottom, ScreenUtils.ScreenTop);
-        polvora.transform.position = new Vector3(posX, posY, 0);
-        Instantiate(polvora);
-        
-
-    }
-
     private void Perder()
     {
         Cursor.visible = true;
-        timerJuego.Stop();
         switch (fase)
         {
             case Fase.FASE1:

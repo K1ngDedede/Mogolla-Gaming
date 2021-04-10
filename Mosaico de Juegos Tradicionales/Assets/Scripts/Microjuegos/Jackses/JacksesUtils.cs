@@ -6,10 +6,16 @@ public static class JacksesUtils
 {
     // Start is called before the first frame update
     static int numeroJacks = 5;
-    static int duracion = 10;
+    static int duracion = 12;
     static bool tutorial = false;
     static Fase fase = Fase.FASE1;
     static float tiempoRestante = 0;
+    static float escalaGravedad = 0.6f;
+
+    public static float EscalaGravedad
+    {
+        get { return escalaGravedad; }
+    }
 
     public static float TiempoRestante
     {
@@ -44,12 +50,13 @@ public static class JacksesUtils
         tutorial = true;
         fase = Fase.FASE1;
         tiempoRestante = 0;
+        escalaGravedad = 0.6f;
     }
 
     public static void dificil()
     {
         numeroJacks = 10;
-        duracion = 10;
+        duracion = 12;
         tutorial = false;
     }
 

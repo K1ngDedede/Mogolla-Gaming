@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Jack : MonoBehaviour
 {
     Sprite sprite;
     SpriteRenderer spriteRenderer;
     string spritesLocation = "Microjuegos/Jackses/Sprites/";
+
+    bool agarrable = false;
+
+    AgarrarJackEventActivado agarrarJackEventActivado;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +44,18 @@ public class Jack : MonoBehaviour
             pos.y = -3.42f;
             gameObject.transform.position = pos;
         }
+
+        //Agregar funcion HabilitarJack al manejador de eventos
+        EventManagerJackses.AgregarBolaSoltadaListener(HabilitarJack);
+
+        agarrarJackEventActivado = new AgarrarJackEventActivado();
+        EventManagerJackses.AgregarInvocadorAgarrarJack(this);
     }
 
+    public void AgregarAgarrarJackListener(UnityAction listener)
+    {
+        agarrarJackEventActivado.AddListener(listener);
+    }
 
     // Update is called once per frame
     void Update()
@@ -48,10 +63,18 @@ public class Jack : MonoBehaviour
         
     }
 
+    private void HabilitarJack()
+    {
+        agarrable = true;
+    }
+
     private void OnMouseDown()
     {
-        
-        Destroy(gameObject);
+        if (agarrable)
+        {
+            agarrarJackEventActivado.Invoke();
+            Destroy(gameObject);
+        }
         
     }
 }

@@ -14,6 +14,8 @@ public class FlechaTutorial : MonoBehaviour
         Vector3 posBola = bola.transform.position;
         gameObject.transform.position = new Vector3(posBola.x + offsetX, posBola.y + offsetY, posBola.z);
 
+        EventManagerJackses.AgregarBolaSoltadaListener(Deshabilitar);
+
     }
 
     // Update is called once per frame
@@ -22,5 +24,15 @@ public class FlechaTutorial : MonoBehaviour
         bola = GameObject.FindGameObjectWithTag("Bola");
         Vector3 posBola = bola.transform.position;
         gameObject.transform.position = new Vector3(posBola.x + offsetX, posBola.y + offsetY, posBola.z);
+    }
+
+    public void Deshabilitar()
+    {
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void Habilitar()
+    {
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
     }
 }
