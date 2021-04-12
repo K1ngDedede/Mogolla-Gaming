@@ -44,7 +44,10 @@ public class YermisAtaque : MonoBehaviour
         {
             ActualizarTiempo();
         }
-        RevisarDisparo();
+        if (!MenuPausa.pausado)
+        {
+            RevisarDisparo();
+        }
         RevisarPonchados();
     }
 

@@ -70,11 +70,15 @@ public class Jack : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (agarrable)
+        if (!MenuPausa.pausado)
         {
-            agarrarJackEventActivado.Invoke();
-            Destroy(gameObject);
+            if (agarrable)
+            {
+                agarrarJackEventActivado.Invoke();
+                Destroy(gameObject);
+            }
         }
+        
         
     }
 }

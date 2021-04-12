@@ -19,7 +19,10 @@ public class FlechaMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SeguirMouse();
+        if (!MenuPausa.pausado)
+        {
+            SeguirMouse();
+        }
         
     }
 

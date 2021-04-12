@@ -19,30 +19,23 @@ public class Mano : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        posMouse = Input.mousePosition;
-        posMouse.z = -Camera.main.transform.position.z;
-        posMouse = Camera.main.ScreenToWorldPoint(posMouse);
-        gameObject.transform.position = posMouse;
-        if (Input.GetMouseButtonDown(0))
+        if (!MenuPausa.pausado)
         {
-            spriteRenderer.sprite = manoCerrada;
+            posMouse = Input.mousePosition;
+            posMouse.z = -Camera.main.transform.position.z;
+            posMouse = Camera.main.ScreenToWorldPoint(posMouse);
+            gameObject.transform.position = posMouse;
+            if (Input.GetMouseButtonDown(0))
+            {
+                spriteRenderer.sprite = manoCerrada;
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                spriteRenderer.sprite = manoAbierta;
+            }
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            spriteRenderer.sprite = manoAbierta;
-        }
+        
     }
 
-    //private void OnMouseDown()
-    //{
-    //    spriteRenderer.sprite = manoCerrada;
-    //    print("mouse down");
-    //}
-
-    //private void OnMouseUp()
-    //{
-    //    spriteRenderer.sprite = manoAbierta;
-    //    print("mouse up");
-    //}
     
 }

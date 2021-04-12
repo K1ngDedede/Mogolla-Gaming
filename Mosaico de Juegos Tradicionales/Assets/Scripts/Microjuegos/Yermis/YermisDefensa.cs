@@ -58,7 +58,10 @@ public class YermisDefensa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SeguirMouse();
+        if (!MenuPausa.pausado)
+        {
+            SeguirMouse();
+        }
         ActualizarHUD();
         RevisarDisparo();
         if (timer.Finished)
