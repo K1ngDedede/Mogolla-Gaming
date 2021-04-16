@@ -1,5 +1,5 @@
 Pasos para agregar un microjuego al proyecto:
-
+-En el aarchivo JSON ubicado en Assets/Resources/Data/juegos.json agregar la informacion del juego siguiendo la estructura
 -Copiar la escena a la carpeta de escenas del proyecto
 -Copiar assets en donde corresponda en la estructura de archivos del proyecto
 -Relacionar nuevamente componentes a objetos (estas relaciones se perdien a pasar vainas al proyecto)
@@ -35,6 +35,7 @@ private void Perder()
         switch (fase)
         {
             case Fase.FASE1:
+		ManejadorFase1.RegistrarPerdidaMicrojuego(Nombre del microjuego);
                 ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
@@ -50,8 +51,6 @@ private void Perder()
 
 
 Agregar un microjuego a una fase X:
-1. Agregar el microjuego al enum Microjuego.cs
+1. Agregar el microjuego al enum Microjuego.cs. Este nombre debe ser igual al nombre puesto al juego en el archivo JSON.
 2. En la clase ConfigFaseXData.cs se define la dificultad del microjuego usando la clase estática definida previamente.
 3. En esta misma clase se agrega el microjuego a la lista microJuegosAJugar.
-4. En el script EscenaIntermediaFaseX, en el método DatosSiguienteMicrojuego, asignarle a la variable nombreSiguienteMicrojuego
-el nombre que saldrá en la pirinola y a la variable escenaACargar el nombre de la escena principal del microjuego.

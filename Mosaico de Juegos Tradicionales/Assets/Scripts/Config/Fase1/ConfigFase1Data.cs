@@ -9,8 +9,8 @@ public class ConfigFase1Data
     static int numMicrojuegosJugados;
     static int vidasTotales;
     static int vidasRestantes;
-    static Microjuego microjuegoActual;
-    static List<Microjuego> microjuegosAJugar;
+    static NombreMicrojuego microjuegoActual;
+    static List<NombreMicrojuego> microjuegosAJugar;
     static int duracionMicrojuegos;
     static int intentosTutorial;
     static bool sesionFase1Terminada;
@@ -56,13 +56,13 @@ public class ConfigFase1Data
         set { vidasRestantes = value; }
     }
 
-    public Microjuego MicrojuegoActual
+    public NombreMicrojuego MicrojuegoActual
     {
         get { return microjuegoActual; }
         set { microjuegoActual = value; }
     }
 
-    public List<Microjuego> MicrojuegosAJugar
+    public List<NombreMicrojuego> MicrojuegosAJugar
     {
         get { return microjuegosAJugar; }
     }
@@ -85,7 +85,7 @@ public class ConfigFase1Data
         {
             n--;
             int k = GenerarNumeroAleatorio(n);
-            Microjuego microjuego = microjuegosAJugar[k];
+            NombreMicrojuego microjuego = microjuegosAJugar[k];
             if(n == microjuegosAJugar.Count - 1)
             {
                 microjuegosAJugar[k] = microjuegosAJugar[n];
@@ -136,15 +136,15 @@ public class ConfigFase1Data
 
 
         //agregar microjuegos a jugar a la lista de microjuegos
-        microjuegosAJugar = new List<Microjuego>();
-        microjuegosAJugar.Add(Microjuego.Jackses);
-        microjuegosAJugar.Add(Microjuego.Trompo);
-		microjuegosAJugar.Add(Microjuego.Fuchi);
-        microjuegosAJugar.Add(Microjuego.Jackses);
-        microjuegosAJugar.Add(Microjuego.Trompo);
-        microjuegosAJugar.Add(Microjuego.Fuchi);
-        microjuegosAJugar.Add(Microjuego.Yermis);
-        microjuegosAJugar.Add(Microjuego.Yermis);
+        microjuegosAJugar = new List<NombreMicrojuego>();
+        microjuegosAJugar.Add(NombreMicrojuego.Jackses);
+        microjuegosAJugar.Add(NombreMicrojuego.Trompo);
+		microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        microjuegosAJugar.Add(NombreMicrojuego.Jackses);
+        microjuegosAJugar.Add(NombreMicrojuego.Trompo);
+        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        microjuegosAJugar.Add(NombreMicrojuego.Yermis);
+        microjuegosAJugar.Add(NombreMicrojuego.Yermis);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();

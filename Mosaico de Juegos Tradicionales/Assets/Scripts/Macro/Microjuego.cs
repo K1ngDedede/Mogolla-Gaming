@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Microjuego
+[System.Serializable]
+public class Microjuego
 {
-   Jackses,
-   Trompo,
-   Fuchi,
-   Yermis
+    public string nombre;
+    public string nombresAlternativos;
+    public string descripcion;
+    public string pathImagen;
+    public string instrucciones;
+    public string escena;
+    public NombreMicrojuego nombreMicrojuego;
+
 }

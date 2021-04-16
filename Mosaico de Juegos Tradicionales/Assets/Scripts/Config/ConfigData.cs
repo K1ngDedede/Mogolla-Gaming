@@ -8,13 +8,20 @@ public class ConfigData
     const string NombreArchivoConfiguracion = "";
 
     static int fase = 2;
-    static List<Microjuego> microjuegosDesbloqueados;
+    static List<Microjuego> microjuegos;
     static string gamerTag = "Anon";
     static int puntuacionMaximaFase3 = 0;
     static bool juegoCargado = false;
 
+    TextAsset juegosJson;
+
     //persistencia
     static string fecha;
+
+    public List<Microjuego> Microjuegos
+    {
+        get { return microjuegos; }
+    }
 
     
     public bool JuegoCargado
@@ -34,10 +41,7 @@ public class ConfigData
         set { fase = value; }
     }
 
-    public List<Microjuego> MicrojuegosDesbloqueados
-    {
-        get { return microjuegosDesbloqueados; }
-    }
+    
 
     public string Gamertag
     {
@@ -51,13 +55,7 @@ public class ConfigData
         set { puntuacionMaximaFase3 = value; }
     }
 
-    public void DesbloquearMicrojuego(Microjuego microjuego)
-    {
-        if (!microjuegosDesbloqueados.Contains(microjuego))
-        {
-            microjuegosDesbloqueados.Add(microjuego);
-        }
-    }
+   
 
     public ConfigData()
     {
@@ -65,12 +63,23 @@ public class ConfigData
         fecha = fecha.Replace("/", "-");
         fecha = fecha.Replace(":", "-");
         fecha = fecha.Replace(".", "");
-        microjuegosDesbloqueados = new List<Microjuego>();
 
         juegoCargado = true;
+        microjuegos = new List<Microjuego>();
+        juegosJson = Resources.Load<TextAsset>("Data/juegos");
+        Microjuegos microjuegosJson = JsonUtility.FromJson<Microjuegos>(juegosJson.text);
 
-    
-        
+        foreach (Microjuego microjuego in microjuegosJson.microjuegos)
+        {
+            microjuegos.Add(microjuego);
+            foreach (NombreMicrojuego nombreMicrojuego in System.Enum.GetValues(typeof(NombreMicrojuego)))
+            {
+                if (nombreMicrojuego.ToString() == microjuego.nombre)
+                {
+                    microjuego.nombreMicrojuego = nombreMicrojuego;
+                }
+            }
+        }
 
         try
         {

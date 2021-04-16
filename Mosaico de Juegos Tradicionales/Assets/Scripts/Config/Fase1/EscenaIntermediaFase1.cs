@@ -20,7 +20,7 @@ public class EscenaIntermediaFase1 : MonoBehaviour
     {
         int vidasRestantes = ConfigFase1Utils.VidasRestantes;
 
-        Microjuego siguienteMicrojuego = ConfigFase1Utils.MicrojuegosAJugar[ConfigFase1Utils.NumMicrojuegosJugados];
+        NombreMicrojuego siguienteMicrojuego = ConfigFase1Utils.MicrojuegosAJugar[ConfigFase1Utils.NumMicrojuegosJugados];
         DatosSiguienteMicrojuego(siguienteMicrojuego);
         textoPirinola = GameObject.FindGameObjectWithTag("TextoPirinola").GetComponent<Text>();
         textoPirinola.text = nombreSiguienteMicrojuego;
@@ -90,27 +90,10 @@ public class EscenaIntermediaFase1 : MonoBehaviour
         }
     }
 
-    private void DatosSiguienteMicrojuego(Microjuego microjuego)
+    private void DatosSiguienteMicrojuego(NombreMicrojuego microjuego)
     {
-        if (microjuego == Microjuego.Jackses)
-        {
-            nombreSiguienteMicrojuego = "Jackses";
-            escenaACargar = "jackses";
-        }
-        else if (microjuego == Microjuego.Trompo)
-        {
-            nombreSiguienteMicrojuego = "Trompo";
-            escenaACargar = "Trompo";
-        }
-        else if (microjuego == Microjuego.Fuchi)
-        {
-            nombreSiguienteMicrojuego = "Fuchi";
-			escenaACargar = "Fuchi";
-        }
-        else if (microjuego == Microjuego.Yermis)
-        {
-            nombreSiguienteMicrojuego = "Yermis";
-            escenaACargar = "yermisTorre";
-        }
+        Microjuego siguienteMicrojuego = ConfigUtils.BuscarMicrojuego(microjuego);
+        nombreSiguienteMicrojuego = siguienteMicrojuego.nombre;
+        escenaACargar = siguienteMicrojuego.escena;
     }
 }
