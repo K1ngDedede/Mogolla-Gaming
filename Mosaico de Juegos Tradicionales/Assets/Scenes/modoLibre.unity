@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 177067727}
   - component: {fileID: 177067729}
   - component: {fileID: 177067730}
+  - component: {fileID: 177067731}
   m_Layer: 5
   m_Name: BotonYermis
   m_TagString: Untagged
@@ -264,6 +265,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombreMicrojuego: 3
+--- !u!114 &177067731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177067725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbf9a2a9f79194590f32f10ce61773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &338803205
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +394,7 @@ GameObject:
   - component: {fileID: 489240349}
   - component: {fileID: 489240352}
   - component: {fileID: 489240351}
+  - component: {fileID: 489240353}
   m_Layer: 5
   m_Name: BotonFuchi
   m_TagString: Untagged
@@ -511,6 +525,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombreMicrojuego: 2
+--- !u!114 &489240353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489240347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbf9a2a9f79194590f32f10ce61773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827179481
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +694,7 @@ GameObject:
   - component: {fileID: 1262254441}
   - component: {fileID: 1262254444}
   - component: {fileID: 1262254443}
+  - component: {fileID: 1262254445}
   m_Layer: 5
   m_Name: BotonTrompo
   m_TagString: Untagged
@@ -713,7 +740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0aa37234220a6754193fce311f1c1088, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ad58f018c2ab384986adb4636a416aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -798,6 +825,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombreMicrojuego: 1
+--- !u!114 &1262254445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262254439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbf9a2a9f79194590f32f10ce61773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1568931868
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +850,7 @@ GameObject:
   - component: {fileID: 1568931870}
   - component: {fileID: 1568931873}
   - component: {fileID: 1568931872}
+  - component: {fileID: 1568931874}
   m_Layer: 5
   m_Name: BotonJackses
   m_TagString: Untagged
@@ -941,6 +981,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombreMicrojuego: 0
+--- !u!114 &1568931874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568931868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbf9a2a9f79194590f32f10ce61773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1612839949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1101,7 @@ GameObject:
   - component: {fileID: 1700179284}
   - component: {fileID: 1700179283}
   - component: {fileID: 1700179285}
+  - component: {fileID: 1700179286}
   m_Layer: 5
   m_Name: BotonVolver
   m_TagString: Untagged
@@ -1166,3 +1219,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1700179286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700179281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbf9a2a9f79194590f32f10ce61773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
