@@ -1,5 +1,5 @@
 Pasos para agregar un microjuego al proyecto:
-
+-En el aarchivo JSON ubicado en Assets/Resources/Data/juegos.json agregar la informacion del juego siguiendo la estructura
 -Copiar la escena a la carpeta de escenas del proyecto
 -Copiar assets en donde corresponda en la estructura de archivos del proyecto
 -Relacionar nuevamente componentes a objetos (estas relaciones se perdien a pasar vainas al proyecto)
@@ -27,6 +27,9 @@ private void Ganar()
             case Fase.FASE3:
                 //llamar manejador de fase 3
                 break;
+	    case Fase.MODOLIBRE:
+                ManejadorModoLibre.Ganar();
+                break;
         }
     }
 private void Perder()
@@ -35,6 +38,7 @@ private void Perder()
         switch (fase)
         {
             case Fase.FASE1:
+		ManejadorFase1.RegistrarPerdidaMicrojuego(Nombre del microjuego);
                 ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
@@ -45,13 +49,25 @@ private void Perder()
             case Fase.FASE3:
                 //llamar manejador de fase 3
                 break;
+	    case Fase.MODOLIBRE:
+                ManejadorModoLibre.Perder();
+                break;
         }
     }
 
 
 Agregar un microjuego a una fase X:
-1. Agregar el microjuego al enum Microjuego.cs
+1. Agregar el microjuego al enum Microjuego.cs. Este nombre debe ser igual al nombre puesto al juego en el archivo JSON.
 2. En la clase ConfigFaseXData.cs se define la dificultad del microjuego usando la clase estática definida previamente.
 3. En esta misma clase se agrega el microjuego a la lista microJuegosAJugar.
-4. En el script EscenaIntermediaFaseX, en el método DatosSiguienteMicrojuego, asignarle a la variable nombreSiguienteMicrojuego
-el nombre que saldrá en la pirinola y a la variable escenaACargar el nombre de la escena principal del microjuego.
+
+Agregar un microjuego al modo libre:
+1. En el canvas de la escena modoLibre, agregar una imagen representativa del microjuego y agregarle el componente botón y el script 
+Assets/Scripts/Modo Libre/BotonMicrojuego.
+2. Al componente botón del boton creado en el paso anterior, dar clic en el + que se encuentra en la sección On Click(). 
+Arrastrar el boton a la casilla que dice None.
+3. En el desplegable que dice "No function" hacer clic, seleccionar BotonMicrojuego>CargarEscenaInformativa().
+4. En el script Assets/Scripts/Modo Libre/EscenaDetalleMicrojuego en los métodos Facil, Medio y Dificil agregar en el switch case
+el microjuego y configurar su dificultad y que está en modoLibre como se ve en el script.
+5. No olvidar agregar en los métodos Ganar y Perder de cada microjuego agregar el correspondiente llamado al ManejadorModoLibre como
+se ve en las instrucciones superiores.

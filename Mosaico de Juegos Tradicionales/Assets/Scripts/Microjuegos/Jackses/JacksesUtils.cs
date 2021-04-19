@@ -41,9 +41,10 @@ public static class JacksesUtils
     public static Fase Fase
     {
         get { return fase; }
+        set { fase = value; }
     }
 
-    public static void facil()
+    public static void Facil()
     {
         numeroJacks = 5;
         duracion = 12;
@@ -53,11 +54,22 @@ public static class JacksesUtils
         escalaGravedad = 0.6f;
     }
 
-    public static void dificil()
+    public static void Medio()
+    {
+        numeroJacks = 8;
+        duracion = 12;
+        fase = Fase.FASE2;
+        tiempoRestante = 0;
+        escalaGravedad = 0.8f;
+    }
+
+    public static void Dificil()
     {
         numeroJacks = 10;
         duracion = 12;
-        tutorial = false;
+        fase = Fase.FASE3;
+        tiempoRestante = 0;
+        escalaGravedad = 1;
     }
 
 }

@@ -42,13 +42,13 @@ public static class ConfigFase1Utils
         get { return configFase1Data.VidasRestantes; }
     }
 
-    public static Microjuego MicrojuegoActual
+    public static NombreMicrojuego MicrojuegoActual
     {
         get { return configFase1Data.MicrojuegoActual; }
         set { configFase1Data.MicrojuegoActual = value; }
     }
 
-    public static List<Microjuego> MicrojuegosAJugar
+    public static List<NombreMicrojuego> MicrojuegosAJugar
     {
         get { return configFase1Data.MicrojuegosAJugar; }
     }

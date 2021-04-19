@@ -93,6 +93,7 @@ public class JuegoJacks : MonoBehaviour
 
     private void RevisarVictoria()
     {
+        DeshabilitarJacks();
         float segundosRestantes = timerJuego.SecondsRemaining;
         if(jacksRecolectados == cantidadJacks)
         {
@@ -128,8 +129,17 @@ public class JuegoJacks : MonoBehaviour
         RevisarRecoleccion();
     }
 
+    private void DeshabilitarJacks()
+    {
+        foreach (GameObject jack in GameObject.FindGameObjectsWithTag("Jack"))
+        {
+            jack.GetComponent<Jack>().DeshabilitarJack();
+        }
+    }
+
     private void InvocarPerder()
     {
+        DeshabilitarJacks();
         Destroy(GameObject.FindGameObjectWithTag("flechaTutorial"));
         GameObject bola = GameObject.FindGameObjectWithTag("Bola");
         Color color = bola.GetComponent<SpriteRenderer>().color;
@@ -177,6 +187,9 @@ public class JuegoJacks : MonoBehaviour
             case Fase.FASE3:
                 //llamar manejador de fase 3
                 break;
+            case Fase.MODOLIBRE:
+                ManejadorModoLibre.Ganar();
+                break;
         }
     }
 
@@ -196,6 +209,9 @@ public class JuegoJacks : MonoBehaviour
                 break;
             case Fase.FASE3:
                 //llamar manejador de fase 3
+                break;
+            case Fase.MODOLIBRE:
+                ManejadorModoLibre.Perder();
                 break;
         }
         

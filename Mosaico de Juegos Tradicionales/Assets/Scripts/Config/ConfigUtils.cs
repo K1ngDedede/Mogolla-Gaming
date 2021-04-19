@@ -20,6 +20,12 @@ public static class ConfigUtils
         set { configData.JuegoCargado = value; }
     }
 
+    public static Microjuego MicrojuegoActual
+    {
+        get { return configData.MicrojuegoActual; }
+        set { configData.MicrojuegoActual = value; }
+    }
+
     public static string Fecha
     {
         get { return configData.Fecha; }
@@ -31,10 +37,11 @@ public static class ConfigUtils
         set { configData.Fase = value; }
     }
 
-    public static List<Microjuego> MicrojuegosDesbloqueados
+    public static List<Microjuego> Microjuegos 
     {
-        get { return configData.MicrojuegosDesbloqueados; }
+        get { return configData.Microjuegos; }
     }
+
 
     public static string Gamertag
     {
@@ -48,9 +55,17 @@ public static class ConfigUtils
         set { configData.PuntuacionMaximaFase3 = value; }
     }
 
-    public static void DesbloquearMicrojuego(Microjuego microjuego)
+    public static Microjuego BuscarMicrojuego(NombreMicrojuego nombreMicrojuego)
     {
-        configData.DesbloquearMicrojuego(microjuego);
+        Microjuego microjuegoRetorno = null;
+        foreach(Microjuego microjuego in configData.Microjuegos)
+        {
+            if(microjuego.nombreMicrojuego == nombreMicrojuego)
+            {
+                microjuegoRetorno = microjuego;
+            }
+        }
+        return microjuegoRetorno;
     }
 
     public static void Inicializar()

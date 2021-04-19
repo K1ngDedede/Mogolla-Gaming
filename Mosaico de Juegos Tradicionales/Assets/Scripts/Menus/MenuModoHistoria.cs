@@ -37,6 +37,11 @@ public class MenuModoHistoria : MonoBehaviour
         //SceneManager.LoadScene("");
     }
 
+    public void EntrarModoLibre()
+    {
+        SceneManager.LoadScene("modoLibre");
+    }
+
     public void Atras()
     {
         SceneManager.LoadScene("menu0");

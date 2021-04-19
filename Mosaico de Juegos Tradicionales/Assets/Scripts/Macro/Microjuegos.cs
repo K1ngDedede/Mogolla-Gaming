@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Fase
+[System.Serializable]
+public class Microjuegos
 {
-    FASE1,
-    FASE2,
-    FASE3,
-    MODOLIBRE
+    public Microjuego[] microjuegos;
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Fase
+public enum NombreMicrojuego
 {
-    FASE1,
-    FASE2,
-    FASE3,
-    MODOLIBRE
+   Jackses,
+   Trompo,
+   Fuchi,
+   Yermis
 }

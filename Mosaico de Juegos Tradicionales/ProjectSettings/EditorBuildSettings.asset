@@ -50,4 +50,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/yermisDefensa.unity
     guid: 2dc7baf858de5b349969d38020d2c549
+  - enabled: 1
+    path: Assets/Scenes/modoLibre.unity
+    guid: 5cfa22190e26836489cb06f06158b695
+  - enabled: 1
+    path: Assets/Scenes/detalleMicrojuego.unity
+    guid: d28764679c64cbc41959c22fa4f8d2e1
+  - enabled: 1
+    path: Assets/Scenes/victoriaModoLibre.unity
+    guid: 0f33fab5c6eac0a4194b300553ea894c
+  - enabled: 1
+    path: Assets/Scenes/derrotaModoLibre.unity
+    guid: 88c1720282648164b8f28f4b9206b609
   m_configObjects: {}

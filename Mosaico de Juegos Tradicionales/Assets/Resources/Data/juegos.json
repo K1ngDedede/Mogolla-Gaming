@@ -1,0 +1,37 @@
+{
+  "microjuegos": [
+    {
+      "nombre": "Yermis",
+      "nombresAlternativos": "",
+      "descripcion": "Este juego se juega con tapas",
+      "pathImagen": "",
+      "instrucciones": "Con el mouse",
+      "escena": "yermisTorre"
+    },
+    {
+      "nombre": "Trompo",
+      "nombresAlternativos": "",
+      "descripcion": "Este juego se juega con un trompo",
+      "pathImagen": "",
+      "instrucciones": "Con el clic",
+      "escena": "Trompo"
+    },
+    {
+      "nombre": "Jackses",
+      "nombresAlternativos": "Yaquis, Jacks, Jasses",
+      "descripcion": "Este juego se juega con un jacks",
+      "pathImagen": "Data/Imagenes/Jacks",
+      "instrucciones": "Con el clic",
+      "escena": "jackses"
+    },
+    {
+      "nombre": "Fuchi",
+      "nombresAlternativos": "",
+      "descripcion": "Este juego se juega con un fuchi",
+      "pathImagen": "",
+      "instrucciones": "No cae",
+      "escena": "Fuchi"
+    }
+
+  ]
+}

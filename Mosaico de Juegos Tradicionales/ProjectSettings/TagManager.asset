@@ -28,6 +28,10 @@ TagManager:
   - personaYermis
   - musica
   - panelPausa
+  - textoJuego
+  - descripcion
+  - instrucciones
+  - imagenMicrojuego
   layers:
   - Default
   - TransparentFX
