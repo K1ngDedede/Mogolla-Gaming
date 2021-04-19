@@ -128,10 +128,10 @@ public class ConfigFase1Data
 
 
         //asignar dificultad de los juegos
-        JacksesUtils.facil();
+        JacksesUtils.Facil();
         TrompoUtils.facilito();
 		FuchiUtils.facil();
-        YermisUtils.facil();
+        YermisUtils.Facil();
 
 
 
@@ -149,19 +149,10 @@ public class ConfigFase1Data
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();
 
+        ConfigUtils.MicrojuegoActual = ConfigUtils.BuscarMicrojuego(microjuegosAJugar.ToArray()[0]);
 
-        try
-        {
-            //recuperar datos
 
-        }catch(Exception e)
-        {
-
-        }
-        finally
-        {
-            
-        }
+     
     }
     
 }

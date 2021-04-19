@@ -119,6 +119,9 @@ public class YermisAtaque : MonoBehaviour
             case Fase.FASE3:
                 //llamar manejador de fase 3
                 break;
+            case Fase.MODOLIBRE:
+                ManejadorModoLibre.Ganar();
+                break;
         }
     }
 
@@ -139,6 +142,9 @@ public class YermisAtaque : MonoBehaviour
                 break;
             case Fase.FASE3:
                 //llamar manejador de fase 3
+                break;
+            case Fase.MODOLIBRE:
+                ManejadorModoLibre.Perder();
                 break;
         }
     }

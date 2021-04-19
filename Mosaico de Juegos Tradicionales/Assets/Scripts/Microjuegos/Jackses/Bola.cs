@@ -45,9 +45,10 @@ public class Bola : MonoBehaviour
             }
             if (agarrable)
             {
+                agarrable = false;
                 rb2d.velocity = Vector2.zero;
                 rb2d.gravityScale = 0;
-                GameObject.FindGameObjectWithTag("flechaTutorial").GetComponent<FlechaTutorial>().Deshabilitar();
+                GameObject.FindGameObjectWithTag("flechaTutorial")?.GetComponent<FlechaTutorial>().Deshabilitar();
                 revisarVictoriaEventoActivado.Invoke();
             }
         }
@@ -78,6 +79,7 @@ public class Bola : MonoBehaviour
         }
         if (numeroRebotes == 2)
         {
+            agarrable = false;
             rb2d.gravityScale = 1.5f;
             perderSegundoReboteActivado.Invoke();
         }

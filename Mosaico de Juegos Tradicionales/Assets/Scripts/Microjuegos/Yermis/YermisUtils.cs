@@ -51,9 +51,10 @@ public static class YermisUtils
     public static Fase Fase
     {
         get { return fase; }
+        set { fase = value; }
     }
 
-    public static void facil()
+    public static void Facil()
     {
         incrementoAnguloFlecha = 80;
         numeroBolasDefensa = 5;
@@ -65,8 +66,27 @@ public static class YermisUtils
         fase = Fase.FASE1;
     }
 
-    public static void medio()
+    public static void Medio()
     {
+        incrementoAnguloFlecha = 120;
+        numeroBolasDefensa = 8;
+        minFuerzaBolasDefensa = 5;
+        maxFuerzaBolasDefensa = 10;
+        anguloDisparoDefensa = 45;
+        disparosAtaque = 5;
+        numeroBlancosAtaque = 4;
+        fase = Fase.FASE2;
+    }
 
+    public static void Dificil()
+    {
+        incrementoAnguloFlecha = 160;
+        numeroBolasDefensa = 10;
+        minFuerzaBolasDefensa = 5;
+        maxFuerzaBolasDefensa = 15;
+        anguloDisparoDefensa = 45;
+        disparosAtaque = 6;
+        numeroBlancosAtaque = 6;
+        fase = Fase.FASE3;
     }
 }

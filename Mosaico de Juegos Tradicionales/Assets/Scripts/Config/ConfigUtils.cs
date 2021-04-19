@@ -20,6 +20,12 @@ public static class ConfigUtils
         set { configData.JuegoCargado = value; }
     }
 
+    public static Microjuego MicrojuegoActual
+    {
+        get { return configData.MicrojuegoActual; }
+        set { configData.MicrojuegoActual = value; }
+    }
+
     public static string Fecha
     {
         get { return configData.Fecha; }

@@ -68,6 +68,11 @@ public class Jack : MonoBehaviour
         agarrable = true;
     }
 
+    public void DeshabilitarJack()
+    {
+        agarrable = false;
+    }
+
     private void OnMouseDown()
     {
         if (!MenuPausa.pausado)

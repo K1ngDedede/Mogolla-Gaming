@@ -9,6 +9,7 @@ public class ConfigData
 
     static int fase = 2;
     static List<Microjuego> microjuegos;
+    static Microjuego microjuegoActual;
     static string gamerTag = "Anon";
     static int puntuacionMaximaFase3 = 0;
     static bool juegoCargado = false;
@@ -17,6 +18,12 @@ public class ConfigData
 
     //persistencia
     static string fecha;
+
+    public Microjuego MicrojuegoActual
+    {
+        get { return microjuegoActual; }
+        set { microjuegoActual = value; }
+    }
 
     public List<Microjuego> Microjuegos
     {

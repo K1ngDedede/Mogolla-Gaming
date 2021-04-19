@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PanelPausa : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class PanelPausa : MonoBehaviour
     {
         menuPausa = GameObject.FindGameObjectWithTag("panelPausa");
         audioSource = GameObject.FindGameObjectWithTag("musica").GetComponent<AudioSource>();
+        Microjuego microjuego = ConfigUtils.MicrojuegoActual;
+        GameObject.FindGameObjectWithTag("descripcion").GetComponent<Text>().text = microjuego.descripcion;
+        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text += microjuego.instrucciones;
+        GameObject.FindGameObjectWithTag("textoJuego").GetComponent<Text>().text = microjuego.nombre;
     }
 
 

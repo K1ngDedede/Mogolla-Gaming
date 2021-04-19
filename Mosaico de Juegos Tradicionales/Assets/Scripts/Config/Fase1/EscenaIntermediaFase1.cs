@@ -95,5 +95,6 @@ public class EscenaIntermediaFase1 : MonoBehaviour
         Microjuego siguienteMicrojuego = ConfigUtils.BuscarMicrojuego(microjuego);
         nombreSiguienteMicrojuego = siguienteMicrojuego.nombre;
         escenaACargar = siguienteMicrojuego.escena;
+        ConfigUtils.MicrojuegoActual = siguienteMicrojuego;
     }
 }
