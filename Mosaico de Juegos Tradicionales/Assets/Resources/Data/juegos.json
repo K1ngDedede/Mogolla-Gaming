@@ -6,7 +6,7 @@
       "descripcion": "Este juego se juega con tapas",
       "pathImagen": "",
       "instruccionesJuego": "Con el mouse",
-      "instruccionesVidaReal": "",
+      "instruccionesVidaReal": "instrucciones en la vida real",
       "escena": "yermisTorre"
     },
     {
@@ -24,7 +24,7 @@
       "descripcion": "Este juego se juega con un jacks",
       "pathImagen": "Data/Imagenes/Jacks",
       "instruccionesJuego": "Con el clic",
-      "instruccionesVidaReal": "",
+      "instruccionesVidaReal": "instrucciones de la vida real",
       "escena": "jackses"
     },
     {

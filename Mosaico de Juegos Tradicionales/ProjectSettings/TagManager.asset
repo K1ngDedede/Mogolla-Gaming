@@ -32,6 +32,8 @@ TagManager:
   - descripcion
   - instrucciones
   - imagenMicrojuego
+  - botonJueguelo
+  - botonRealidad
   layers:
   - Default
   - TransparentFX

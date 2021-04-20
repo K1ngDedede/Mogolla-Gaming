@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class EscenaDetalleMicrojuego : MonoBehaviour
 {
     Microjuego microjuego = ConfigUtils.MicrojuegoActual;
+    GameObject botonJueguelo, botonRealidad;
     // Start is called before the first frame update
     void Start()
     {
+        botonJueguelo = GameObject.FindGameObjectWithTag("botonJueguelo");
+        botonRealidad = GameObject.FindGameObjectWithTag("botonRealidad");
         GameObject.FindGameObjectWithTag("textoJuego").GetComponent<Text>().text = microjuego.nombre;
         string descripcion = "";
         if(microjuego.nombresAlternativos != "")
@@ -18,10 +21,33 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
         }
         descripcion += microjuego.descripcion;
         GameObject.FindGameObjectWithTag("descripcion").GetComponent<Text>().text = descripcion;
-        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text = microjuego.instruccionesJuego;
+        CambiarInstruccionesRealidad();
         Image image = GameObject.FindGameObjectWithTag("imagenMicrojuego").GetComponent<Image>();
         image.sprite = Resources.Load<Sprite>(microjuego.pathImagen);
         image.preserveAspect = true;
+    }
+
+    public void CambiarInstruccionesRealidad()
+    {
+        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text = microjuego.instruccionesVidaReal;
+        Color colorBotonJueguelo = botonJueguelo.GetComponent<Image>().color;
+        colorBotonJueguelo.a = 0;
+        botonJueguelo.GetComponent<Image>().color = colorBotonJueguelo;
+        Color colorBotonRealidad = botonRealidad.GetComponent<Image>().color;
+        colorBotonRealidad.a = 1;
+        botonRealidad.GetComponent<Image>().color = colorBotonRealidad;
+
+    }
+
+    public void CambiarInstruccionesJueguelo()
+    {
+        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text = microjuego.instruccionesJuego;
+        Color colorBotonJueguelo = botonJueguelo.GetComponent<Image>().color;
+        colorBotonJueguelo.a = 1;
+        botonJueguelo.GetComponent<Image>().color = colorBotonJueguelo;
+        Color colorBotonRealidad = botonRealidad.GetComponent<Image>().color;
+        colorBotonRealidad.a = 0;
+        botonRealidad.GetComponent<Image>().color = colorBotonRealidad;
     }
 
     // Update is called once per frame
