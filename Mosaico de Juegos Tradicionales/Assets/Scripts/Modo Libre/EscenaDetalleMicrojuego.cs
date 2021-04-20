@@ -18,7 +18,7 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
         }
         descripcion += microjuego.descripcion;
         GameObject.FindGameObjectWithTag("descripcion").GetComponent<Text>().text = descripcion;
-        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text = microjuego.instrucciones;
+        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text = microjuego.instruccionesJuego;
         Image image = GameObject.FindGameObjectWithTag("imagenMicrojuego").GetComponent<Image>();
         image.sprite = Resources.Load<Sprite>(microjuego.pathImagen);
         image.preserveAspect = true;

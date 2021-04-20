@@ -5,7 +5,8 @@
       "nombresAlternativos": "",
       "descripcion": "Este juego se juega con tapas",
       "pathImagen": "",
-      "instrucciones": "Con el mouse",
+      "instruccionesJuego": "Con el mouse",
+      "instruccionesVidaReal": "",
       "escena": "yermisTorre"
     },
     {
@@ -13,7 +14,8 @@
       "nombresAlternativos": "",
       "descripcion": "Este juego se juega con un trompo",
       "pathImagen": "",
-      "instrucciones": "Con el clic",
+      "instruccionesJuego": "Con el clic",
+      "instruccionesVidaReal": "",
       "escena": "Trompo"
     },
     {
@@ -21,7 +23,8 @@
       "nombresAlternativos": "Yaquis, Jacks, Jasses",
       "descripcion": "Este juego se juega con un jacks",
       "pathImagen": "Data/Imagenes/Jacks",
-      "instrucciones": "Con el clic",
+      "instruccionesJuego": "Con el clic",
+      "instruccionesVidaReal": "",
       "escena": "jackses"
     },
     {
@@ -29,7 +32,8 @@
       "nombresAlternativos": "",
       "descripcion": "Este juego se juega con un fuchi",
       "pathImagen": "",
-      "instrucciones": "No cae",
+      "instruccionesJuego": "No cae",
+      "instruccionesVidaReal": "",
       "escena": "Fuchi"
     }
 

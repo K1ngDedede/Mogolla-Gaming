@@ -16,7 +16,7 @@ public class PanelPausa : MonoBehaviour
         audioSource = GameObject.FindGameObjectWithTag("musica").GetComponent<AudioSource>();
         Microjuego microjuego = ConfigUtils.MicrojuegoActual;
         GameObject.FindGameObjectWithTag("descripcion").GetComponent<Text>().text = microjuego.descripcion;
-        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text += microjuego.instrucciones;
+        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text += microjuego.instruccionesJuego;
         GameObject.FindGameObjectWithTag("textoJuego").GetComponent<Text>().text = microjuego.nombre;
     }
 
