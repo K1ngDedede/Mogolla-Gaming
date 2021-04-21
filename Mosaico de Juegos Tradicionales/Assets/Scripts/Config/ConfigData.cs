@@ -87,19 +87,6 @@ public class ConfigData
                 }
             }
         }
-
-        try
-        {
-            //Recuperar datos
-        }
-        catch(Exception e)
-        {
-
-        }
-        finally
-        {
-
-        }
     }
 
 }

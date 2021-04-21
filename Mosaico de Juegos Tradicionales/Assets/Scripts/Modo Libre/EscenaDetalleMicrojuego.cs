@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class EscenaDetalleMicrojuego : MonoBehaviour
 {
@@ -22,9 +23,9 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
         descripcion += microjuego.descripcion;
         GameObject.FindGameObjectWithTag("descripcion").GetComponent<Text>().text = descripcion;
         CambiarInstruccionesRealidad();
-        Image image = GameObject.FindGameObjectWithTag("imagenMicrojuego").GetComponent<Image>();
-        image.sprite = Resources.Load<Sprite>(microjuego.pathImagen);
-        image.preserveAspect = true;
+        VideoPlayer videoPlayer = GameObject.FindGameObjectWithTag("videoPlayer").GetComponent<VideoPlayer>();
+        videoPlayer.clip = Resources.Load<VideoClip>(microjuego.pathVideo);
+        //image.preserveAspect = true;
     }
 
     public void CambiarInstruccionesRealidad()

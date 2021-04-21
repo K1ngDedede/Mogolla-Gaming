@@ -3,35 +3,35 @@
     {
       "nombre": "Yermis",
       "nombresAlternativos": "",
-      "descripcion": "Este juego se juega con tapas",
-      "pathImagen": "",
-      "instruccionesJuego": "Con el mouse",
-      "instruccionesVidaReal": "instrucciones en la vida real",
+      "descripcion": "Este juego de equipo se juega con tapas de botellas, una bola y, en algunos casos, elementos que se asemejen a un bate.",
+      "pathVideo": "Data/Videos/VideoYermis",
+      "instruccionesJuego": "Hacer clic para disparar la bola hacia la torre de tapas. Si la torre es derribada, ponche a las personas apuntando y disparando con el mouse sin que se le acaben los lanzamientos. En caso contrario, debera esquivar las bolas lanzadas hacia usted.",
+      "instruccionesVidaReal": "Se arma una torre de tapas en el piso. Los jugadores de un equipo se tomaran turnos para intentar derribarla. Si es derribada, el equipo lanzador debe ponchar al otro equipo mientras este intenta construir la torre nuevamente. Si el equipo defensor logra construir la torre, gritaran \"Yermis\" y ganaran un punto. De lo contrario, el equipo ofensivo pasara a defender y viceversa.",
       "escena": "yermisTorre"
     },
     {
       "nombre": "Trompo",
       "nombresAlternativos": "",
       "descripcion": "Este juego se juega con un trompo",
-      "pathImagen": "",
+      "pathVideo": "",
       "instruccionesJuego": "Con el clic",
       "instruccionesVidaReal": "",
       "escena": "Trompo"
     },
     {
-      "nombre": "Jackses",
-      "nombresAlternativos": "Yaquis, Jacks, Jasses",
-      "descripcion": "Este juego se juega con un jacks",
-      "pathImagen": "Data/Imagenes/Jacks",
-      "instruccionesJuego": "Con el clic",
-      "instruccionesVidaReal": "instrucciones de la vida real",
+      "nombre": "Jacks",
+      "nombresAlternativos": "Jazz, Yazos, Jackses, Yaz, Yas, Chibcha.",
+      "descripcion": "Este juego se juega con unas fichas denominadas \"Jacks\", una bola que rebote y una superficie plana.",
+      "pathVideo": "Data/Videos/VideoJacks",
+      "instruccionesJuego": "Suelte la pelota haciendo clic sobre ella. Recoja todos los Jacks haciendo clic sobre ellos antes de que la bola rebote por segunda vez. Una vez recogidos los Jacks haga clic sobre la bola para agarrarla y ganar antes de que se acabe el tiempo.",
+      "instruccionesVidaReal": "Hay distintas formas de jugar. Sin embargo, la mas jugada es lanzar la bola y agarrar la mayor cantidad de fichas antes de que la bola vuelva a caer.",
       "escena": "jackses"
     },
     {
       "nombre": "Fuchi",
       "nombresAlternativos": "",
       "descripcion": "Este juego se juega con un fuchi",
-      "pathImagen": "",
+      "pathVideo": "",
       "instruccionesJuego": "No cae",
       "instruccionesVidaReal": "",
       "escena": "Fuchi"

@@ -23,6 +23,7 @@ public class PanelPausa : MonoBehaviour
 
     public void Reanudar()
     {
+        Cursor.visible = true;
         audioSource.Play();
         menuPausa.SetActive(false);
         Time.timeScale = 1;
@@ -30,6 +31,11 @@ public class PanelPausa : MonoBehaviour
     }
     public void RegresarMenuPrincipal()
     {
+        NombreMicrojuego nombreMicrojuego = ConfigUtils.MicrojuegoActual.nombreMicrojuego;
+        if (nombreMicrojuego == NombreMicrojuego.Fuchi || nombreMicrojuego == NombreMicrojuego.Jackses)
+        {
+            Cursor.visible = false;
+        }
         Time.timeScale = 1;
         MenuPausa.pausado = false;
         SceneManager.LoadScene("menu0");

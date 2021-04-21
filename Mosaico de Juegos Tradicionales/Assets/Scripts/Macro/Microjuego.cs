@@ -8,7 +8,7 @@ public class Microjuego
     public string nombre;
     public string nombresAlternativos;
     public string descripcion;
-    public string pathImagen;
+    public string pathVideo;
     public string instruccionesJuego;
     public string instruccionesVidaReal;
     public string escena;

@@ -34,6 +34,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Pausar()
     {
+        Cursor.visible = true;
         audioSource.Pause();
         menuPausa.SetActive(true);
         Time.timeScale = 0;
@@ -42,6 +43,11 @@ public class MenuPausa : MonoBehaviour
 
     public void Reanudar()
     {
+        NombreMicrojuego nombreMicrojuego = ConfigUtils.MicrojuegoActual.nombreMicrojuego;
+        if(nombreMicrojuego == NombreMicrojuego.Fuchi || nombreMicrojuego == NombreMicrojuego.Jackses)
+        {
+            Cursor.visible = false;
+        }
         audioSource.Play();
         menuPausa.SetActive(false);
         Time.timeScale = 1;
