@@ -180,6 +180,7 @@ public class JuegoJacks : MonoBehaviour
             case Fase.FASE1:
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
+                ManejadorFase1.RegistrarVictoria();
                 break;
             case Fase.FASE2:
                 //llamar manejador de fase 2

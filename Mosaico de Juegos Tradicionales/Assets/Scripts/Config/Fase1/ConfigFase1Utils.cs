@@ -6,6 +6,12 @@ public static class ConfigFase1Utils
 {
     static ConfigFase1Data configFase1Data;
 
+    public static bool AcabaDePerder
+    {
+        get { return configFase1Data.AcabaDePerder; }
+        set { configFase1Data.AcabaDePerder = value; }
+    }
+
     public static List<string> MicrojuegosPerdidos
     {
         get { return configFase1Data.MicrojuegosPerdidos; }

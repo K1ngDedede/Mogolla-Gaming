@@ -110,6 +110,7 @@ public class YermisAtaque : MonoBehaviour
         switch (fase)
         {
             case Fase.FASE1:
+                ManejadorFase1.RegistrarVictoria();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
                 break;

@@ -10,6 +10,11 @@ public static class ManejadorFase1
         ConfigFase1Utils.RegistrarPerdidaMicrojuego(microjuego);
     }
 
+    public static void RegistrarVictoria()
+    {
+        ConfigFase1Utils.AcabaDePerder = false;
+    }
+
     public static void EmpezarTutorial()
     {
         TrompoUtils.tutorial();
@@ -40,6 +45,7 @@ public static class ManejadorFase1
 
     public static void PerderVida()
     {
+        ConfigFase1Utils.AcabaDePerder = true;
         ConfigFase1Utils.PerderVida();
     }
 

@@ -17,6 +17,13 @@ public class ConfigFase1Data
     static System.Random rng = new System.Random();
     static List<string> microjuegosPerdidos;
     static string fecha;
+    static bool acabaDePerder;
+
+    public bool AcabaDePerder
+    {
+        get { return acabaDePerder; }
+        set { acabaDePerder = value; }
+    }
 
     public List<string> MicrojuegosPerdidos
     {

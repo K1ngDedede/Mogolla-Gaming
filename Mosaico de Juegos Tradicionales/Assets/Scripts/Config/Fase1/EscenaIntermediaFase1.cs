@@ -34,45 +34,58 @@ public class EscenaIntermediaFase1 : MonoBehaviour
         //Apariencia abuela
         GameObject abuela = GameObject.FindGameObjectWithTag("abuela");
         Sprite spriteAbuela;
-        SpriteRenderer spriteRendererAbuela = abuela.GetComponent<SpriteRenderer>(); ;
-        Vector3 posBarra;
-        Vector3 escalaBarra;
+        SpriteRenderer spriteRendererAbuela = abuela.GetComponent<SpriteRenderer>();
+        Vector3 escalaBarra = Vector3.zero;
         switch (vidasRestantes)
         {
             case 4:
                 spriteAbuela = Resources.Load<Sprite>(ubicacionAbuela + "AbuelitaFeliz");
-                //rendererBarra.color = alto;
-                //posBarra = new Vector3(0, 2.761f, 0);
-                //escalaBarra = new Vector3(1.395553f, 0.2241068f, 0);
-                
                 break;
             case 3:
                 spriteAbuela = Resources.Load<Sprite>(ubicacionAbuela + "AbuelitaSeria");
-                //rendererBarra.color = medio;
-                //posBarra = new Vector3(-0.919f, 2.761f, 0);
-                //escalaBarra = new Vector3(1.036599f, 0.2241068f, 0);
-                animation.Play("3vidas");
+                if (ConfigFase1Utils.AcabaDePerder)
+                {
+                    animation.Play("3vidas");
+                }
+                else
+                {
+                    rendererBarra.color = medio;
+                    escalaBarra = new Vector3(1.045294f, 0.2241068f, 1);
+                }
+
                 break;
             case 2:
+                if (ConfigFase1Utils.AcabaDePerder)
+                {
+                    animation.Play("2vidas");
+                }
+                else
+                {
+                    rendererBarra.color = medio;
+                    escalaBarra = new Vector3(0.6890782f, 0.2241068f, 0);
+                }
                 spriteAbuela = Resources.Load<Sprite>(ubicacionAbuela + "AbuelitaSeria");
-                //rendererBarra.color = medio;
-                //posBarra = new Vector3(-1.775f, 2.761f, 0);
-                //escalaBarra = new Vector3(0.7022681f, 0.2241068f, 0);
-                animation.Play("2vidas");
                 break;
             default:
+                if (ConfigFase1Utils.AcabaDePerder)
+                {
+                    animation.Play("1vida");
+                }
+                else
+                {
+                    rendererBarra.color = bajo;
+                    escalaBarra = new Vector3(0.3427572f, 0.2241068f, 0);
+                }
                 spriteAbuela = Resources.Load<Sprite>(ubicacionAbuela + "AbuelitaSeria");
-                //rendererBarra.color = bajo;
-                //posBarra = new Vector3(-2.667f, 2.761f, 0);
-                //escalaBarra = new Vector3(0.3537103f, 0.2241068f, 0);
-                animation.Play("1vida");
                 break;
 
         }
        
         spriteRendererAbuela.sprite = spriteAbuela;
-        //barraPaciencia.transform.position = posBarra;
-        //barraPaciencia.transform.localScale = escalaBarra;
+        if(escalaBarra != Vector3.zero)
+        {
+            barraPaciencia.transform.localScale = escalaBarra;
+        }
 
         timerCambioEscena = Camera.main.gameObject.AddComponent<Timer>();
         timerCambioEscena.Duration = 5;
