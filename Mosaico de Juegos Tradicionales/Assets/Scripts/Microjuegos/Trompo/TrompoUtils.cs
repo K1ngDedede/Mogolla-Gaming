@@ -6,30 +6,46 @@ public static class TrompoUtils
 {
     static float torqueR = 0.3f;
     static float torqueP = 10;
-    static int duracion = 10;
-    static bool mov = false;
+    static int mov = 0;
     static bool teach = false;
 
-    public static bool Mov => mov;
+    public static int Mov
+    {
+        get => mov;
+        set => mov = value;
+    }
 
-    public static bool Teach => teach;
+    public static bool Teach
+    {
+        get => teach;
+        set => teach = value;
+    }
 
     static Fase fase = Fase.FASE1;
 
-    public static float TorqueR => torqueR;
+    public static float TorqueR
+    {
+        get => torqueR;
+        set => torqueR = value;
+    }
 
-    public static float TorqueP => torqueP;
+    public static float TorqueP
+    {
+        get => torqueP;
+        set => torqueP = value;
+    }
 
-    public static int Duracion => duracion;
-
-    public static Fase Fase => fase;
+    public static Fase Fase
+    {
+        get => fase;
+        set => fase = value;
+    }
 
     public static void tutorial()
     {
         torqueR = 0f;
         torqueP = 0;
-        duracion = 12;
-        mov = false;
+        mov = 0;
         teach = true;
     }
     
@@ -37,19 +53,27 @@ public static class TrompoUtils
     {
         torqueR = 0.3f;
         torqueP = 10;
-        duracion = 12;
-        mov = false;
+        mov = 0;
         teach = false;
         fase = Fase.FASE1;
     }
 
-    public static void dificil()
+    public static void medio()
     {
         torqueR = 0.4f;
         torqueP = 8;
-        duracion = 10;
-        mov = true;
+        mov = 1;
         teach = false;
+        fase = Fase.FASE2;
+    }
+
+    public static void difisil()
+    {
+        torqueR = 0.4f;
+        torqueP = 8;
+        mov = 2;
+        teach = false;
+        fase = Fase.FASE3;
     }
 
 }

@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Trompo.unity
     guid: 7dd061442f4457640a113f414e66162d
   - enabled: 1
+    path: Assets/Scenes/Olla.unity
+    guid: 64c8085ce85d7424dafab6e043fb2eba
+  - enabled: 1
     path: Assets/Scenes/victoriaFase1.unity
     guid: 867f376d67c80c542b16936285a84f50
   - enabled: 1

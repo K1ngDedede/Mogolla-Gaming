@@ -1,12 +1,14 @@
 Pasos para agregar un microjuego al proyecto:
 -En el aarchivo JSON ubicado en Assets/Resources/Data/juegos.json agregar la informacion del juego siguiendo la estructura
 -Copiar la escena a la carpeta de escenas del proyecto
+-Agregar la escena al build, en File>Build Settings. Arrastrar la escena a la lista.
 -Copiar assets en donde corresponda en la estructura de archivos del proyecto
 -Relacionar nuevamente componentes a objetos (estas relaciones se perdien a pasar vainas al proyecto)
 -Cada microjuego debe tener una clase estatica similar a Scripts/Microjuegos/Jackses/JacksesUtil.cs en donde se definen las
 dificultades como métodos y los atributos que se modifican para modificar la dificultad del microjuego. En esta clase es posible 
 declarar una variable tutorial por si el juego necesita una funcionalidad adicional en su versión tutorial. Aqui tambien debe haber
 un atributo de tipo Fase y cada dificultad debe definir a qué fase pertenece.
+-Modificar el script Scripts/Macro/NombreMicrojuego para incluir el juego en el enum. Este nombre debe ser igual al nombre puesto al juego en el archivo JSON.
 -En el script del microjuego, los atributos se declaran usando la clase estática mencionada en el paso anterior. Se puede ver esto
 en Scripts/Microjuegos/Jackses/JuegoJacks.cs y con el atributo tutorial se pueden hacer funcionalidades de tutorial en el juego. En esta clase
 también debe haber un atributo de tipo Fase llamado fase que se obtiene a partir de la clase estática. Este atributo sirve para llamar al Manejador de fase
@@ -58,16 +60,20 @@ private void Perder()
 
 
 Agregar un microjuego a una fase X:
-1. Agregar el microjuego al enum Microjuego.cs. Este nombre debe ser igual al nombre puesto al juego en el archivo JSON.
+1. Paso movido a las instrucciones superiores
 2. En la clase ConfigFaseXData.cs se define la dificultad del microjuego usando la clase estática definida previamente.
 3. En esta misma clase se agrega el microjuego a la lista microJuegosAJugar.
 
 Agregar un microjuego al modo libre:
-1. En el canvas de la escena modoLibre, agregar una imagen representativa del microjuego y agregarle el componente botón y el script 
-Assets/Scripts/Modo Libre/BotonMicrojuego.
+1. En el canvas de la escena modoLibre, agregar una imagen representativa del microjuego y agregarle el componente botón y los scripts 
+Assets/Scripts/Modo Libre/BotonMicrojuego & Assets/Scripts/Utils/BHBManager
+1.5. Haga una copia de la imagen a usar preferiblemente para este paso. Seleccionar la imagenen (copia) en el editor de Unity. En el inspector, cambiar los import settings
+de la imagen (el pequeño ícono que parece dos sliders en la parte superior derecha del inspector) para que utilice el preset ButtonImporter. Aplicar los cambios.
+Procure utilizar esta versión de la imagen para el objeto en el canvas.
 2. Al componente botón del boton creado en el paso anterior, dar clic en el + que se encuentra en la sección On Click(). 
 Arrastrar el boton a la casilla que dice None.
 3. En el desplegable que dice "No function" hacer clic, seleccionar BotonMicrojuego>CargarEscenaInformativa().
+3.5. En las propiedades del componente BotonMicrojuego agregado en el paso 1, cambiar el nombre del microjuego al apropiado.
 4. En el script Assets/Scripts/Modo Libre/EscenaDetalleMicrojuego en los métodos Facil, Medio y Dificil agregar en el switch case
 el microjuego y configurar su dificultad y que está en modoLibre como se ve en el script.
 5. No olvidar agregar en los métodos Ganar y Perder de cada microjuego agregar el correspondiente llamado al ManejadorModoLibre como

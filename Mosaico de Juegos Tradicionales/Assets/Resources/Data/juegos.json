@@ -1,5 +1,14 @@
 {
   "microjuegos": [
+	{
+      "nombre": "Olla",
+      "nombresAlternativos": "",
+      "descripcion": "La Olla es un juego para varios jugadores que se juega con un balón (usualmente) ligero, como el de voleibol.",
+      "pathVideo": "",
+      "instruccionesJuego": "Usted es el jugador resaltado en blanco. Remate el balón haciendo clic en la olla cuando sea oportuno para ganar. Tenga en cuenta que el remate siempre ocurre al tercer toque del balón.",
+      "instruccionesVidaReal": "Un grupo de personas se agrupan en círculo, con una inicialmente en el centro, denominado \"La Olla.\" El balón se pasa entre las personas del círculo, y al tercer pase se debe rematar para golpear a los que ocupan la olla. Si alguien se equivoca al pasar o el remate falla, el que cometió el error pasa del círculo a la olla. Si alguien en la olla logra atrapar el remate, este podrá salir de la olla y volver al círculo. El juego continua hasta que solo quede un jugador fuera de la olla, quien se convierte en el ganador.",
+      "escena": "Olla"
+    },
     {
       "nombre": "Yermis",
       "nombresAlternativos": "",
@@ -11,11 +20,11 @@
     },
     {
       "nombre": "Trompo",
-      "nombresAlternativos": "",
-      "descripcion": "Este juego se juega con un trompo",
+      "nombresAlternativos": "Peonza, Piuca, Repión, Mona.",
+      "descripcion": "El trompo es un dispositivo que gira sobre una punta, y se equilibra gracias a su gran momento angular.",
       "pathVideo": "",
-      "instruccionesJuego": "Con el clic",
-      "instruccionesVidaReal": "",
+      "instruccionesJuego": "Haga clic para impulsar al trompo hacia la posición del puntero. Balancee el trompo hasta que se agote el tiempo para ganar.",
+      "instruccionesVidaReal": "El trompo se pone a girar con una cuerda, pita o piola. Existen muchos trucos que se pueden realizar con un trompo.",
       "escena": "Trompo"
     },
     {

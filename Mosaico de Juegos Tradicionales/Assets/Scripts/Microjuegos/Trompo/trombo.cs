@@ -32,6 +32,10 @@ public class trombo : MonoBehaviour
 
     protected bool teach = TrompoUtils.Teach;
     
+    protected Vector3 movTarget = Vector3.zero;
+
+    protected int mov = TrompoUtils.Mov;
+    
 
     void Start()
     {
@@ -41,7 +45,7 @@ public class trombo : MonoBehaviour
         sapo.freezeRotation = false;
         gameObject.AddComponent(typeof(BackwardsTimer));
         n = gameObject.AddComponent<BackwardsTimer>();
-        n.Duration = TrompoUtils.Duracion;
+        n.Duration = 12;
         GameObject tt = GameObject.FindGameObjectWithTag("temptimer");
         temptimer = tt.GetComponent<Text>();
         temptimer.text = "lmao";
@@ -61,6 +65,19 @@ public class trombo : MonoBehaviour
             sapo.AddTorque(0.18f, ForceMode2D.Impulse);
         }
 
+        movTarget = transform.position;
+        switch (mov)
+        {
+            case 1:
+                movTarget.x = 2.5f;
+                break;
+            case 2:
+                movTarget.x = Random.Range(-2.5f, 2.5f);
+                break;
+            default:
+                movTarget=Vector3.zero;
+                break;
+        }
         prevs = Mathf.Sign(gameObject.transform.eulerAngles.z);
         n.Run();
     }
@@ -87,12 +104,29 @@ public class trombo : MonoBehaviour
                 sapo.AddTorque(sapasso, ForceMode2D.Impulse);
             }
             //Input del usuario
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && !MenuPausa.pausado)
             {
-                float xinput = Input.mousePosition.x - ((float) Screen.width / 2) < gameObject.transform.position.x
+                Vector3 p = Input.mousePosition;
+                p.z = -Camera.main.transform.position.z;
+                p = Camera.main.ScreenToWorldPoint(p);
+                float xinput = p.x < transform.position.x
                     ? 0.05f
                     : -0.05f;
                 sapo.AddTorque(xinput, ForceMode2D.Impulse);
+            }
+            //El trompo se mueve en dificultades avanzadas
+            if (mov > 0)
+            {
+                if (Vector3.Distance(transform.position, movTarget) != 0)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, movTarget, Time.deltaTime*0.5f*mov);
+                }
+                else
+                {
+                    movTarget.x = mov == 1 ? -Math.Sign(movTarget.x) * 2.5f : Random.Range(0, -Math.Sign(movTarget.x) * 2.5f);
+                }
+
+                
             }
             //Condición de victoria
             if (n.Finished && vCond == 0)
@@ -146,6 +180,9 @@ public class trombo : MonoBehaviour
             case Fase.FASE3:
                 //llamar manejador de fase 3
                 break;
+            case Fase.MODOLIBRE:
+                ManejadorModoLibre.Perder();
+                break;
         }
     }
 
@@ -174,6 +211,9 @@ public class trombo : MonoBehaviour
                     break;
                 case Fase.FASE3:
                     //llamar manejador de fase 3
+                    break;
+                case Fase.MODOLIBRE:
+                    ManejadorModoLibre.Ganar();
                     break;
             }
         }
