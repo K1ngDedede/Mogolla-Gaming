@@ -31,6 +31,7 @@ public class PanelPausa : MonoBehaviour
     }
     public void RegresarMenuPrincipal()
     {
+        Cursor.visible = true;
         NombreMicrojuego nombreMicrojuego = ConfigUtils.MicrojuegoActual.nombreMicrojuego;
         if (nombreMicrojuego == NombreMicrojuego.Fuchi || nombreMicrojuego == NombreMicrojuego.Jackses)
         {
