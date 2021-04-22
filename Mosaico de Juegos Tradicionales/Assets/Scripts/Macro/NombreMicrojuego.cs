@@ -9,6 +9,5 @@ public enum NombreMicrojuego
    Trompo,
    Fuchi,
    Yermis,
-   [Description("La Olla")]
    Olla
 }

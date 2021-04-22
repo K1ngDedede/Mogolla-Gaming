@@ -1,5 +1,5 @@
 Pasos para agregar un microjuego al proyecto:
--En el aarchivo JSON ubicado en Assets/Resources/Data/juegos.json agregar la informacion del juego siguiendo la estructura
+-En el archivo JSON ubicado en Assets/Resources/Data/juegos.json agregar la informacion del juego siguiendo la estructura
 -Copiar la escena a la carpeta de escenas del proyecto
 -Agregar la escena al build, en File>Build Settings. Arrastrar la escena a la lista.
 -Copiar assets en donde corresponda en la estructura de archivos del proyecto
@@ -9,6 +9,8 @@ dificultades como métodos y los atributos que se modifican para modificar la di
 declarar una variable tutorial por si el juego necesita una funcionalidad adicional en su versión tutorial. Aqui tambien debe haber
 un atributo de tipo Fase y cada dificultad debe definir a qué fase pertenece.
 -Modificar el script Scripts/Macro/NombreMicrojuego para incluir el juego en el enum. Este nombre debe ser igual al nombre puesto al juego en el archivo JSON.
+-En el script ConfigData, en la funcion DarNombreMicrojuego incluir un case igual a los demas en donde se le asigne a la variable nombre el mismo nombre dado al
+microjuego en el JSON.
 -En el script del microjuego, los atributos se declaran usando la clase estática mencionada en el paso anterior. Se puede ver esto
 en Scripts/Microjuegos/Jackses/JuegoJacks.cs y con el atributo tutorial se pueden hacer funcionalidades de tutorial en el juego. En esta clase
 también debe haber un atributo de tipo Fase llamado fase que se obtiene a partir de la clase estática. Este atributo sirve para llamar al Manejador de fase

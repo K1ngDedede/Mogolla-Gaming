@@ -62,7 +62,29 @@ public class ConfigData
         set { puntuacionMaximaFase3 = value; }
     }
 
-   
+    private string DarNombreMicrojuego(NombreMicrojuego nombreMicrojuego)
+    {
+        string nombre="";
+        switch (nombreMicrojuego)
+        {
+            case NombreMicrojuego.Fuchi:
+                nombre = "Fuchi";
+                break;
+            case NombreMicrojuego.Jackses:
+                nombre = "Jacks";
+                break;
+            case NombreMicrojuego.Olla:
+                nombre = "La Olla";
+                break;
+            case NombreMicrojuego.Trompo:
+                nombre = "Trompo";
+                break;
+            case NombreMicrojuego.Yermis:
+                nombre = "Yermis";
+                break;
+        }
+        return nombre;
+    }
 
     public ConfigData()
     {
@@ -81,7 +103,7 @@ public class ConfigData
             microjuegos.Add(microjuego);
             foreach (NombreMicrojuego nombreMicrojuego in System.Enum.GetValues(typeof(NombreMicrojuego)))
             {
-                if (nombreMicrojuego.ToString() == microjuego.nombre)
+                if (DarNombreMicrojuego(nombreMicrojuego) == microjuego.nombre)
                 {
                     microjuego.nombreMicrojuego = nombreMicrojuego;
                 }
