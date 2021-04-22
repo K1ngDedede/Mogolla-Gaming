@@ -28,6 +28,7 @@ public class Oya : MonoBehaviour
     protected Vector3 heightS;
     protected float dist;
     protected Vector3 far;
+	protected float locTime;
 
     void Start()
     {
@@ -80,13 +81,14 @@ public class Oya : MonoBehaviour
         handS[1] = Resources.Load<Sprite>(sPath + "daHandS");
 
         StartCoroutine("grovel");
+		locTime = Time.time;
     }
 
     
     void Update()
     {
         //c espera un tole al principio
-        if (state == -1 && Time.time > 2)
+        if (state == -1 && Time.time > locTime+2)
         {
             state = 0;
             dist = Vector3.Distance(fellas[ballpath[state]].transform.position,
