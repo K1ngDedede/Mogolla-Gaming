@@ -139,7 +139,8 @@ public class ConfigFase1Data
         TrompoUtils.facilito();
 		FuchiUtils.facil();
         YermisUtils.Facil();
-
+        /*OllaUtils.facilito();
+        OllaUtils._Fase = Fase.FASE1;*/
 
 
         //agregar microjuegos a jugar a la lista de microjuegos

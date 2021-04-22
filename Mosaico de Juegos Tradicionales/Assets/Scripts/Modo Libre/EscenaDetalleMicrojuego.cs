@@ -75,6 +75,13 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 YermisUtils.Facil();
                 YermisUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Olla:
+                OllaUtils.facilito();
+                break;
+            case NombreMicrojuego.Trompo:
+                TrompoUtils.facilito();
+                TrompoUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -94,6 +101,14 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 YermisUtils.Medio();
                 YermisUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Olla:
+                OllaUtils.medio();
+                OllaUtils._Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Trompo:
+                TrompoUtils.medio();
+                TrompoUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -112,6 +127,14 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
             case NombreMicrojuego.Yermis:
                 YermisUtils.Dificil();
                 YermisUtils.Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Olla:
+                OllaUtils.difisil();
+                OllaUtils._Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Trompo:
+                TrompoUtils.difisil();
+                TrompoUtils.Fase = Fase.MODOLIBRE;
                 break;
             default:
                 break;

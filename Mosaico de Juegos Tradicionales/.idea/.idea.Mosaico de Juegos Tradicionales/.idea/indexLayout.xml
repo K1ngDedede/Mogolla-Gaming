@@ -22,6 +22,7 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
+      <Path>Builds</Path>
       <Path>Instrucciones</Path>
       <Path>Library</Path>
       <Path>Temp</Path>

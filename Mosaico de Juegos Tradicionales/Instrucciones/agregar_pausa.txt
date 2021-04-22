@@ -1,6 +1,7 @@
 Pasos para agregar el menu de pausa a una escena:
 1. Agregar el script MenuPausa que se encuentra en Assets/Scripts/Macro a la camara de la escena.
 2. Agregar el prefab PanelPausa ubicado en Assets/Resources/Utils/Prefabs como hijo del canvas de la escena.
+2.5. Si no existe el Canvas, crearlo con clic derecho>UI>Canvas. Cambiar el CanvasScaler para que escale con la pantalla.
 3. Asegurarse de que el objeto que tiene el AudioSource tenga el tag "musica".
 4. Abrir la ventana Audio Mixer en Window>Audio>Audio Mixer.
 5. Al campo "output" del Audio Source del objeto descrito en el paso 3 arrastrar el grupo Master que se ve en la ventana del paso anterior.
