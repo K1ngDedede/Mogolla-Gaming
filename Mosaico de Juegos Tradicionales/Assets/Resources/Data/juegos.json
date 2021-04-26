@@ -1,6 +1,6 @@
 {
   "microjuegos": [
-	{
+    {
       "nombre": "La Olla",
       "nombresAlternativos": "",
       "descripcion": "La Olla es un juego para varios jugadores que se juega con un balón (usualmente) ligero, como el de voleibol.",
@@ -44,6 +44,15 @@
       "instruccionesJuego": "No cae",
       "instruccionesVidaReal": "",
       "escena": "Fuchi"
+    },
+    {
+      "nombre": "Rana",
+      "nombresAlternativos": "Sapo.",
+      "descripcion": "Este juego se juega con una mesa de Rana y unos aros metalicos.",
+      "pathVideo": "Data/Videos/VideoRana",
+      "instruccionesJuego": "Haga clic para determinar la direccion y fuerza del lanzamiento. Acumule los puntos necesarios ingresando aros en la boca de las ranas o en los agujeros de la mesa. Tenga cuidado, ya que no hay lanzamientos ilimitados.",
+      "instruccionesVidaReal": "Los jugadores se toman turnos lanzando un determinado numero de aros (generalmente son 10). El jugador acumula puntos si inserta el aro en los agujeros de la mesa. El jugador con mayor cantidad de puntos gana.",
+      "escena": "rana"
     }
 
   ]

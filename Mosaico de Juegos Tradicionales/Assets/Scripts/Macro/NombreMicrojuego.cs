@@ -9,5 +9,6 @@ public enum NombreMicrojuego
    Trompo,
    Fuchi,
    Yermis,
-   Olla
+   Olla,
+   Rana 
 }

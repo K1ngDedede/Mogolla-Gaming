@@ -35,6 +35,10 @@ TagManager:
   - botonJueguelo
   - botonRealidad
   - videoPlayer
+  - aroRana
+  - flechas
+  - hueco
+  - textoPuntaje
   layers:
   - Default
   - TransparentFX
@@ -50,8 +54,8 @@ TagManager:
   - Mesa
   - BordeYermis
   - BolaYermis
-  - 
-  - 
+  - huecoRana
+  - aroRana
   - 
   - 
   - 

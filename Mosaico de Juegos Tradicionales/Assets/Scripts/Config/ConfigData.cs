@@ -82,6 +82,9 @@ public class ConfigData
             case NombreMicrojuego.Yermis:
                 nombre = "Yermis";
                 break;
+            case NombreMicrojuego.Rana:
+                nombre = "Rana";
+                break;
         }
         return nombre;
     }
