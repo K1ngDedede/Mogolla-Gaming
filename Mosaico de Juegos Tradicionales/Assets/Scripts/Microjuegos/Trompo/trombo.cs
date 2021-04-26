@@ -35,6 +35,8 @@ public class trombo : MonoBehaviour
     protected Vector3 movTarget = Vector3.zero;
 
     protected int mov = TrompoUtils.Mov;
+
+    protected Transform papa;
     
 
     void Start()
@@ -64,8 +66,8 @@ public class trombo : MonoBehaviour
             //impulso inicial
             sapo.AddTorque(0.18f, ForceMode2D.Impulse);
         }
-
-        movTarget = transform.position;
+        papa = transform.parent;
+        movTarget = papa.position;
         switch (mov)
         {
             case 1:
@@ -117,9 +119,9 @@ public class trombo : MonoBehaviour
             //El trompo se mueve en dificultades avanzadas
             if (mov > 0)
             {
-                if (Vector3.Distance(transform.position, movTarget) != 0)
+                if (Vector3.Distance(papa.position, movTarget) != 0)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, movTarget, Time.deltaTime*0.5f*mov);
+                    papa.position = Vector3.MoveTowards(papa.position, movTarget, Time.deltaTime*0.5f*mov);
                 }
                 else
                 {
