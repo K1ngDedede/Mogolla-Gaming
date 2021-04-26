@@ -67,16 +67,17 @@ public class Rana : MonoBehaviour
 
     private void RevisarFinAros()
     {
+        float segundos = timer.SecondsRemaining;
         timer.Stop();
         if (puntaje < puntajeRequerido)
         {
             FadeMusica(2);
-            Perder();
+            Invoke("Perder", 3);
         }
         else
         {
             FadeVolumen(2);
-            Ganar();
+            Invoke("Ganar", 3);
         }
     }
 

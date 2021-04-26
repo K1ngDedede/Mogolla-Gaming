@@ -82,6 +82,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 TrompoUtils.facilito();
                 TrompoUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Rana:
+                RanaUtils.Facil();
+                RanaUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -109,6 +113,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 TrompoUtils.medio();
                 TrompoUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Rana:
+                RanaUtils.Medio();
+                RanaUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -135,6 +143,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
             case NombreMicrojuego.Trompo:
                 TrompoUtils.difisil();
                 TrompoUtils.Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Rana:
+                RanaUtils.Dificil();
+                RanaUtils.Fase = Fase.MODOLIBRE;
                 break;
             default:
                 break;

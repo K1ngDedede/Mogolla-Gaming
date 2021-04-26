@@ -46,7 +46,7 @@ public class MenuPausa : MonoBehaviour
         NombreMicrojuego nombreMicrojuego = ConfigUtils.MicrojuegoActual.nombreMicrojuego;
         if(nombreMicrojuego == NombreMicrojuego.Fuchi || nombreMicrojuego == NombreMicrojuego.Jackses)
         {
-            Cursor.visible = false;
+            Cursor.visible = true;
         }
         audioSource.Play();
         menuPausa.SetActive(false);

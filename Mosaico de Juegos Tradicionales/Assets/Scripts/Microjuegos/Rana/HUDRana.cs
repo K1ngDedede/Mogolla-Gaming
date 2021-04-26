@@ -13,6 +13,8 @@ public class HUDRana : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        puntajeRequerido = RanaUtils.PuntajeRequerido;
+        puntaje = 0;
         textoTiempo = GameObject.FindGameObjectWithTag("TextoTimer").GetComponent<Text>();
         textoPuntaje = GameObject.FindGameObjectWithTag("textoPuntaje").GetComponent<Text>();
         textoPuntaje.text = "Puntaje: " + puntaje + "/" + puntajeRequerido;
