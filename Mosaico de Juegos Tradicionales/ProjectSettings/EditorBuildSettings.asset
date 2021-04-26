@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/derrotaModoLibre.unity
     guid: 88c1720282648164b8f28f4b9206b609
+  - enabled: 1
+    path: Assets/Scenes/rana.unity
+    guid: 37ebe716bd7562a4cadf83befd521a32
   m_configObjects: {}
