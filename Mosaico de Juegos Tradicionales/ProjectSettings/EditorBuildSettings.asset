@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rana.unity
     guid: 37ebe716bd7562a4cadf83befd521a32
+  - enabled: 1
+    path: Assets/Scenes/Tejo.unity
+    guid: bd55dcf4d88a437408fc531a537630a6
   m_configObjects: {}

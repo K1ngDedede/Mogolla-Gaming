@@ -106,7 +106,9 @@ public class Click : MonoBehaviour
 			//if(currentTime <= 0f){
 			//Perder();
 			//Invoke("Perder",n.SecondsRemaining());
-			Invoke("Perder",n.SecondsRemaining);
+			//Invoke("Perder",n.SecondsRemaining);
+			FadeMusica(2);
+			Invoke("Perder", 3);
 			Debug.Log("Fin");
 			//}
 			
@@ -118,42 +120,59 @@ public class Click : MonoBehaviour
         switch (fase)
         {
             case Fase.FASE1:
+				ManejadorFase1.RegistrarVictoria();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
 				Cursor.visible = true;
                 break;
             case Fase.FASE2:
-			Cursor.visible = true;
                 //llamar manejador de fase 2
                 break;
             case Fase.FASE3:
-			Cursor.visible = true;
                 //llamar manejador de fase 3
                 break;
+            case Fase.MODOLIBRE:
+                ManejadorModoLibre.Ganar();
+                break;
+				
         }
     }
 	
 	private void Perder()
     {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        Destroy(musica);
         //timerJuego.Stop();
         switch (fase)
         {
             case Fase.FASE1:
-				ManejadorFase1.RegistrarPerdidaMicrojuego("Fuchi");
-				ManejadorFase1.PerderVida();
+                ManejadorFase1.RegistrarPerdidaMicrojuego("YermisAtaque");
+                ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
-				Cursor.visible = true;
                 break;
             case Fase.FASE2:
                 //llamar manejador de fase 2
-				Cursor.visible = true;
                 break;
             case Fase.FASE3:
                 //llamar manejador de fase 3
-				Cursor.visible = true;
+                break;
+            case Fase.MODOLIBRE:
+                ManejadorModoLibre.Perder();
                 break;
         }
         
+    }
+	
+	private void FadeMusica(float duracionFade)
+    {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        StartCoroutine(FadeAudioSource.StartFade(musica.GetComponent<AudioSource>(), duracionFade, 0));
+    }
+
+    private void FadeVolumen(float duracionFade)
+    {
+        GameObject musica = GameObject.FindGameObjectWithTag("musica");
+        StartCoroutine(FadeAudioSource.StartFadeVolumen(musica.GetComponent<AudioSource>(), duracionFade, 0));
     }
 }
