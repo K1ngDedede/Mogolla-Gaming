@@ -86,6 +86,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 RanaUtils.Facil();
                 RanaUtils.Fase = Fase.MODOLIBRE;
                 break;
+			case NombreMicrojuego.Tejo:
+                TejoUtils.Facil();
+                TejoUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -117,6 +121,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 RanaUtils.Medio();
                 RanaUtils.Fase = Fase.MODOLIBRE;
                 break;
+			case NombreMicrojuego.Tejo:
+                TejoUtils.Medio();
+                TejoUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -147,6 +155,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
             case NombreMicrojuego.Rana:
                 RanaUtils.Dificil();
                 RanaUtils.Fase = Fase.MODOLIBRE;
+                break;
+			case NombreMicrojuego.Tejo:
+                TejoUtils.Dificil();
+                TejoUtils.Fase = Fase.MODOLIBRE;
                 break;
             default:
                 break;

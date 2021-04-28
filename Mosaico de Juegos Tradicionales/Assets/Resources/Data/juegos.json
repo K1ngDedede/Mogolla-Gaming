@@ -38,11 +38,11 @@
     },
     {
       "nombre": "Fuchi",
-      "nombresAlternativos": "",
-      "descripcion": "Este juego se juega con un fuchi",
+      "nombresAlternativos": "Hacky sack, Fuchi ball",
+      "descripcion": "Es un juego colombiano de pies que se juega con una pelota tejida",
       "pathVideo": "",
-      "instruccionesJuego": "No cae",
-      "instruccionesVidaReal": "",
+      "instruccionesJuego": "Evite que la pelota toque el suelo. Deje caer la pelota y pateela haciendo clic sobre esta. Debe patearla al menos 6 veces antes de que el tiempo acabe para ganar. ",
+      "instruccionesVidaReal": "Consiste en realizar trucos con una pelota chica de tela o con una hacky sack sin dejarla caer al suelo.",
       "escena": "Fuchi"
     },
     {
@@ -53,6 +53,15 @@
       "instruccionesJuego": "Haga clic para determinar la direccion y fuerza del lanzamiento. Acumule los puntos necesarios ingresando aros en la boca de las ranas o en los agujeros de la mesa. Tenga cuidado, ya que los lanzamientos son limitados.",
       "instruccionesVidaReal": "Los jugadores se toman turnos lanzando un determinado numero de aros (generalmente son 10). El jugador acumula puntos si inserta el aro en los agujeros de la mesa o en las bocas de las ranas. El jugador con mayor cantidad de puntos gana.",
       "escena": "rana"
+    },
+    {
+      "nombre": "Tejo",
+      "nombresAlternativos": "Turmequé",
+      "descripcion": "Es un deporte, que consiste en lanzar un disco metálico a unas canchas de embocinada para hacer estallar una mecha",
+      "pathVideo": "",
+      "instruccionesJuego": "Has clic en la flecha para fijar la dirección y otro clic en la pantalla para fijar la fuerza.",
+      "instruccionesVidaReal": "Se realiza el lanzamiento de un tejocon la finalidad de introducirlo en un bocín, en el cual se coloca una mecha",
+      "escena": "Tejo"
     }
 
   ]

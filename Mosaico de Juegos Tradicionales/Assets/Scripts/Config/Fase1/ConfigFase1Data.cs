@@ -153,6 +153,8 @@ public class ConfigFase1Data
         microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
         microjuegosAJugar.Add(NombreMicrojuego.Yermis);
         microjuegosAJugar.Add(NombreMicrojuego.Yermis);
+		microjuegosAJugar.Add(NombreMicrojuego.Tejo);
+        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();

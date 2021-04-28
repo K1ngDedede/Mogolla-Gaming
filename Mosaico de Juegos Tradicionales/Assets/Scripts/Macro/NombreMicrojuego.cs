@@ -10,5 +10,6 @@ public enum NombreMicrojuego
    Fuchi,
    Yermis,
    Olla,
-   Rana 
+   Rana,
+   Tejo
 }
