@@ -5,7 +5,7 @@ using UnityEngine;
 public static class RanaUtils
 {
     static float incrementoAngulo = 120;
-    static int numeroAros = 3;
+    static int numeroAros = 50;
     static float velocidadBarraFuerza = 2;
     static int duracion = 12;
     static int puntajeRequerido = 100;

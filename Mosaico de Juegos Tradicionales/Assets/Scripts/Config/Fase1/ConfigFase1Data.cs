@@ -147,13 +147,13 @@ public class ConfigFase1Data
         microjuegosAJugar = new List<NombreMicrojuego>();
         microjuegosAJugar.Add(NombreMicrojuego.Jackses);
         microjuegosAJugar.Add(NombreMicrojuego.Trompo);
-		microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
         microjuegosAJugar.Add(NombreMicrojuego.Jackses);
         microjuegosAJugar.Add(NombreMicrojuego.Trompo);
         microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
         microjuegosAJugar.Add(NombreMicrojuego.Yermis);
         microjuegosAJugar.Add(NombreMicrojuego.Yermis);
-		microjuegosAJugar.Add(NombreMicrojuego.Tejo);
+        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
         microjuegosAJugar.Add(NombreMicrojuego.Tejo);
 
         //randomizar lista de microjuegos

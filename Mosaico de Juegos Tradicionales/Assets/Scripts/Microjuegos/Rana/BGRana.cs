@@ -23,11 +23,10 @@ public class BGRana : MonoBehaviour
     {
         bgm = gameObject.GetComponent<Renderer>().material;
         vic = (Texture2D)Resources.Load("Microjuegos/Rana/Sprites/f2");
-        def = (Texture2D)Resources.Load("Microjuegos/Trompo/Sprites/ff");
         bgm.mainTexture = vic;
         bgm.mainTextureScale = new Vector2(5f, 5f);
         vic.wrapMode = TextureWrapMode.Repeat;
-        def.wrapMode = TextureWrapMode.Repeat;
+        //def.wrapMode = TextureWrapMode.Repeat;
         state = true;
         offX = 0;
         offY = 0;
@@ -43,12 +42,6 @@ public class BGRana : MonoBehaviour
             offY += Time.deltaTime * sY;
             bgm.mainTextureOffset = new Vector2(offX, offY);
         }
-    }
-
-    public void halt()
-    {
-        state = !state;
-        bgm.mainTexture = def;
     }
 
 

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HuecoRana : MonoBehaviour
 {
-    float rangoVelocidad = 8;
+    float rangoMaxVelocidad = 0;
+    float rangoMinVelocidad = -8;
     float escalaApropiada = 0.5f;
     float errorEscala = 0.2f;
     int puntaje;
@@ -47,13 +48,14 @@ public class HuecoRana : MonoBehaviour
         Rigidbody2D rb2d = aroRana.GetComponent<Rigidbody2D>();
         Vector2 velocidad = rb2d.velocity;
         float escala = aroRana.transform.localScale.x;
-        if(velocidad.magnitude<rangoVelocidad && velocidad.magnitude > -rangoVelocidad && escala>escalaApropiada-errorEscala && escala<escalaApropiada+errorEscala)
+        //if(velocidad.magnitude<rangoVelocidad && velocidad.magnitude > -rangoVelocidad && escala>escalaApropiada-errorEscala && escala<escalaApropiada+errorEscala)
+        if (velocidad.y < rangoMaxVelocidad && velocidad.y > rangoMinVelocidad && escala > escalaApropiada - errorEscala && escala < escalaApropiada + errorEscala)
         {
             AroRana aroRanaScript = aroRana.GetComponent<AroRana>();
             aroRanaScript.EntrarHueco(posicionEntrada);
             HUDRana.ActualizarPuntaje(puntaje);
             Camera.main.GetComponent<Rana>().AumentarPuntaje(puntaje);
         }
-        
+
     }
 }

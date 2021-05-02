@@ -8,11 +8,13 @@ public class AroRana : MonoBehaviour
     bool disparado;
     float anguloActual = 0;
     float incrementoAngulo = 500;
-    float escalaMinima = 0.5f;
+    float escalaMinima = 0.4f;
     float decrementoEscala = 0.6f;
     bool entro = false;
     float velocidadMovimiento = 2f;
     float velocidadFade = 1f;
+    float rangoExistenciaMinX = -5;
+    float rangoExistenciaMaxX = 5;
     Vector2 posicionEntrada;
     Vector3 rotacion;
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class AroRana : MonoBehaviour
         if (disparado)
         {
             ReducirEscala();
+            RevisarUbicacion();
         }
         if (entro)
         {
@@ -37,9 +40,18 @@ public class AroRana : MonoBehaviour
         }
     }
 
+    private void RevisarUbicacion()
+    {
+        Vector2 pos = gameObject.transform.position;
+        if(pos.x<rangoExistenciaMinX || pos.x>rangoExistenciaMaxX)
+        {
+            FadeAway();
+        }
+    }
 
     private void ReducirEscala()
     {
+        print(GetComponent<Rigidbody2D>().velocity.y);
         Vector3 escalaActual = gameObject.transform.localScale;
         if (escalaActual.x > escalaMinima)
         {
