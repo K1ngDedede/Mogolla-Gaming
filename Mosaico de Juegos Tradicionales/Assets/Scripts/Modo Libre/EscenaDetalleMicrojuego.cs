@@ -7,11 +7,12 @@ using UnityEngine.Video;
 
 public class EscenaDetalleMicrojuego : MonoBehaviour
 {
-    Microjuego microjuego = ConfigUtils.MicrojuegoActual;
+    Microjuego microjuego;
     GameObject botonJueguelo, botonRealidad;
     // Start is called before the first frame update
     void Start()
     {
+        microjuego = ConfigUtils.MicrojuegoActual;
         botonJueguelo = GameObject.FindGameObjectWithTag("botonJueguelo");
         botonRealidad = GameObject.FindGameObjectWithTag("botonRealidad");
         GameObject.FindGameObjectWithTag("textoJuego").GetComponent<Text>().text = microjuego.nombre;

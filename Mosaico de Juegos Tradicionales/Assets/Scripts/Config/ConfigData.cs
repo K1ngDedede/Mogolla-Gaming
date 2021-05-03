@@ -7,7 +7,7 @@ public class ConfigData
 {
     const string NombreArchivoConfiguracion = "";
 
-    static int fase = 2;
+    static int fase = 1;
     static List<Microjuego> microjuegos;
     static Microjuego microjuegoActual;
     static string gamerTag = "Anon";
@@ -21,7 +21,7 @@ public class ConfigData
 
     public Microjuego MicrojuegoActual
     {
-        get { return microjuegoActual; }
+        get  { return microjuegoActual;}
         set { microjuegoActual = value; }
     }
 
@@ -98,12 +98,11 @@ public class ConfigData
         fecha = fecha.Replace("/", "-");
         fecha = fecha.Replace(":", "-");
         fecha = fecha.Replace(".", "");
-
         juegoCargado = true;
         microjuegos = new List<Microjuego>();
         juegosJson = Resources.Load<TextAsset>("Data/juegos");
         Microjuegos microjuegosJson = JsonUtility.FromJson<Microjuegos>(juegosJson.text);
-
+        microjuegoActual = new Microjuego();
         foreach (Microjuego microjuego in microjuegosJson.microjuegos)
         {
             microjuegos.Add(microjuego);
