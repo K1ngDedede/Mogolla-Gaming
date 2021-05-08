@@ -91,6 +91,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 TejoUtils.Facil();
                 TejoUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Coca:
+                CocaUtils.Facil();
+                CocaUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -126,6 +130,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 TejoUtils.Medio();
                 TejoUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Coca:
+                CocaUtils.Medio();
+                CocaUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -160,6 +168,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
 			case NombreMicrojuego.Tejo:
                 TejoUtils.Dificil();
                 TejoUtils.Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Coca:
+                CocaUtils.Dificil();
+                CocaUtils.Fase = Fase.MODOLIBRE;
                 break;
             default:
                 break;

@@ -39,6 +39,9 @@ TagManager:
   - flechas
   - hueco
   - textoPuntaje
+  - cuerda
+  - tapa
+  - palo
   layers:
   - Default
   - TransparentFX

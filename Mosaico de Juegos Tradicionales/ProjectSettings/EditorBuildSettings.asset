@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tejo.unity
     guid: bd55dcf4d88a437408fc531a537630a6
+  - enabled: 1
+    path: Assets/Scenes/coca.unity
+    guid: ffdb64fbb6c92f6489381fc0935ea19e
   m_configObjects: {}

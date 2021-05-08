@@ -62,6 +62,15 @@
       "instruccionesJuego": "Has clic en la flecha para fijar la dirección y otro clic en la pantalla para fijar la fuerza.",
       "instruccionesVidaReal": "Se realiza el lanzamiento de un tejocon la finalidad de introducirlo en un bocín, en el cual se coloca una mecha",
       "escena": "Tejo"
+    },
+    {
+      "nombre": "Coca",
+      "nombresAlternativos": "Balero",
+      "descripcion": "Es un juguete de madera que consta de un mango unido a una bola o barril perforado por medio de una cuerda.",
+      "pathVideo": "Data/Videos/VideoCoca",
+      "instruccionesJuego": "Mueva la coca usando el mouse para encholar la esfera en el mango antes de que el tiempo se agote.",
+      "instruccionesVidaReal": "El objetivo del juego es insertar la esfera o barril perforado en el mango usando movimientos manuales. Una vez insertado, es posible realizar otro tipo de maniobras. Por ejemplo, impulsar repetidas veces el mango para incrustar tantas veces como sea posible. El incrustar se le llama \"encholar\".",
+      "escena": "coca"
     }
 
   ]

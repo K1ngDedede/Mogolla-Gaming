@@ -11,5 +11,6 @@ public enum NombreMicrojuego
    Yermis,
    Olla,
    Rana,
-   Tejo
+   Tejo,
+   Coca
 }
