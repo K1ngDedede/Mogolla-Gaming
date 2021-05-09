@@ -141,6 +141,7 @@ public class ConfigFase1Data
         YermisUtils.Facil();
         /*OllaUtils.facilito();
         OllaUtils._Fase = Fase.FASE1;*/
+        piquisUtils.facilito();
 
 
         //agregar microjuegos a jugar a la lista de microjuegos
@@ -150,11 +151,8 @@ public class ConfigFase1Data
         microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
         microjuegosAJugar.Add(NombreMicrojuego.Jackses);
         microjuegosAJugar.Add(NombreMicrojuego.Trompo);
-        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        microjuegosAJugar.Add(NombreMicrojuego.Piquis);
         microjuegosAJugar.Add(NombreMicrojuego.Yermis);
-        microjuegosAJugar.Add(NombreMicrojuego.Yermis);
-        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
-        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();

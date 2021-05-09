@@ -25,7 +25,6 @@
       <Path>Builds</Path>
       <Path>Instrucciones</Path>
       <Path>Library</Path>
-      <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>

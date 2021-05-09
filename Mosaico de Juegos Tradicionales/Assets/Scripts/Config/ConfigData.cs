@@ -91,6 +91,9 @@ public class ConfigData
             case NombreMicrojuego.Coca:
                 nombre = "Coca";
                 break;
+            case NombreMicrojuego.Piquis:
+                nombre = "Piquis";
+                break;
         }
         return nombre;
     }
