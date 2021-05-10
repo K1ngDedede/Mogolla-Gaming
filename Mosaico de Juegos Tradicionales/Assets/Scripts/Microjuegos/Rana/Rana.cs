@@ -142,7 +142,9 @@ public class Rana : MonoBehaviour
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
+                ManejadorFase2.RegistrarVictoria();
                 break;
             case Fase.FASE3:
                 //llamar manejador de fase 3
@@ -164,7 +166,10 @@ public class Rana : MonoBehaviour
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.RegistrarPerdidaMicrojuego("Jackses");
+                ManejadorFase2.PerderVida();
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
                 //llamar manejador de fase 3

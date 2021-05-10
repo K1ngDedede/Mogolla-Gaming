@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EscenaIntermediaFase1 : MonoBehaviour
 {
-    string ubicacionAbuela = "Cutscene/";
+    string ubicacionAbuela = "Cutscene/Fase1/";
     string nombreSiguienteMicrojuego;
     Text textoPirinola;
     string escenaACargar;

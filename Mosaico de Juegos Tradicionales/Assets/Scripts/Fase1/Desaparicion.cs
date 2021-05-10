@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Desaparicion : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Desaparicion : MonoBehaviour
     {
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         Animator anim = GetComponent<Animator>();
+        Text text = GetComponent<Text>();
         if (anim != null)
         {
             anim.enabled = false;
@@ -33,6 +35,10 @@ public class Desaparicion : MonoBehaviour
         if(spriteRenderer != null)
         {
             spriteRenderer.enabled = false;
+        }
+        if (text != null)
+        {
+            text.text = "";
         }
     }
 }

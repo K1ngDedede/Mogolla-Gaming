@@ -9,6 +9,7 @@ public class BotonTutorial : MonoBehaviour
     [SerializeField]
     float tiempo;
 
+
     string ubicacion = "Misc/UI/";
     // Start is called before the first frame update
     void Start()

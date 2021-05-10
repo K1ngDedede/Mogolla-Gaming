@@ -20,7 +20,7 @@ public class PaloCoca : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(siguiendoMouse)
+        if(siguiendoMouse && !MenuPausa.pausado)
         {
             Vector3 posMouse = Input.mousePosition;
             posMouse.z = -Camera.main.transform.position.z;

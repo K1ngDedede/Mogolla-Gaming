@@ -59,10 +59,6 @@ public static class ConfigFase1Utils
         get { return configFase1Data.MicrojuegosAJugar; }
     }
 
-    public static int DuracionMicrojuegos
-    {
-        get { return configFase1Data.DuracionMicrojuegos; }
-    }
 
     public static void RegistrarPerdidaMicrojuego(string microjuego)
     {

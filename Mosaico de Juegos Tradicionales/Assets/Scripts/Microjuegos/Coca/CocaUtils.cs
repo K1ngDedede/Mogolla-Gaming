@@ -50,6 +50,7 @@ public static class CocaUtils
         duracion = 12;
         longSegmentoCuerda = 0.3f;
         gravedad = new Vector2(0f, -1f);
+        fase = Fase.FASE1;
     }
 
     public static void Medio()
@@ -58,6 +59,7 @@ public static class CocaUtils
         fuerzaY = 1f;
         longSegmentoCuerda = 0.4f;
         gravedad = new Vector2(0f, -3f);
+        fase = Fase.FASE2;
     }
 
     public static void Dificil()
@@ -66,6 +68,7 @@ public static class CocaUtils
         fuerzaY = 2f;
         longSegmentoCuerda = 0.5f;
         gravedad = new Vector2(0f, -6f);
+        fase = Fase.FASE3;
     }
 
 }

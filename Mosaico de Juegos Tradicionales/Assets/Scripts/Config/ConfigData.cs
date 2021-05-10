@@ -7,7 +7,7 @@ public class ConfigData
 {
     const string NombreArchivoConfiguracion = "";
 
-    static int fase = 1;
+    static int fase = 3;
     static List<Microjuego> microjuegos;
     static Microjuego microjuegoActual;
     static string gamerTag = "Anon";

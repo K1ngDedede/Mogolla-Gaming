@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ConfigFase1Data
+public class ConfigFase2Data
 {
-
     static int numMicrojuegosJugados;
     static int vidasTotales;
     static int vidasRestantes;
     static NombreMicrojuego microjuegoActual;
     static List<NombreMicrojuego> microjuegosAJugar;
-    static int intentosTutorial;
-    static bool sesionFase1Terminada;
+    static bool sesionFase2Terminada;
     static System.Random rng = new System.Random();
     static List<string> microjuegosPerdidos;
     static string fecha;
@@ -39,10 +37,10 @@ public class ConfigFase1Data
         get { return fecha; }
     }
 
-    public bool SesionFase1Terminada
+    public bool SesionFase2Terminada
     {
-        get { return sesionFase1Terminada; }
-        set { sesionFase1Terminada = value; }
+        get { return sesionFase2Terminada; }
+        set { sesionFase2Terminada = value; }
     }
 
     public int VidasTotales
@@ -74,12 +72,6 @@ public class ConfigFase1Data
     }
 
 
-    public int IntentosTutorial
-    {
-        get { return intentosTutorial; }
-        set { intentosTutorial = value; }
-    }
-
     public static void RandomizarMicrojuegos()
     {
         int n = microjuegosAJugar.Count;
@@ -88,7 +80,7 @@ public class ConfigFase1Data
             n--;
             int k = GenerarNumeroAleatorio(n);
             NombreMicrojuego microjuego = microjuegosAJugar[k];
-            if(n == microjuegosAJugar.Count - 1)
+            if (n == microjuegosAJugar.Count - 1)
             {
                 microjuegosAJugar[k] = microjuegosAJugar[n];
                 microjuegosAJugar[n] = microjuego;
@@ -103,23 +95,22 @@ public class ConfigFase1Data
                 microjuegosAJugar[k] = microjuegosAJugar[n];
                 microjuegosAJugar[n] = microjuego;
             }
-            
-            
+
+
         }
     }
 
-     private static int GenerarNumeroAleatorio(int max)
+    private static int GenerarNumeroAleatorio(int max)
     {
         return rng.Next(max + 1);
     }
 
-    public ConfigFase1Data()
+    public ConfigFase2Data()
     {
         numMicrojuegosJugados = 0;
-        vidasTotales = 4;
+        vidasTotales = 3;
         vidasRestantes = vidasTotales;
-        intentosTutorial = 1;
-        sesionFase1Terminada = false;
+        sesionFase2Terminada = false;
         microjuegosPerdidos = new List<string>();
 
         fecha = DateTime.Now.ToString().Replace(" ", "_");
@@ -129,26 +120,18 @@ public class ConfigFase1Data
 
 
         //asignar dificultad de los juegos
-        JacksesUtils.Facil();
-        TrompoUtils.facilito();
-		FuchiUtils.facil();
-        YermisUtils.Facil();
-        /*OllaUtils.facilito();
-        OllaUtils._Fase = Fase.FASE1;*/
+        JacksesUtils.Medio();
+        CocaUtils.Medio();
+        RanaUtils.Medio();
+        YermisUtils.Medio();
 
 
         //agregar microjuegos a jugar a la lista de microjuegos
         microjuegosAJugar = new List<NombreMicrojuego>();
         microjuegosAJugar.Add(NombreMicrojuego.Jackses);
-        microjuegosAJugar.Add(NombreMicrojuego.Trompo);
-        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
-        microjuegosAJugar.Add(NombreMicrojuego.Jackses);
-        microjuegosAJugar.Add(NombreMicrojuego.Trompo);
-        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
         microjuegosAJugar.Add(NombreMicrojuego.Yermis);
-        microjuegosAJugar.Add(NombreMicrojuego.Yermis);
-        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
-        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
+        microjuegosAJugar.Add(NombreMicrojuego.Rana);
+        microjuegosAJugar.Add(NombreMicrojuego.Coca);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();
@@ -156,7 +139,6 @@ public class ConfigFase1Data
         ConfigUtils.MicrojuegoActual = ConfigUtils.BuscarMicrojuego(microjuegosAJugar.ToArray()[0]);
 
 
-     
+
     }
-    
 }
