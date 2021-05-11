@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/yermisDefensa.unity
     guid: 2dc7baf858de5b349969d38020d2c549
   - enabled: 1
+    path: Assets/Scenes/Biquis.unity
+    guid: 374447d55a58dfc409fcd92027617c6b
+  - enabled: 1
     path: Assets/Scenes/modoLibre.unity
     guid: 5cfa22190e26836489cb06f06158b695
   - enabled: 1

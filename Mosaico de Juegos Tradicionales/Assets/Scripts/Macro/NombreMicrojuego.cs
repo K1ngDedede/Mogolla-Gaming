@@ -12,5 +12,6 @@ public enum NombreMicrojuego
    Olla,
    Rana,
    Tejo,
-   Coca
+   Coca,
+   Piquis
 }

@@ -95,6 +95,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 CocaUtils.Facil();
                 CocaUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Piquis:
+                piquisUtils.facilito();
+                piquisUtils._Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -134,6 +138,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 CocaUtils.Medio();
                 CocaUtils.Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Piquis:
+                piquisUtils.medio();
+                piquisUtils._Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }
@@ -172,6 +180,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
             case NombreMicrojuego.Coca:
                 CocaUtils.Dificil();
                 CocaUtils.Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Piquis:
+                piquisUtils.difisil();
+                piquisUtils._Fase = Fase.MODOLIBRE;
                 break;
             default:
                 break;

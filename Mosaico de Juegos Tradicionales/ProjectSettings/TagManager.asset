@@ -4,45 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Jack
-  - Bola
-  - TextoJacks
-  - TextoTimer
-  - TextoPirinola
-  - BotonSegundaFase
-  - BotonTerceraFase
-  - temptimer
-  - bg
-  - flechaTutorial
-  - tHand
-  - ttimer
-  - abuela
-  - barraPaciencia
-  - RelojitoTimer
-  - textoToques
-  - bolaYermis
-  - bordeYermis
-  - flechaRotatoria
-  - tapaYermis
-  - textoDisparos
-  - personaYermis
   - musica
+  - TextoTimer
   - panelPausa
   - textoJuego
-  - descripcion
   - instrucciones
-  - imagenMicrojuego
-  - botonJueguelo
-  - botonRealidad
-  - videoPlayer
-  - aroRana
-  - flechas
-  - hueco
-  - textoPuntaje
-  - cuerda
-  - tapa
-  - palo
-  - chulo
+  - descripcion
+  - Jack
+  - Undefined
   layers:
   - Default
   - TransparentFX
@@ -52,14 +21,14 @@ TagManager:
   - UI
   - 
   - 
-  - Jack
-  - Bola
-  - Mano
-  - Mesa
-  - BordeYermis
-  - BolaYermis
-  - huecoRana
-  - aroRana
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -79,16 +48,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Bola
-    uniqueID: 1034283763
-    locked: 0
-  - name: Mesa
-    uniqueID: 3915021573
-    locked: 0
-  - name: Jack
-    uniqueID: 2044054677
-    locked: 0
-  - name: Mano
-    uniqueID: 843300465
     locked: 0

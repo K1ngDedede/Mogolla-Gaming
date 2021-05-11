@@ -49,7 +49,7 @@ public class EscenaIntermediaFase2 : MonoBehaviour
                 }
                 else
                 {
-                    chulos[1].GetComponent<Chulo>().CambiarAEquis();
+                    chulos[2].GetComponent<Chulo>().CambiarAEquis();
                     chulos[0].GetComponent<Chulo>().CambiarAEquis();
                 }
                 break;

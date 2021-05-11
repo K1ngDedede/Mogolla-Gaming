@@ -69,7 +69,7 @@ Agregar un microjuego a una fase X:
 Agregar un microjuego al modo libre:
 1. En el canvas de la escena modoLibre, agregar una imagen representativa del microjuego y agregarle el componente botón y los scripts 
 Assets/Scripts/Modo Libre/BotonMicrojuego & Assets/Scripts/Utils/BHBManager
-1.5. Haga una copia de la imagen a usar preferiblemente para este paso. Seleccionar la imagenen (copia) en el editor de Unity. En el inspector, cambiar los import settings
+1.5. Haga una copia de la imagen a usar preferiblemente para este paso. Seleccionar la imagen (copia) en el editor de Unity. En el inspector, cambiar los import settings
 de la imagen (el pequeño ícono que parece dos sliders en la parte superior derecha del inspector) para que utilice el preset ButtonImporter. Aplicar los cambios.
 Procure utilizar esta versión de la imagen para el objeto en el canvas.
 2. Al componente botón del boton creado en el paso anterior, dar clic en el + que se encuentra en la sección On Click(). 
