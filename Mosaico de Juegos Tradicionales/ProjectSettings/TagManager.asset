@@ -9,9 +9,19 @@ TagManager:
   - panelPausa
   - textoJuego
   - instrucciones
-  - descripcion
-  - Jack
-  - Undefined
+  - imagenMicrojuego
+  - botonJueguelo
+  - botonRealidad
+  - videoPlayer
+  - aroRana
+  - flechas
+  - hueco
+  - textoPuntaje
+  - cuerda
+  - tapa
+  - palo
+  - lmao
+  - lmao 2
   layers:
   - Default
   - TransparentFX
