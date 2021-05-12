@@ -9,8 +9,12 @@ public class EscenaIntermediaFase1 : MonoBehaviour
     string ubicacionAbuela = "Cutscene/Fase1/";
     string nombreSiguienteMicrojuego;
     Text textoPirinola;
+    Text textoAbuela;
     string escenaACargar;
     Timer timerCambioEscena;
+    string[] dialogos = new string[]{"Ya me va a sacar la piedra...", "Se me está agotando la paciencia...", "No importa, siga intentando" };
+    string dialogo;
+    float duracionCaracter = 0.1f;
 
     //datos de la barra medidora
     Color alto = new Color(0.65098f, 0.690196f, 0.141176f), medio = new Color(0.97254f, 0.952941f, 0.6196f), bajo = new Color(0.333333f, 0.22745f, 0.196078f);
@@ -24,6 +28,16 @@ public class EscenaIntermediaFase1 : MonoBehaviour
         DatosSiguienteMicrojuego(siguienteMicrojuego);
         textoPirinola = GameObject.FindGameObjectWithTag("TextoPirinola").GetComponent<Text>();
         textoPirinola.text = nombreSiguienteMicrojuego;
+        textoAbuela = GameObject.FindGameObjectWithTag("textoJuego").GetComponent<Text>();
+        if (vidasRestantes < 4)
+        {
+            dialogo = dialogos[vidasRestantes - 1];
+            if (ConfigFase1Utils.AcabaDePerder)
+            {
+                StartCoroutine("Escribir");
+            }
+        }
+        
 
         //Barra medidora de paciencia
         GameObject barraPaciencia = GameObject.FindGameObjectWithTag("barraPaciencia");
@@ -109,5 +123,14 @@ public class EscenaIntermediaFase1 : MonoBehaviour
         nombreSiguienteMicrojuego = siguienteMicrojuego.nombre;
         escenaACargar = siguienteMicrojuego.escena;
         ConfigUtils.MicrojuegoActual = siguienteMicrojuego;
+    }
+
+    IEnumerator Escribir()
+    {
+        foreach (char c in dialogo)
+        {
+            textoAbuela.text += c;
+            yield return new WaitForSeconds(duracionCaracter);
+        }
     }
 }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DerrotaFase1 : MonoBehaviour
+public class DerrotaFase : MonoBehaviour
 {
+    [SerializeField]
+    string escenaFase;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class DerrotaFase1 : MonoBehaviour
 
     public void Reintentar()
     {
-        SceneManager.LoadScene("fase1");
+        SceneManager.LoadScene(escenaFase);
     }
 
     public void VolverAMenu()

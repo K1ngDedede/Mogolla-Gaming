@@ -4,82 +4,91 @@
       "nombre": "La Olla",
       "nombresAlternativos": "",
       "descripcion": "La Olla es un juego para varios jugadores que se juega con un balón (usualmente) ligero, como el de voleibol.",
-      "pathVideo": "",
+      "pathImagen": "",
       "instruccionesJuego": "Usted es el jugador resaltado en blanco. Remate el balón haciendo clic en la olla cuando sea oportuno para ganar. Tenga en cuenta que el remate siempre ocurre al tercer toque del balón.",
       "instruccionesVidaReal": "Un grupo de personas se agrupan en círculo, con una inicialmente en el centro, denominado \"La Olla.\" El balón se pasa entre las personas del círculo, y al tercer pase se debe rematar para golpear a los que ocupan la olla. Si alguien se equivoca al pasar o el remate falla, el que cometió el error pasa del círculo a la olla. Si alguien en la olla logra atrapar el remate, este podrá salir de la olla y volver al círculo. El juego continua hasta que solo quede un jugador fuera de la olla, quien se convierte en el ganador.",
-      "escena": "Olla"
+      "escena": "Olla",
+      "urlVideo": ""
     },
     {
       "nombre": "Yermis",
       "nombresAlternativos": "",
       "descripcion": "Este juego de equipo se juega con tapas de botellas, una bola y, en algunos casos, elementos que se asemejen a un bate.",
-      "pathVideo": "Data/Videos/VideoYermis",
+      "pathImagen": "Data/Imagenes/Yermis",
       "instruccionesJuego": "Hacer clic para disparar la bola hacia la torre de tapas. Si la torre es derribada, ponche a las personas apuntando y disparando con el mouse sin que se le acaben los lanzamientos. En caso contrario, debera esquivar las bolas lanzadas hacia usted.",
       "instruccionesVidaReal": "Se arma una torre de tapas en el piso. Los jugadores de un equipo se tomaran turnos para intentar derribarla. Si es derribada, el equipo lanzador debe ponchar al otro equipo mientras este intenta construir la torre nuevamente. Si el equipo defensor logra construir la torre, gritaran \"Yermis\" y ganaran un punto. De lo contrario, el equipo ofensivo pasara a defender y viceversa.",
-      "escena": "yermisTorre"
+      "escena": "yermisTorre",
+      "urlVideo": "https://youtu.be/J0Qq7vO5R78"
     },
     {
       "nombre": "Trompo",
       "nombresAlternativos": "Peonza, Piuca, Repión, Mona.",
       "descripcion": "El trompo es un dispositivo que gira sobre una punta, y se equilibra gracias a su gran momento angular.",
-      "pathVideo": "",
+      "pathImagen": "",
       "instruccionesJuego": "Haga clic para impulsar al trompo hacia la posición del puntero. Balancee el trompo hasta que se agote el tiempo para ganar.",
       "instruccionesVidaReal": "El trompo se pone a girar con una cuerda, pita o piola. Existen muchos trucos que se pueden realizar con un trompo.",
-      "escena": "Trompo"
+      "escena": "Trompo",
+      "urlVideo": ""
     },
     {
       "nombre": "Jacks",
-      "nombresAlternativos": "Jazz, Yazos, Jackses, Yaz, Yas, Chibcha.",
+      "nombresAlternativos": "Matatena, Jazz, Yazos, Jackses, Chibcha.",
       "descripcion": "Este juego se juega con unas fichas denominadas \"Jacks\", una bola que rebote y una superficie plana.",
-      "pathVideo": "Data/Videos/VideoJacks",
+      "pathImagen": "Data/Imagenes/Jackses",
       "instruccionesJuego": "Suelte la pelota haciendo clic sobre ella. Recoja todos los Jacks haciendo clic sobre ellos antes de que la bola rebote por segunda vez. Una vez recogidos los Jacks haga clic sobre la bola para agarrarla y ganar antes de que se acabe el tiempo.",
       "instruccionesVidaReal": "Hay distintas formas de jugar. Sin embargo, la mas jugada es lanzar la bola y agarrar la mayor cantidad de fichas antes de que la bola vuelva a caer.",
-      "escena": "jackses"
+      "escena": "jackses",
+      "urlVideo": "https://www.youtube.com/watch?v=fSCjJl-wOeQ"
     },
     {
       "nombre": "Fuchi",
       "nombresAlternativos": "Hacky sack, Fuchi ball",
       "descripcion": "Es un juego colombiano de pies que se juega con una pelota tejida",
-      "pathVideo": "",
+      "pathImagen": "",
       "instruccionesJuego": "Evite que la pelota toque el suelo. Deje caer la pelota y pateela haciendo clic sobre esta. Debe patearla al menos 6 veces antes de que el tiempo acabe para ganar. ",
       "instruccionesVidaReal": "Consiste en realizar trucos con una pelota chica de tela o con una hacky sack sin dejarla caer al suelo.",
-      "escena": "Fuchi"
+      "escena": "Fuchi",
+      "urlVideo": ""
     },
     {
       "nombre": "Rana",
       "nombresAlternativos": "Sapo.",
       "descripcion": "Este juego se juega con una mesa de Rana y unos aros metalicos.",
-      "pathVideo": "Data/Videos/VideoRana",
+      "pathImagen": "Data/Imagenes/Rana",
       "instruccionesJuego": "Haga clic para determinar la direccion y fuerza del lanzamiento. Acumule los puntos necesarios ingresando aros en la boca de las ranas o en los agujeros de la mesa. Tenga cuidado, ya que los lanzamientos son limitados.",
       "instruccionesVidaReal": "Los jugadores se toman turnos lanzando un determinado numero de aros (generalmente son 10). El jugador acumula puntos si inserta el aro en los agujeros de la mesa o en las bocas de las ranas. El jugador con mayor cantidad de puntos gana.",
-      "escena": "rana"
+      "escena": "rana",
+      "urlVideo": "https://youtu.be/XfIoz8YBPsc?t=27"
     },
     {
       "nombre": "Tejo",
       "nombresAlternativos": "Turmequé",
       "descripcion": "Es un deporte, que consiste en lanzar un disco metálico a unas canchas de embocinada para hacer estallar una mecha",
-      "pathVideo": "",
+      "pathImagen": "",
       "instruccionesJuego": "Has clic en la flecha para fijar la dirección y otro clic en la pantalla para fijar la fuerza.",
       "instruccionesVidaReal": "Se realiza el lanzamiento de un tejocon la finalidad de introducirlo en un bocín, en el cual se coloca una mecha",
-      "escena": "Tejo"
+      "escena": "Tejo",
+      "urlVideo": ""
     },
     {
       "nombre": "Coca",
       "nombresAlternativos": "Balero",
       "descripcion": "Es un juguete de madera que consta de un mango unido a una bola o barril perforado por medio de una cuerda.",
-      "pathVideo": "Data/Videos/VideoCoca",
+      "pathImagen": "Data/Imagenes/Coca",
       "instruccionesJuego": "Mueva la coca usando el mouse para encholar la esfera en el mango antes de que el tiempo se agote.",
       "instruccionesVidaReal": "El objetivo del juego es insertar la esfera o barril perforado en el mango usando movimientos manuales. Una vez insertado, es posible realizar otro tipo de maniobras. Por ejemplo, impulsar repetidas veces el mango para incrustar tantas veces como sea posible. El incrustar se le llama \"encholar\".",
-      "escena": "coca"
+      "escena": "coca",
+      "urlVideo": "https://www.youtube.com/watch?v=HrmBqH_lNlg"
     },
-	{
+    {
       "nombre": "Piquis",
       "nombresAlternativos": "Canicas, Maras, Bolas.",
       "descripcion": "Las piquis son esferas de vidrio de tamaño variable. Las más grandes se denominan \"Potas\", y las más pequeñas son \"Pinguas\".",
-      "pathVideo": "",
+      "pathImagen": "",
       "instruccionesJuego": "Haga clic para disparar la piqui en la dirección del puntero. Haga carambola con todas las piquis antes de que se agote el tiempo para ganar.",
       "instruccionesVidaReal": "Existen innumerables formas de jugar piquis. En colombia, los juegos más comunes son la troya, las cuartas, la meca, la vuelta a colombia y el quiebrahuesos. Todos los juegos tienen en común que los jugadores tienden a apostar sus piquis; el ganador se queda con las piquis de sus oponentes.",
-      "escena": "Biquis"
+      "escena": "Biquis",
+      "urlVideo": ""
     }
   ]
 }

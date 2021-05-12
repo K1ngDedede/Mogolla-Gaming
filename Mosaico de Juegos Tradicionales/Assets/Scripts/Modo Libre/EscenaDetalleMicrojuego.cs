@@ -24,9 +24,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
         descripcion += microjuego.descripcion;
         GameObject.FindGameObjectWithTag("descripcion").GetComponent<Text>().text = descripcion;
         CambiarInstruccionesRealidad();
-        VideoPlayer videoPlayer = GameObject.FindGameObjectWithTag("videoPlayer").GetComponent<VideoPlayer>();
-        videoPlayer.clip = Resources.Load<VideoClip>(microjuego.pathVideo);
-        //image.preserveAspect = true;
+        Image imagenJuego = GameObject.FindGameObjectWithTag("imagenMicrojuego").GetComponent<Image>();
+        Sprite imagen = Resources.Load<Sprite>(microjuego.pathImagen);
+        imagenJuego.sprite = imagen;
+        imagenJuego.preserveAspect = true;
     }
 
     public void CambiarInstruccionesRealidad()
@@ -189,5 +190,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 break;
         }
         SceneManager.LoadScene(ConfigUtils.MicrojuegoActual.escena);
+    }
+
+    public void AbrirEnlace()
+    {
+        Application.OpenURL(microjuego.urlVideo);
     }
 }

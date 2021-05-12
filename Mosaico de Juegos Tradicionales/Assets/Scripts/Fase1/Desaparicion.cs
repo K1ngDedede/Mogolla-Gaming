@@ -28,6 +28,7 @@ public class Desaparicion : MonoBehaviour
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         Animator anim = GetComponent<Animator>();
         Text text = GetComponent<Text>();
+        Image image = GetComponent<Image>();
         if (anim != null)
         {
             anim.enabled = false;
@@ -39,6 +40,10 @@ public class Desaparicion : MonoBehaviour
         if (text != null)
         {
             text.text = "";
+        }
+        if(image != null)
+        {
+            image.enabled = false;
         }
     }
 }
