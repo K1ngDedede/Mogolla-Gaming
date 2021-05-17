@@ -52,7 +52,7 @@ public class Click : MonoBehaviour
 		temptimer = tt.GetComponent<Text>();
 		temptimer.text = n.SecondsRemaining.ToString()+"s";
 		//currentTime -= 1*Time.deltaTime;
-        if (Input.GetMouseButtonDown(0) && fuchiHabilitado)
+        if (Input.GetMouseButtonDown(0) && fuchiHabilitado && !MenuPausa.pausado)
         {
 			GameControlScript.disabled2 = true;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

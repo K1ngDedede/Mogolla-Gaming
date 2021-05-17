@@ -42,7 +42,7 @@ public class TejoMov : MonoBehaviour
     void Update()
     {
 		
-        if (thrown)
+        if (thrown && !MenuPausa.pausado)
         {
             transform.localScale = transform.localScale * 0.997f;
             diffInSeconds = (Time.time - dateTime1);

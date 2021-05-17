@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Codigo adaptado de https://www.youtube.com/watch?v=FcnvwtyxLds
+
 public class Cuerda : MonoBehaviour
 {
     private LineRenderer lineRenderer;

@@ -38,6 +38,7 @@ public static class FuchiUtils
     public static Fase Fase
     {
         get { return fase; }
+        set { fase = value; }
     }
 
     public static void facil()

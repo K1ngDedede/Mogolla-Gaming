@@ -79,6 +79,7 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 break;
             case NombreMicrojuego.Olla:
                 OllaUtils.facilito();
+                OllaUtils._Fase = Fase.MODOLIBRE;
                 break;
             case NombreMicrojuego.Trompo:
                 TrompoUtils.facilito();
@@ -99,6 +100,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
             case NombreMicrojuego.Piquis:
                 piquisUtils.facilito();
                 piquisUtils._Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Fuchi:
+                FuchiUtils.facil();
+                FuchiUtils.Fase = Fase.MODOLIBRE;
                 break;
             default:
                 break;
@@ -185,6 +190,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
             case NombreMicrojuego.Piquis:
                 piquisUtils.difisil();
                 piquisUtils._Fase = Fase.MODOLIBRE;
+                break;
+            case NombreMicrojuego.Fuchi:
+                FuchiUtils.dificil();
+                FuchiUtils.Fase = Fase.MODOLIBRE;
                 break;
             default:
                 break;

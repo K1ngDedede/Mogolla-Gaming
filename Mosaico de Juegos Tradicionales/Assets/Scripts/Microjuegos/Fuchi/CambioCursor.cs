@@ -18,13 +18,19 @@ public class CambioCursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		transform.position = cursorPos;
-		
-		if(Input.GetMouseButtonDown(0)){
-			rend.sprite = handCursor;
-		}else if(Input.GetMouseButtonUp(0)){
-			rend.sprite = normalCursor;
-		}
+        if (!MenuPausa.pausado)
+        {
+            Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = cursorPos;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                rend.sprite = handCursor;
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                rend.sprite = normalCursor;
+            }
+        }
     }
 }
