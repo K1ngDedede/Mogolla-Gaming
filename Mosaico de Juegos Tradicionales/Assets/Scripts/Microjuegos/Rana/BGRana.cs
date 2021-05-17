@@ -22,7 +22,7 @@ public class BGRana : MonoBehaviour
     void Start()
     {
         bgm = gameObject.GetComponent<Renderer>().material;
-        vic = (Texture2D)Resources.Load("Microjuegos/Rana/Sprites/f2");
+        vic = (Texture2D)Resources.Load("Microjuegos/Coca/f2");
         bgm.mainTexture = vic;
         bgm.mainTextureScale = new Vector2(5f, 5f);
         vic.wrapMode = TextureWrapMode.Repeat;
