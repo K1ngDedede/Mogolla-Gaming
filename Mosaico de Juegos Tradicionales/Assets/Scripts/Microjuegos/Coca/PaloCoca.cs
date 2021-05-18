@@ -22,11 +22,16 @@ public class PaloCoca : MonoBehaviour
     {
         if(siguiendoMouse && !MenuPausa.pausado)
         {
-            Vector3 posMouse = Input.mousePosition;
-            posMouse.z = -Camera.main.transform.position.z;
-            posMouse = Camera.main.ScreenToWorldPoint(posMouse);
-            gameObject.transform.position = posMouse;
+            SeguirMouse();
         }
         
+    }
+
+    void SeguirMouse()
+    {
+        Vector3 posMouse = Input.mousePosition;
+        posMouse.z = -Camera.main.transform.position.z;
+        posMouse = Camera.main.ScreenToWorldPoint(posMouse);
+        gameObject.transform.position = posMouse;
     }
 }

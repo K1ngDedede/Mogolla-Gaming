@@ -6,15 +6,6 @@ public class FlechaMouse : MonoBehaviour
 {
     float fuerza = 20;
     Vector3 direccion, posMouse;
-    int disparos;
-
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

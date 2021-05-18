@@ -56,6 +56,7 @@ public static class JacksesUtils
 
     public static void Medio()
     {
+        tutorial = false;
         numeroJacks = 8;
         duracion = 12;
         fase = Fase.FASE2;
@@ -65,6 +66,7 @@ public static class JacksesUtils
 
     public static void Dificil()
     {
+        tutorial = false;
         numeroJacks = 10;
         duracion = 12;
         fase = Fase.FASE3;

@@ -11,14 +11,12 @@ public class JuegoJacks : MonoBehaviour
     float posYJacks = -3.4f;
     int cantidadJacks = JacksesUtils.NumeroJacks;
     int jacksRecolectados = 0;
-    GameObject[] jacks;
     string prefabLocation = "Microjuegos/Jackses/Prefabs/";
 
     Vector3 posMesa = new Vector3(0.035f, -2.96f, 0);
     GameObject mesa;
 
     GameObject bola;
-    Bola bolaScript;
 
     GameObject mano;
 
@@ -27,7 +25,6 @@ public class JuegoJacks : MonoBehaviour
 
     bool tutorial = JacksesUtils.Tutorial;
     GameObject flechaTutorial;
-    bool flechaInstanciada = false;
 
     Fase fase = JacksesUtils.Fase;
 
@@ -40,7 +37,6 @@ public class JuegoJacks : MonoBehaviour
         EventManagerJackses.AgregarListenerAgarrarJack(AgarrarJack);
 
         Cursor.visible = false;
-        jacks = new GameObject[cantidadJacks];
         //sapwnear jacks
         for(int i = 0; i < cantidadJacks; i++)
         {
@@ -57,8 +53,12 @@ public class JuegoJacks : MonoBehaviour
         mano = Resources.Load<GameObject>(prefabLocation + "Mano");
         Instantiate(mano);
 
-        flechaTutorial = Resources.Load<GameObject>(prefabLocation + "FlechaTutorial");
-        Instantiate(flechaTutorial);
+        if (tutorial)
+        {
+            flechaTutorial = Resources.Load<GameObject>(prefabLocation + "FlechaTutorial");
+            Instantiate(flechaTutorial);
+        }
+        
 
         mesa = Resources.Load<GameObject>(prefabLocation + "Mesa");
         Instantiate(mesa);
@@ -85,7 +85,7 @@ public class JuegoJacks : MonoBehaviour
 
     public void RevisarRecoleccion()
     {
-        if(jacksRecolectados == cantidadJacks)
+        if(jacksRecolectados == cantidadJacks && tutorial)
         {
             GameObject.FindGameObjectWithTag("flechaTutorial").GetComponent<FlechaTutorial>().Habilitar();
         }

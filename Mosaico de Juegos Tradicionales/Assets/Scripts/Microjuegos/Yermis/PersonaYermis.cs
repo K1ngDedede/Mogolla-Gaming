@@ -7,7 +7,7 @@ public class PersonaYermis : MonoBehaviour
 
     float fuerzaMinima = 5, fuerzaMaxima = 8;
 
-    string ubicacion = "Microjuegos/Yermis/Sprites/";
+    string ubicacionSprites = "Microjuegos/Yermis/Sprites/";
     bool ponchado = false;
 
     public bool Ponchado
@@ -28,11 +28,11 @@ public class PersonaYermis : MonoBehaviour
         int opcionSprite = Random.Range(1, 3);
         if(opcionSprite == 1)
         {
-            sprite = Resources.Load<Sprite>(ubicacion + "persona");
+            sprite = Resources.Load<Sprite>(ubicacionSprites + "persona");
         }
         else
         {
-            sprite = Resources.Load<Sprite>(ubicacion + "persona2");
+            sprite = Resources.Load<Sprite>(ubicacionSprites + "persona2");
         }
         GetComponent<SpriteRenderer>().sprite = sprite;
         int opcionOrientacion = Random.Range(1, 3);
@@ -51,11 +51,6 @@ public class PersonaYermis : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(direccion * fuerza, ForceMode2D.Impulse);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

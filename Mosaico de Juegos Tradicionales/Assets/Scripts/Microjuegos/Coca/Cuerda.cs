@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class Cuerda : MonoBehaviour
 {
-    private LineRenderer lineRenderer;
-    private List<SegmentoCuerda> segmentosCuerda = new List<SegmentoCuerda>();
-    private float longSegmentoCuerda = 0.3f;
-    private int numeroSegmentos = 20;
-    private float anchoLinea = 0.1f;
-    private Vector2 posFinal;
-    private bool siguiendoTapa = false;
-    private bool siguiendoMouse = true;
+    LineRenderer lineRenderer;
+    List<SegmentoCuerda> segmentosCuerda = new List<SegmentoCuerda>();
+    float longSegmentoCuerda = 0.3f;
+    int numeroSegmentos = 20;
+    float anchoLinea = 0.1f;
+    Vector2 posFinal;
+    bool siguiendoTapa = false;
+    bool siguiendoMouse = true;
     Vector2 gravedad = new Vector2(0f, -1f);
 
     public bool SiguiendoMouse
