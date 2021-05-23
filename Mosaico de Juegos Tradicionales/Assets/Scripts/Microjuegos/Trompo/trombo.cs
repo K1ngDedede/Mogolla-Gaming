@@ -177,10 +177,16 @@ public class trombo : MonoBehaviour
                 
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.RegistrarPerdidaMicrojuego("Trompo");
+                ManejadorFase2.PerderVida();
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                ManejadorFase3.RegistrarPerdidaMicrojuego("Trompo");
+                ManejadorFase3.PerderVida();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Perder();
@@ -210,10 +216,15 @@ public class trombo : MonoBehaviour
                     ManejadorFase1.RevisarFinFase();
                     break;
                 case Fase.FASE2:
-                    //llamar manejador de fase 2
+                    ManejadorFase2.AumentarMicrojuegosJugados();
+                    ManejadorFase2.RevisarFinFase();
+                    ManejadorFase2.RegistrarVictoria();
                     break;
                 case Fase.FASE3:
-                    //llamar manejador de fase 3
+                    TrompoUtils.loop();
+                    ManejadorFase3.AumentarMicrojuegosJugados();
+                    ManejadorFase3.RevisarFinFase();
+                    ManejadorFase3.RegistrarVictoria();
                     break;
                 case Fase.MODOLIBRE:
                     ManejadorModoLibre.Ganar();

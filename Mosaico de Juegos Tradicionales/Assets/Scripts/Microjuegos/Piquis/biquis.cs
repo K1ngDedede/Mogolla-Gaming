@@ -125,16 +125,22 @@ public class biquis : MonoBehaviour
         switch (fase)
         {
             case Fase.FASE1:
-                ManejadorFase1.RegistrarPerdidaMicrojuego("Olla");
+                ManejadorFase1.RegistrarPerdidaMicrojuego("Piquis");
                 ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.RegistrarPerdidaMicrojuego("Piquis");
+                ManejadorFase2.PerderVida();
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                ManejadorFase3.RegistrarPerdidaMicrojuego("Piquis");
+                ManejadorFase3.PerderVida();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Perder();
@@ -161,10 +167,15 @@ public class biquis : MonoBehaviour
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
+                ManejadorFase2.RegistrarVictoria();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                piquisUtils.loop();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
+                ManejadorFase3.RegistrarVictoria();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Ganar();

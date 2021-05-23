@@ -20,6 +20,9 @@ public class GBGScroller : MonoBehaviour
 
     [SerializeField]
     private float sY;
+
+    private const string cogote = "cogote";
+    private int state;
     void Start()
     {
         bgm = gameObject.GetComponent<Renderer>().material;
@@ -28,6 +31,7 @@ public class GBGScroller : MonoBehaviour
         vic.wrapMode = TextureWrapMode.Repeat;
         offX = 0;
         offY = 0;
+        state = 0;
     }
 
     
@@ -36,6 +40,25 @@ public class GBGScroller : MonoBehaviour
         offX += Time.deltaTime * sX;
         offY += Time.deltaTime * sY;
         bgm.mainTextureOffset = new Vector2(offX, offY);
+        if (Input.anyKeyDown && state<=cogote.Length)
+        {
+            if (Input.GetKeyDown(cogote[state].ToString()))
+            {
+                state++;
+            }
+            else
+            {
+                state = 0;
+            }
+            if (state == cogote.Length)
+            {
+                state++;
+                vic = Resources.Load<Texture2D>("Utils/Sprites/cogote");
+                vic.wrapMode = TextureWrapMode.Repeat;
+                bgm.mainTexture = vic;
+            }
+        }
+        
     }
     
 }

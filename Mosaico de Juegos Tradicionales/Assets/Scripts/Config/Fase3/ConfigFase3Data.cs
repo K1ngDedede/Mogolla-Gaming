@@ -147,6 +147,10 @@ public class ConfigFase3Data
         CocaUtils.Dificil();
         RanaUtils.Dificil();
         YermisUtils.Dificil();
+        TrompoUtils.difisil();
+        OllaUtils.difisil();
+        piquisUtils.difisil();
+        //FuchiUtils.dificil();
 
 
         //agregar microjuegos a jugar a la lista de microjuegos
@@ -155,17 +159,21 @@ public class ConfigFase3Data
         microjuegosAJugar.Add(NombreMicrojuego.Yermis);
         microjuegosAJugar.Add(NombreMicrojuego.Rana);
         microjuegosAJugar.Add(NombreMicrojuego.Coca);
+        microjuegosAJugar.Add(NombreMicrojuego.Trompo);
+        microjuegosAJugar.Add(NombreMicrojuego.Olla);
+        microjuegosAJugar.Add(NombreMicrojuego.Piquis);
+        //microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
 
         //agregar microjuegos al pool
         poolMicrojuegos = new List<NombreMicrojuego>();
         poolMicrojuegos.Add(NombreMicrojuego.Coca);
         //poolMicrojuegos.Add(NombreMicrojuego.Fuchi);
         poolMicrojuegos.Add(NombreMicrojuego.Jackses);
-        //poolMicrojuegos.Add(NombreMicrojuego.Olla);
-        //poolMicrojuegos.Add(NombreMicrojuego.Piquis);
+        poolMicrojuegos.Add(NombreMicrojuego.Olla);
+        poolMicrojuegos.Add(NombreMicrojuego.Piquis);
         poolMicrojuegos.Add(NombreMicrojuego.Rana);
         //poolMicrojuegos.Add(NombreMicrojuego.Tejo);
-        //poolMicrojuegos.Add(NombreMicrojuego.Trompo);
+        poolMicrojuegos.Add(NombreMicrojuego.Trompo);
         poolMicrojuegos.Add(NombreMicrojuego.Yermis);
 
         //randomizar lista de microjuegos

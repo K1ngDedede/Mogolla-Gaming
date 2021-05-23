@@ -266,10 +266,15 @@ public class Oya : MonoBehaviour
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
+                ManejadorFase2.RegistrarVictoria();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                OllaUtils.loop();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
+                ManejadorFase3.RegistrarVictoria();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Ganar();
@@ -303,10 +308,16 @@ public class Oya : MonoBehaviour
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.RegistrarPerdidaMicrojuego("Olla");
+                ManejadorFase2.PerderVida();
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                ManejadorFase3.RegistrarPerdidaMicrojuego("Olla");
+                ManejadorFase3.PerderVida();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Perder();

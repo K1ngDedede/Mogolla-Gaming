@@ -57,5 +57,10 @@ public static class OllaUtils
         fase = Fase.FASE3;
     }
 
+    public static void loop()
+    {
+        speedMax *= 1.5f;
+        speedBol *= 1.3f;
+    }
 
 }

@@ -76,4 +76,11 @@ public static class TrompoUtils
         fase = Fase.FASE3;
     }
 
+    public static void loop()
+    {
+        torqueR *= 1.2f;
+        torqueP *= 0.8f;
+        mov += 1;
+    }
+
 }

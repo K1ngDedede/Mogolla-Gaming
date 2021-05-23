@@ -123,15 +123,21 @@ public class ConfigFase2Data
         JacksesUtils.Medio();
         CocaUtils.Medio();
         RanaUtils.Medio();
-        YermisUtils.Medio();
-
+        //YermisUtils.Medio();
+        OllaUtils.medio();
+        TrompoUtils.medio();
+        piquisUtils.medio();
+        FuchiUtils.facil();
 
         //agregar microjuegos a jugar a la lista de microjuegos
         microjuegosAJugar = new List<NombreMicrojuego>();
         microjuegosAJugar.Add(NombreMicrojuego.Jackses);
-        microjuegosAJugar.Add(NombreMicrojuego.Yermis);
+        microjuegosAJugar.Add(NombreMicrojuego.Olla);
         microjuegosAJugar.Add(NombreMicrojuego.Rana);
         microjuegosAJugar.Add(NombreMicrojuego.Coca);
+        microjuegosAJugar.Add(NombreMicrojuego.Trompo);
+        microjuegosAJugar.Add(NombreMicrojuego.Piquis);
+        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();

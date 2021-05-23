@@ -9,6 +9,7 @@ public static class piquisUtils
     static float sMod = 1;
     static int d = 12;
     static Fase fase = Fase.FASE1;
+    static int iterator = 0;
 
     public static int Jogo
     {
@@ -67,5 +68,22 @@ public static class piquisUtils
         fase = Fase.FASE3;
     }
 
+    public static void loop()
+    {
+        iterator++;
+        if (iterator % 5 == 0)
+        {
+            jogo++;
+        }
+        else
+        {
+            fMod = (int) (fMod*1.1f);
+            sMod *= 0.95f;
+        }
+        if (iterator % 2 == 0 && d > 4)
+        {
+            d--;
+        }
+    }
 
 }
