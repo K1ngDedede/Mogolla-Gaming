@@ -59,7 +59,7 @@ public class IndicadorFuerza : MonoBehaviour
     private void Mover()
     {
         Vector3 posActual = gameObject.transform.position;
-        if(posActual.x >= posXMaxima || posActual.x <= posXMinima)
+        if(posActual.x >= posXMaxima + incrementoX || posActual.x <= posXMinima - incrementoX)
         {
             multiplicador *= -1;
         }

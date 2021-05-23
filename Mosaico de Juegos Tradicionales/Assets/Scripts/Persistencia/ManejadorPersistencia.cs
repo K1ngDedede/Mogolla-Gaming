@@ -7,9 +7,6 @@ using System;
 public static class ManejadorPersistencia
 {
     static string endpoint = "https://proyecto-de-grado-7e7d3-default-rtdb.firebaseio.com/";
-    //static string endpointAuth = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAGVYtptYjUzEB1yAbgMXq_6Fwsv63qItc";
-    //static string endpointLogin = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyAGVYtptYjUzEB1yAbgMXq_6Fwsv63qItc";
-    static string idToken;
 
 
     //private static void RegistrarAnonimo()

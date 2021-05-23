@@ -66,7 +66,7 @@ public class EscenaIntermediaFase3 : MonoBehaviour
 
 
         timerCambioEscena = Camera.main.gameObject.AddComponent<Timer>();
-        timerCambioEscena.Duration = 1;
+        timerCambioEscena.Duration = 5;
         timerCambioEscena.Run();
 
     }
