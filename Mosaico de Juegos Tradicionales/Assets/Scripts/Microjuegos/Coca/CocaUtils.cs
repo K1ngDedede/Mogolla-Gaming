@@ -71,4 +71,11 @@ public static class CocaUtils
         fase = Fase.FASE3;
     }
 
+    public static void AumentarDificultad()
+    {
+        fuerzaX += fuerzaX * 0.2f;
+        fuerzaY += fuerzaY * 0.2f;
+        gravedad.y += gravedad.y * 0.2f;
+    }
+
 }

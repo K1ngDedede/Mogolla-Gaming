@@ -546,6 +546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelPausa
       objectReference: {fileID: 0}
+    - target: {fileID: 5932991983974736341, guid: 76001408a6a5df2429bba4a9c3da2f69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5932991983974736346, guid: 76001408a6a5df2429bba4a9c3da2f69,
         type: 3}
       propertyPath: m_Pivot.x

@@ -34,7 +34,7 @@ public class MenuModoHistoria : MonoBehaviour
 
     public void EntrarFase3()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("fase3");
     }
 
     public void EntrarModoLibre()

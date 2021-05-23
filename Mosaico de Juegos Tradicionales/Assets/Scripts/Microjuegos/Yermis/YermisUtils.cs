@@ -89,4 +89,15 @@ public static class YermisUtils
         numeroBlancosAtaque = 6;
         fase = Fase.FASE3;
     }
+
+    public static void AumentarDificultad()
+    {
+        incrementoAnguloFlecha += incrementoAnguloFlecha * 0.1f;
+        numeroBolasDefensa ++;
+        minFuerzaBolasDefensa += minFuerzaBolasDefensa*0.1f;
+        maxFuerzaBolasDefensa += maxFuerzaBolasDefensa*0.1f;
+        anguloDisparoDefensa = 45;
+        disparosAtaque++;
+        numeroBlancosAtaque++;
+    }
 }

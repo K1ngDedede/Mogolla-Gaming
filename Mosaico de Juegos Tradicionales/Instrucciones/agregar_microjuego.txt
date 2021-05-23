@@ -32,7 +32,10 @@ private void Ganar()
                 ManejadorFase2.RegistrarVictoria();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                Utils.AumentarDificultad();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
+                ManejadorFase3.RegistrarVictoria();
                 break;
 	    case Fase.MODOLIBRE:
                 ManejadorModoLibre.Ganar();
@@ -57,7 +60,10 @@ private void Perder()
                 ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                ManejadorFase3.RegistrarPerdidaMicrojuego(Nombre del microjuego);
+                ManejadorFase3.PerderVida();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
 	    case Fase.MODOLIBRE:
                 ManejadorModoLibre.Perder();
@@ -70,6 +76,7 @@ Agregar un microjuego a una fase X:
 1. Paso movido a las instrucciones superiores
 2. En la clase ConfigFaseXData.cs se define la dificultad del microjuego usando la clase estática definida previamente.
 3. En esta misma clase se agrega el microjuego a la lista microJuegosAJugar.
+4. Si es la fase 3 se debe agregar una funcion IncrementarDificultad() a la clas estatica del microjuego
 
 Agregar un microjuego al modo libre:
 1. En el canvas de la escena modoLibre, agregar una imagen representativa del microjuego y agregarle el componente botón y los scripts 

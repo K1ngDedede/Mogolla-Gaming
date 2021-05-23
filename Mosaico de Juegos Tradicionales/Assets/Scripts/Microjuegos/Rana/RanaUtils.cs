@@ -68,4 +68,14 @@ public static class RanaUtils
         puntajeRequerido = 200;
         fase = Fase.FASE3;
     }
+
+    public static void AumentarDificultad()
+    {
+        incrementoAngulo += incrementoAngulo * 0.1f;
+        velocidadBarraFuerza += velocidadBarraFuerza * 0.1f;
+        if (puntajeRequerido < 295)
+        {
+            puntajeRequerido += 5;
+        }
+    }
 }

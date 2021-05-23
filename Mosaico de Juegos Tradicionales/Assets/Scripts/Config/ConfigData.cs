@@ -106,6 +106,7 @@ public class ConfigData
         juegoCargado = true;
         microjuegos = new List<Microjuego>();
         juegosJson = Resources.Load<TextAsset>("Data/juegos");
+        Debug.Log(juegosJson.text);
         Microjuegos microjuegosJson = JsonUtility.FromJson<Microjuegos>(juegosJson.text);
         microjuegoActual = new Microjuego();
         foreach (Microjuego microjuego in microjuegosJson.microjuegos)

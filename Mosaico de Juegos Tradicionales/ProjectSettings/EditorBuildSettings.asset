@@ -86,4 +86,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/derrotaFase2.unity
     guid: 8aa59d4e84e976a428cb7fd0151aea2c
+  - enabled: 1
+    path: Assets/Scenes/fase3.unity
+    guid: 6fe70ac9e2ee8ca45a7d7f37c1e99914
+  - enabled: 1
+    path: Assets/Scenes/victoriaFase3.unity
+    guid: 66d4aac84d97b7348be29cdbd8b04e67
+  - enabled: 1
+    path: Assets/Scenes/escenaIntermediaFase3.unity
+    guid: 472172132689a4b479215abdbc2f57eb
+  - enabled: 1
+    path: Assets/Scenes/derrotaFase3.unity
+    guid: 1f8f31ea6c6725e47ae209ede4de270f
+  - enabled: 1
+    path: Assets/Scenes/tablaClasificacion.unity
+    guid: c2cf96c6520617841bb273653f4429df
   m_configObjects: {}

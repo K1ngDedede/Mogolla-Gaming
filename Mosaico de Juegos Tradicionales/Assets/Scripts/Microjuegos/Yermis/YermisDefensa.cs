@@ -235,13 +235,16 @@ public class YermisDefensa : MonoBehaviour
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                ManejadorFase2.RegistrarPerdidaMicrojuego("Jackses");
+                ManejadorFase2.RegistrarPerdidaMicrojuego("YermisDefensa");
                 ManejadorFase2.PerderVida();
                 ManejadorFase2.AumentarMicrojuegosJugados();
                 ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                ManejadorFase3.RegistrarPerdidaMicrojuego("YermisDefensa");
+                ManejadorFase3.PerderVida();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Perder();
@@ -267,7 +270,10 @@ public class YermisDefensa : MonoBehaviour
                 ManejadorFase2.RegistrarVictoria();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                YermisUtils.AumentarDificultad();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
+                ManejadorFase3.RegistrarVictoria();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Ganar();

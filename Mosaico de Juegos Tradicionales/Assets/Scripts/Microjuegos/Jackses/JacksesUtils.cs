@@ -74,4 +74,11 @@ public static class JacksesUtils
         escalaGravedad = 1;
     }
 
+    public static void AumentarDificultad()
+    {
+        numeroJacks++;
+        tiempoRestante = 0;
+        escalaGravedad += escalaGravedad * 0.1f;
+    }
+
 }
