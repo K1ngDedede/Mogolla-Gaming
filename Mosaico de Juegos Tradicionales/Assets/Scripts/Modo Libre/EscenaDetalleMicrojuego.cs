@@ -4,11 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using System.Runtime.InteropServices;
 
 public class EscenaDetalleMicrojuego : MonoBehaviour
 {
     Microjuego microjuego;
     GameObject botonJueguelo, botonRealidad;
+
+    public void OpenLinkJSPlugin(string link)
+    {
+        #if !UNITY_EDITOR
+        openWindow("http://unity3d.com");
+        #endif
+    }
+
+    [DllImport("__Internal")]
+    private static extern void openWindow(string url);
     // Start is called before the first frame update
     void Start()
     {
@@ -203,6 +214,7 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
 
     public void AbrirEnlace()
     {
-        Application.OpenURL(microjuego.urlVideo);
+        //OpenURLInExternalWindow(microjuego.urlVideo);
+        openWindow(microjuego.urlVideo);
     }
 }
