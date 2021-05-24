@@ -41,7 +41,7 @@ public class IndicadorFuerza : MonoBehaviour
             Camera.main.GetComponent<Rana>().InvocarRevisarFinAros();
             enMovimiento = false;
             fuerza = Mathf.Log(multiplicadorFuerza * (gameObject.transform.position.x + posXMaxima)) * multiplicadorFuerza;          
-            GameObject.FindGameObjectWithTag("flechaRotatoria").GetComponent<FlechaRana>().DispararAro(fuerza);
+            GameObject.FindGameObjectWithTag("flechaRotatoria").GetComponent<FlechaRana>().DispararAro(fuerza-0.5f);
             GetComponent<SpriteRenderer>().enabled = false;
             foreach (GameObject barra in GameObject.FindGameObjectsWithTag("barraPaciencia"))
             {

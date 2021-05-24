@@ -36,7 +36,7 @@ public class EscenaIntermediaFase2 : MonoBehaviour
         switch (vidasRestantes)
         {
             case 2:
-                chuloScript = chulos[0].GetComponent<Chulo>();
+                chuloScript = chulos[2].GetComponent<Chulo>();
                 if (ConfigFase2Utils.AcabaDePerder)
                 {
                     chuloScript.Perder();
@@ -49,13 +49,13 @@ public class EscenaIntermediaFase2 : MonoBehaviour
             case 1:
                 if (ConfigFase2Utils.AcabaDePerder)
                 {
-                    chulos[2].GetComponent<Chulo>().Perder();
-                    chulos[0].GetComponent<Chulo>().CambiarAEquis();
+                    chulos[1].GetComponent<Chulo>().Perder();
+                    chulos[2].GetComponent<Chulo>().CambiarAEquis();
                 }
                 else
                 {
+                    chulos[1].GetComponent<Chulo>().CambiarAEquis();
                     chulos[2].GetComponent<Chulo>().CambiarAEquis();
-                    chulos[0].GetComponent<Chulo>().CambiarAEquis();
                 }
                 break;
         }

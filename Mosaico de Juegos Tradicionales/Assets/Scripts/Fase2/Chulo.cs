@@ -9,13 +9,19 @@ public class Chulo : MonoBehaviour
     SpriteRenderer spriteRenderer;
     string ubicacion = "Cutscene/Fase2/";
     Animation anim;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animation>();
+        chulo = Resources.Load<Sprite>(ubicacion + "chulo");
+        equis = Resources.Load<Sprite>(ubicacion + "equis");
+    }
     // Start is called before the first frame update
     void Start()
     {
-        chulo = Resources.Load<Sprite>(ubicacion + "chulo");
-        equis = Resources.Load<Sprite>(ubicacion + "equis");
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animation>();
+        
+        
     }
 
     // Update is called once per frame
