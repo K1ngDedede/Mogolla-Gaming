@@ -258,8 +258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.5, y: -42.2}
-  m_SizeDelta: {x: 303.03348, y: 90.31714}
+  m_AnchoredPosition: {x: 44.9, y: -42.2}
+  m_SizeDelta: {x: 335.92606, y: 90.31714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181245700
 MonoBehaviour:
@@ -293,7 +293,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Las reglas son sencillas. Debe ganar X juegos sin decepcionar al Jurado.
+  m_Text: "Las reglas son sencillas. Debe ganar 8 juegos sin decepcionar al Jurado.
     Divi\xE9rtase y buena suerte."
 --- !u!222 &181245701
 CanvasRenderer:

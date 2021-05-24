@@ -138,6 +138,8 @@ public class ConfigFase2Data
         microjuegosAJugar.Add(NombreMicrojuego.Trompo);
         microjuegosAJugar.Add(NombreMicrojuego.Piquis);
         microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        NombreMicrojuego microjuegoAleatorio = microjuegosAJugar[GenerarNumeroAleatorio(microjuegosAJugar.Count-1)];
+        microjuegosAJugar.Add(microjuegoAleatorio);
 
         //randomizar lista de microjuegos
         RandomizarMicrojuegos();
