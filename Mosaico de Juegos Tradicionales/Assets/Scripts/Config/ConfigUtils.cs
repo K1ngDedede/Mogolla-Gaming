@@ -49,18 +49,6 @@ public static class ConfigUtils
     }
 
 
-    public static string Gamertag
-    {
-        get { return configData.Gamertag; }
-        set { configData.Gamertag = value; }
-    }
-
-    public static int PuntuacionMaximaFase3
-    {
-        get { return configData.PuntuacionMaximaFase3; }
-        set { configData.PuntuacionMaximaFase3 = value; }
-    }
-
     public static Microjuego BuscarMicrojuego(NombreMicrojuego nombreMicrojuego)
     {
         Microjuego microjuegoRetorno = null;

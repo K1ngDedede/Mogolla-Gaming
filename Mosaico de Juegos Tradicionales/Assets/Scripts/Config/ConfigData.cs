@@ -6,11 +6,9 @@ using System;
 public class ConfigData
 {
 
-    static int fase = 3;
+    static int fase = 1;
     static List<Microjuego> microjuegos;
     static Microjuego microjuegoActual;
-    static string gamerTag = "Anon";
-    static int puntuacionMaximaFase3 = 0;
     static bool juegoCargado = false;
     static bool primerIntentoFase = true;
 
@@ -54,19 +52,6 @@ public class ConfigData
         set { fase = value; }
     }
 
-    
-
-    public string Gamertag
-    {
-        get { return gamerTag; }
-        set { gamerTag = value; }
-    }
-
-    public int PuntuacionMaximaFase3
-    {
-        get { return puntuacionMaximaFase3; }
-        set { puntuacionMaximaFase3 = value; }
-    }
 
     private string DarNombreMicrojuego(NombreMicrojuego nombreMicrojuego)
     {
