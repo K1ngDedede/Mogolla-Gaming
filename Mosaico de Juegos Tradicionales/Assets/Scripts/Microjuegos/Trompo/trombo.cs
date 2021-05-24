@@ -70,15 +70,16 @@ public class trombo : MonoBehaviour
         movTarget = papa.position;
         switch (mov)
         {
+            case 0:
+                movTarget=Vector3.zero;
+                break;
             case 1:
                 movTarget.x = 2.5f;
                 break;
-            case 2:
+            default:
                 movTarget.x = Random.Range(-2.5f, 2.5f);
                 break;
-            default:
-                movTarget=Vector3.zero;
-                break;
+
         }
         prevs = Mathf.Sign(gameObject.transform.eulerAngles.z);
         n.Run();

@@ -133,7 +133,7 @@ public class Oya : MonoBehaviour
                 }
             }
             //el sape
-            if (Input.GetMouseButtonDown(0) && Vector3.Distance(bol.transform.position, hand.transform.position)<0.7f && !MenuPausa.pausado)
+            if (Input.GetMouseButtonDown(0) && (Vector3.Distance(bol.transform.position, hand.transform.position)<0.85f||Vector3.Distance(bol.transform.position, fellas[0].transform.position)<0.3f) && !MenuPausa.pausado)
             {
                 sFlag = Input.mousePosition;
                 sFlag.z = -Camera.main.transform.position.z;
@@ -156,8 +156,7 @@ public class Oya : MonoBehaviour
             }
             else if(Vector3.Distance(sFlag, transform.position)<1.2f)
             {
-               //TODO reemplazar condición por hitbox, eventualmente 
-               returnVic();
+                returnVic();
                state++;
             }
             else
