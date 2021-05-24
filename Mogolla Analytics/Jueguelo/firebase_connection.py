@@ -37,4 +37,4 @@ def armar_diccionario_sesiones():
         sesiones_list.append(sesion_dict)
     return sesiones_list
 
-armar_diccionario_sesiones()
+print(armar_diccionario_sesiones())
