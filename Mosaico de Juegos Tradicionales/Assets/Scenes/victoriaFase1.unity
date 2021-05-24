@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 430979239}
   - component: {fileID: 430979241}
   - component: {fileID: 430979240}
+  - component: {fileID: 430979242}
   m_Layer: 5
   m_Name: TextoVictoria
   m_TagString: Untagged
@@ -255,8 +256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134, y: 0}
-  m_SizeDelta: {x: 600, y: 600}
+  m_AnchoredPosition: {x: 121.3, y: 0}
+  m_SizeDelta: {x: 565.36035, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &430979240
 MonoBehaviour:
@@ -279,7 +280,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1992e25dcb327bc4a8cb30f8e0d5f87f, type: 3}
-    m_FontSize: 60
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -290,7 +291,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA1Victoria!"
+  m_Text: "\xA1Buena mijo, le veo futuro!"
 --- !u!222 &430979241
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -299,6 +300,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430979238}
   m_CullTransparentMesh: 0
+--- !u!114 &430979242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430979238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e24473ffb3dfb468aa1b98144d2db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoAparicion: 0
+  duracionCaracter: 0.06
 --- !u!1 &462469142
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018617908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.14, y: 0.03, z: 0}
+  m_LocalPosition: {x: -5, y: 0.03, z: 0}
   m_LocalScale: {x: 0.3508671, y: 0.3508671, z: 0.7017342}
   m_Children: []
   m_Father: {fileID: 0}
