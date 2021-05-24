@@ -18,6 +18,7 @@ public static class ManejadorFase1
     public static void EmpezarTutorial()
     {
         TrompoUtils.tutorial();
+        ConfigUtils.MicrojuegoActual = ConfigUtils.BuscarMicrojuego(NombreMicrojuego.Trompo);
         SceneManager.LoadScene("Trompo");
     }
 
