@@ -18,6 +18,7 @@ public class ConfigFase1Data
     static string fecha;
     static bool acabaDePerder;
 
+
     public bool AcabaDePerder
     {
         get { return acabaDePerder; }
@@ -79,6 +80,7 @@ public class ConfigFase1Data
         get { return intentosTutorial; }
         set { intentosTutorial = value; }
     }
+
 
     public static void RandomizarMicrojuegos()
     {

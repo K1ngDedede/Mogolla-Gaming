@@ -12,7 +12,12 @@ public class EscenaIntermediaFase3 : MonoBehaviour
     Timer timerCambioEscena;
     string ubicacion = "Cutscene/Fase2/";
 
-
+    private void Awake()
+    {
+        timerCambioEscena = Camera.main.gameObject.AddComponent<Timer>();
+        timerCambioEscena.Duration = 5;
+        timerCambioEscena.Run();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -65,9 +70,7 @@ public class EscenaIntermediaFase3 : MonoBehaviour
 
 
 
-        timerCambioEscena = Camera.main.gameObject.AddComponent<Timer>();
-        timerCambioEscena.Duration = 5;
-        timerCambioEscena.Run();
+        
 
     }
 

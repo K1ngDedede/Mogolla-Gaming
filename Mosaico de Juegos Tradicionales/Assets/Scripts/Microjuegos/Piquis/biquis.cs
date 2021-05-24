@@ -74,7 +74,7 @@ public class biquis : MonoBehaviour
             lmao.AddForce((d)*fMod,ForceMode2D.Force);
         }
         //Se gana cuando todas las piquis hayan colisionado
-        if (state == jogo + 2)
+        if (state == jogo + 2 && letimer.Running)
         {
             letimer.Stop();
             returnVic();

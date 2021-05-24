@@ -88,4 +88,9 @@ public static class TejoUtils
 		y2 = -1f;
 		
     }
+
+    public static void IncrementarDificultad()
+    {
+
+    }
 }

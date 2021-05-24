@@ -19,11 +19,17 @@ public class EscenaIntermediaFase1 : MonoBehaviour
     //datos de la barra medidora
     Color alto = new Color(0.65098f, 0.690196f, 0.141176f), medio = new Color(0.97254f, 0.952941f, 0.6196f), bajo = new Color(0.333333f, 0.22745f, 0.196078f);
 
+    private void Awake()
+    {
+        timerCambioEscena = Camera.main.gameObject.AddComponent<Timer>();
+        timerCambioEscena.Duration = 5;
+        timerCambioEscena.Run();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         int vidasRestantes = ConfigFase1Utils.VidasRestantes;
-
         NombreMicrojuego siguienteMicrojuego = ConfigFase1Utils.MicrojuegosAJugar[ConfigFase1Utils.NumMicrojuegosJugados];
         DatosSiguienteMicrojuego(siguienteMicrojuego);
         textoPirinola = GameObject.FindGameObjectWithTag("TextoPirinola").GetComponent<Text>();
@@ -101,9 +107,7 @@ public class EscenaIntermediaFase1 : MonoBehaviour
             barraPaciencia.transform.localScale = escalaBarra;
         }
 
-        timerCambioEscena = Camera.main.gameObject.AddComponent<Timer>();
-        timerCambioEscena.Duration = 5;
-        timerCambioEscena.Run();
+        
 
     }
 

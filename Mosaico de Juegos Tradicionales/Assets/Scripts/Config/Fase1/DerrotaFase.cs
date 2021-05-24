@@ -21,11 +21,13 @@ public class DerrotaFase : MonoBehaviour
 
     public void Reintentar()
     {
+        ConfigUtils.PrimerIntentoFase = false;
         SceneManager.LoadScene(escenaFase);
     }
 
     public void VolverAMenu()
     {
+        ConfigUtils.PrimerIntentoFase = true;
         SceneManager.LoadScene("menu1");
     }
 }

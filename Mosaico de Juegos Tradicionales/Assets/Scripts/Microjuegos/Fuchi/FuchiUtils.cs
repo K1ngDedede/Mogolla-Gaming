@@ -55,6 +55,17 @@ public static class FuchiUtils
 		x1 = 3.0f;
 		y0 = 1.5f;
 		y1 = 5.0f;
+        fase = Fase.FASE1;
+    }
+
+    public static void medio()
+    {
+        fase = Fase.FASE2;
+    }
+
+    public static void IncrementarDificultad()
+    {
+
     }
 
     public static void dificil()
@@ -69,5 +80,6 @@ public static class FuchiUtils
 		x1 = 3.0f;
 		y0 = 1.5f;
 		y1 = 5.0f;
+        fase = Fase.FASE3;
     }
 }

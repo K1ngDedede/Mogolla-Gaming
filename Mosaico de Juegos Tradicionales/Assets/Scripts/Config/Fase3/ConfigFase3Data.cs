@@ -130,7 +130,7 @@ public class ConfigFase3Data
     {
         puntaje = 0;
         numMicrojuegosJugados = 0;
-        vidasTotales = 3;
+        vidasTotales = 4;
         vidasRestantes = vidasTotales;
         sesionFase3Terminada = false;
         microjuegosPerdidos = new List<string>();
@@ -150,7 +150,8 @@ public class ConfigFase3Data
         TrompoUtils.difisil();
         OllaUtils.difisil();
         piquisUtils.difisil();
-        //FuchiUtils.dificil();
+        TejoUtils.Dificil();
+        FuchiUtils.dificil();
 
 
         //agregar microjuegos a jugar a la lista de microjuegos
@@ -162,17 +163,18 @@ public class ConfigFase3Data
         microjuegosAJugar.Add(NombreMicrojuego.Trompo);
         microjuegosAJugar.Add(NombreMicrojuego.Olla);
         microjuegosAJugar.Add(NombreMicrojuego.Piquis);
-        //microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
 
         //agregar microjuegos al pool
         poolMicrojuegos = new List<NombreMicrojuego>();
         poolMicrojuegos.Add(NombreMicrojuego.Coca);
-        //poolMicrojuegos.Add(NombreMicrojuego.Fuchi);
+        poolMicrojuegos.Add(NombreMicrojuego.Fuchi);
         poolMicrojuegos.Add(NombreMicrojuego.Jackses);
         poolMicrojuegos.Add(NombreMicrojuego.Olla);
         poolMicrojuegos.Add(NombreMicrojuego.Piquis);
         poolMicrojuegos.Add(NombreMicrojuego.Rana);
-        //poolMicrojuegos.Add(NombreMicrojuego.Tejo);
+        poolMicrojuegos.Add(NombreMicrojuego.Tejo);
         poolMicrojuegos.Add(NombreMicrojuego.Trompo);
         poolMicrojuegos.Add(NombreMicrojuego.Yermis);
 

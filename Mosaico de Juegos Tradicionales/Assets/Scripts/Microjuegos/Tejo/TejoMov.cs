@@ -80,19 +80,24 @@ public class TejoMov : MonoBehaviour
 	}
 	private void Ganar()
     {
+        Cursor.visible = true;
         switch (fase)
         {
             case Fase.FASE1:
 				ManejadorFase1.RegistrarVictoria();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
-				Cursor.visible = true;
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.RegistrarVictoria();
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                TejoUtils.IncrementarDificultad();
+                ManejadorFase3.RegistrarVictoria();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Ganar();
@@ -104,20 +109,27 @@ public class TejoMov : MonoBehaviour
     {
 		GameObject musica = GameObject.FindGameObjectWithTag("musica");
         Destroy(musica);
+        Cursor.visible = true;
         //timerJuego.Stop();
         switch (fase)
         {
             case Fase.FASE1:
-                ManejadorFase1.RegistrarPerdidaMicrojuego("YermisAtaque");
+                ManejadorFase1.RegistrarPerdidaMicrojuego("Tejo");
                 ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.RegistrarPerdidaMicrojuego("Tejo");
+                ManejadorFase2.PerderVida();
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                ManejadorFase3.RegistrarPerdidaMicrojuego("Tejo");
+                ManejadorFase3.PerderVida();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Perder();

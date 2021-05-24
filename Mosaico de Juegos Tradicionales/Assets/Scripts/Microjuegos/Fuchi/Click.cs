@@ -117,19 +117,24 @@ public class Click : MonoBehaviour
 	
 	private void Ganar()
     {
+        Cursor.visible = true;
         switch (fase)
         {
             case Fase.FASE1:
 				ManejadorFase1.RegistrarVictoria();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
-				Cursor.visible = true;
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
+                ManejadorFase2.RegistrarVictoria();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                FuchiUtils.IncrementarDificultad();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
+                ManejadorFase3.RegistrarVictoria();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Ganar();
@@ -142,26 +147,32 @@ public class Click : MonoBehaviour
     {
         GameObject musica = GameObject.FindGameObjectWithTag("musica");
         Destroy(musica);
+        Cursor.visible = true;
         //timerJuego.Stop();
         switch (fase)
         {
             case Fase.FASE1:
-                ManejadorFase1.RegistrarPerdidaMicrojuego("YermisAtaque");
+                ManejadorFase1.RegistrarPerdidaMicrojuego("Fuchi");
                 ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();
                 break;
             case Fase.FASE2:
-                //llamar manejador de fase 2
+                ManejadorFase2.RegistrarPerdidaMicrojuego("Fuchi");
+                ManejadorFase2.PerderVida();
+                ManejadorFase2.AumentarMicrojuegosJugados();
+                ManejadorFase2.RevisarFinFase();
                 break;
             case Fase.FASE3:
-                //llamar manejador de fase 3
+                ManejadorFase3.RegistrarPerdidaMicrojuego("Fuchi");
+                ManejadorFase3.PerderVida();
+                ManejadorFase3.AumentarMicrojuegosJugados();
+                ManejadorFase3.RevisarFinFase();
                 break;
             case Fase.MODOLIBRE:
                 ManejadorModoLibre.Perder();
                 break;
         }
-        
     }
 	
 	private void FadeMusica(float duracionFade)

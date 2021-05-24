@@ -15,7 +15,7 @@ public class BotonTutorial : MonoBehaviour
     void Start()
     {
         Image imageComponent = gameObject.GetComponent<Image>();
-        if (ConfigUtils.Fase == 1)
+        if (ConfigUtils.Fase == 1 && ConfigUtils.PrimerIntentoFase)
         {
             gameObject.SetActive(false);
             Invoke("Visibilizar", tiempo);

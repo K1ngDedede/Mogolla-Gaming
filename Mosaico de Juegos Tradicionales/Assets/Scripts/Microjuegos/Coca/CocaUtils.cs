@@ -55,6 +55,7 @@ public static class CocaUtils
 
     public static void Medio()
     {
+        duracion = 10;
         fuerzaX = 3;
         fuerzaY = 1f;
         longSegmentoCuerda = 0.4f;
@@ -64,6 +65,7 @@ public static class CocaUtils
 
     public static void Dificil()
     {
+        duracion = 8;
         fuerzaX = 4;
         fuerzaY = 2f;
         longSegmentoCuerda = 0.5f;
@@ -73,6 +75,10 @@ public static class CocaUtils
 
     public static void AumentarDificultad()
     {
+        if (duracion > 4)
+        {
+            duracion -= 1;
+        }
         fuerzaX += fuerzaX * 0.2f;
         fuerzaY += fuerzaY * 0.2f;
         gravedad.y += gravedad.y * 0.2f;

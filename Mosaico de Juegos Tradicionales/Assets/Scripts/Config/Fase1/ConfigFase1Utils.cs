@@ -12,6 +12,7 @@ public static class ConfigFase1Utils
         set { configFase1Data.AcabaDePerder = value; }
     }
 
+
     public static List<string> MicrojuegosPerdidos
     {
         get { return configFase1Data.MicrojuegosPerdidos; }

@@ -7,6 +7,7 @@ public class Coca : MonoBehaviour
     int duracion = CocaUtils.Duracion;
     BackwardsTimer timer;
     Fase fase = CocaUtils.Fase;
+    bool fade = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,13 @@ public class Coca : MonoBehaviour
     {
         if (timer.Running)
         {
-            HUD.ActualizarTiempo(timer.SecondsRemaining);
+            float secondsRemaining = timer.SecondsRemaining;
+            HUD.ActualizarTiempo(secondsRemaining);
+            if (secondsRemaining <= 2 && !fade)
+            {
+                fade = true;
+                FadeVolumen(secondsRemaining);
+            }
         }
         if (timer.Finished)
         {

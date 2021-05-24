@@ -12,7 +12,7 @@ public class BotonSaltarFase2 : MonoBehaviour
     void Start()
     {
         Image imageComponent = gameObject.GetComponent<Image>();
-        if (ConfigUtils.Fase == 2)
+        if (ConfigUtils.Fase == 2 && ConfigUtils.PrimerIntentoFase)
         {
             gameObject.SetActive(false);
         }

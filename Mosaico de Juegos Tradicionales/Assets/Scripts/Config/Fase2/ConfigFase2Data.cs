@@ -127,7 +127,7 @@ public class ConfigFase2Data
         OllaUtils.medio();
         TrompoUtils.medio();
         piquisUtils.medio();
-        FuchiUtils.facil();
+        FuchiUtils.medio();
 
         //agregar microjuegos a jugar a la lista de microjuegos
         microjuegosAJugar = new List<NombreMicrojuego>();

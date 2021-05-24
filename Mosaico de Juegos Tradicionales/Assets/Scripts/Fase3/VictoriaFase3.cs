@@ -24,4 +24,9 @@ public class VictoriaFase3 : MonoBehaviour
         ConfigFase3Utils.JugandoEnContinuacion = true;
         SceneManager.LoadScene("escenaIntermediaFase3");
     }
+
+    public void VolverAMenu()
+    {
+        SceneManager.LoadScene("menu0");
+    }
 }

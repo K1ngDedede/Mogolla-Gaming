@@ -12,11 +12,18 @@ public class ConfigData
     static string gamerTag = "Anon";
     static int puntuacionMaximaFase3 = 0;
     static bool juegoCargado = false;
+    static bool primerIntentoFase = true;
 
     TextAsset juegosJson;
 
     //persistencia
     static string fecha;
+
+    public bool PrimerIntentoFase
+    {
+        get { return primerIntentoFase; }
+        set { primerIntentoFase = value; }
+    }
 
     public Microjuego MicrojuegoActual
     {
@@ -106,7 +113,6 @@ public class ConfigData
         juegoCargado = true;
         microjuegos = new List<Microjuego>();
         juegosJson = Resources.Load<TextAsset>("Data/juegos");
-        Debug.Log(juegosJson.text);
         Microjuegos microjuegosJson = JsonUtility.FromJson<Microjuegos>(juegosJson.text);
         microjuegoActual = new Microjuego();
         foreach (Microjuego microjuego in microjuegosJson.microjuegos)

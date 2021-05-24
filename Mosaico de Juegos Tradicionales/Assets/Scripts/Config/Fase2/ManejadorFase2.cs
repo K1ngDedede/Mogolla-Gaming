@@ -53,6 +53,7 @@ public static class ManejadorFase2
         else if (ConfigFase2Utils.NumMicrojuegosJugados == ConfigFase2Utils.MicrojuegosAJugar.Count)
         {
             //cargar escena de victoria
+            ConfigUtils.PrimerIntentoFase = true;
             if (ConfigUtils.Fase == 2)
             {
                 ConfigUtils.Fase = 3;

@@ -44,6 +44,12 @@ TagManager:
   - palo
   - lmao
   - lmao 2
+  - registro
+  - tablaClasificacion
+  - posicion
+  - nombre
+  - puntaje
+  - rank
   layers:
   - Default
   - TransparentFX

@@ -70,7 +70,8 @@ public static class ManejadorFase1
         else if(ConfigFase1Utils.NumMicrojuegosJugados == ConfigFase1Utils.MicrojuegosAJugar.Count)
         {
             //cargar escena de victoria
-            if(ConfigUtils.Fase == 1)
+            ConfigUtils.PrimerIntentoFase = true;
+            if (ConfigUtils.Fase == 1)
             {
                 ConfigUtils.Fase = 2;
             }

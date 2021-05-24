@@ -20,6 +20,12 @@ public static class ConfigUtils
         set { configData.JuegoCargado = value; }
     }
 
+    public static bool PrimerIntentoFase
+    {
+        get { return configData.PrimerIntentoFase; }
+        set { configData.PrimerIntentoFase = value; }
+    }
+
     public static Microjuego MicrojuegoActual
     {
         get { return configData.MicrojuegoActual; }
