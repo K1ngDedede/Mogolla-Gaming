@@ -4,11 +4,11 @@
       "nombre": "La Olla",
       "nombresAlternativos": "",
       "descripcion": "La Olla es un juego para varios jugadores que se juega con un balón (usualmente) ligero, como el de voleibol.",
-      "pathImagen": "",
+      "pathImagen": "Data/Imagenes/la_olla",
       "instruccionesJuego": "Usted es el jugador resaltado en blanco. Remate el balón haciendo clic en la olla cuando sea oportuno para ganar. Tenga en cuenta que el remate siempre ocurre al tercer toque del balón.",
       "instruccionesVidaReal": "Un grupo de personas se agrupan en círculo, con una inicialmente en el centro, denominado \"La Olla.\" El balón se pasa entre las personas del círculo, y al tercer pase se debe rematar para golpear a los que ocupan la olla. Si alguien se equivoca al pasar o el remate falla, el que cometió el error pasa del círculo a la olla. Si alguien en la olla logra atrapar el remate, este podrá salir de la olla y volver al círculo. El juego continua hasta que solo quede un jugador fuera de la olla, quien se convierte en el ganador.",
       "escena": "Olla",
-      "urlVideo": ""
+      "urlVideo": "https://youtu.be/VAnWIPqJE1k?t=181"
     },
     {
       "nombre": "Yermis",
@@ -24,11 +24,11 @@
       "nombre": "Trompo",
       "nombresAlternativos": "Peonza, Piuca, Repión, Mona.",
       "descripcion": "El trompo es un dispositivo que gira sobre una punta, y se equilibra gracias a su gran momento angular.",
-      "pathImagen": "",
+      "pathImagen": "Data/Imagenes/trompo",
       "instruccionesJuego": "Haga clic para impulsar al trompo hacia la posición del puntero. Balancee el trompo hasta que se agote el tiempo para ganar.",
       "instruccionesVidaReal": "El trompo se pone a girar con una cuerda, pita o piola. Existen muchos trucos que se pueden realizar con un trompo.",
       "escena": "Trompo",
-      "urlVideo": ""
+      "urlVideo": "https://youtu.be/Xc_Gn4Q-6tI"
     },
     {
       "nombre": "Jacks",
@@ -83,12 +83,12 @@
     {
       "nombre": "Piquis",
       "nombresAlternativos": "Canicas, Maras, Bolas.",
-      "descripcion": "Las piquis son esferas de vidrio de tamaño variable. Las más grandes se denominan \"Potas\", y las más pequeñas son \"Pinguas\".",
-      "pathImagen": "",
+      "descripcion": "Las piquis son esferas de vidrio de tamaño variable. Las grandes son \"Potas\", y las pequeñas son \"Pinguas\".",
+      "pathImagen": "Data/Imagenes/piquis",
       "instruccionesJuego": "Haga clic para disparar la piqui en la dirección del puntero. Haga carambola con todas las piquis antes de que se agote el tiempo para ganar.",
       "instruccionesVidaReal": "Existen innumerables formas de jugar piquis. En colombia, los juegos más comunes son la troya, las cuartas, la meca, la vuelta a colombia y el quiebrahuesos. Todos los juegos tienen en común que los jugadores tienden a apostar sus piquis; el ganador se queda con las piquis de sus oponentes.",
       "escena": "Biquis",
-      "urlVideo": ""
+      "urlVideo": "https://youtu.be/PEYW7DiVczk?t=20"
     }
   ]
 }
