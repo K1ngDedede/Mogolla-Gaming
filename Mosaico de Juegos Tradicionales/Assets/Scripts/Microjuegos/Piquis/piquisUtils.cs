@@ -71,7 +71,7 @@ public static class piquisUtils
     public static void loop()
     {
         iterator++;
-        if (iterator % 5 == 0)
+        if (iterator % 3 == 0)
         {
             jogo++;
         }
@@ -80,7 +80,7 @@ public static class piquisUtils
             fMod = (int) (fMod*1.1f);
             sMod *= 0.95f;
         }
-        if (iterator % 2 == 0 && d > 4)
+        if (d > 4)
         {
             d--;
         }
