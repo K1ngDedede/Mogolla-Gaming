@@ -47,7 +47,7 @@ public static class RanaUtils
         incrementoAngulo = 120;
         numeroAros = 4;
         velocidadBarraFuerza = 2;
-        puntajeRequerido = 70;
+        puntajeRequerido = 40;
         fase = Fase.FASE1;
     }
 
@@ -65,7 +65,7 @@ public static class RanaUtils
         incrementoAngulo = 200;
         numeroAros = 3;
         velocidadBarraFuerza = 5;
-        puntajeRequerido = 200;
+        puntajeRequerido = 140;
         fase = Fase.FASE3;
     }
 

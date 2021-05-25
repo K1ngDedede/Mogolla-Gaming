@@ -130,7 +130,7 @@ public class ConfigFase3Data
     {
         puntaje = 0;
         numMicrojuegosJugados = 0;
-        vidasTotales = 4;
+        vidasTotales = 1;
         vidasRestantes = vidasTotales;
         sesionFase3Terminada = false;
         microjuegosPerdidos = new List<string>();
@@ -156,15 +156,15 @@ public class ConfigFase3Data
 
         //agregar microjuegos a jugar a la lista de microjuegos
         microjuegosAJugar = new List<NombreMicrojuego>();
-        microjuegosAJugar.Add(NombreMicrojuego.Jackses);
-        microjuegosAJugar.Add(NombreMicrojuego.Yermis);
-        microjuegosAJugar.Add(NombreMicrojuego.Rana);
+        //microjuegosAJugar.Add(NombreMicrojuego.Jackses);
+        //microjuegosAJugar.Add(NombreMicrojuego.Yermis);
+        //microjuegosAJugar.Add(NombreMicrojuego.Rana);
         microjuegosAJugar.Add(NombreMicrojuego.Coca);
-        microjuegosAJugar.Add(NombreMicrojuego.Trompo);
-        microjuegosAJugar.Add(NombreMicrojuego.Olla);
-        microjuegosAJugar.Add(NombreMicrojuego.Piquis);
-        microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
-        microjuegosAJugar.Add(NombreMicrojuego.Tejo);
+        //microjuegosAJugar.Add(NombreMicrojuego.Trompo);
+        //microjuegosAJugar.Add(NombreMicrojuego.Olla);
+        //microjuegosAJugar.Add(NombreMicrojuego.Piquis);
+        //microjuegosAJugar.Add(NombreMicrojuego.Fuchi);
+        //microjuegosAJugar.Add(NombreMicrojuego.Tejo);
 
         //agregar microjuegos al pool
         poolMicrojuegos = new List<NombreMicrojuego>();

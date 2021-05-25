@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Proyecto26;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class TablaClasificacion : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class TablaClasificacion : MonoBehaviour
     Text headerNombreText;
     Text headerPuntajeText;
     Text rankText;
+    Text feedbackRegistroText;
     string gamerTag;
     string endpoint = "https://proyecto-de-grado-7e7d3-default-rtdb.firebaseio.com/";
     int puntaje;
@@ -31,10 +33,12 @@ public class TablaClasificacion : MonoBehaviour
         headerNombreText = GameObject.FindGameObjectWithTag("nombre").GetComponent<Text>();
         headerPuntajeText = GameObject.FindGameObjectWithTag("puntaje").GetComponent<Text>();
         rankText = GameObject.FindGameObjectWithTag("rank").GetComponent<Text>();
+        feedbackRegistroText = GameObject.FindGameObjectWithTag("feedbackRegistro").GetComponent<Text>();
         headerPosText.text = "";
         headerNombreText.text = "";
         headerPuntajeText.text = "";
         rankText.text = "";
+        feedbackRegistroText.text = "";
     }
 
     // Update is called once per frame
@@ -50,23 +54,36 @@ public class TablaClasificacion : MonoBehaviour
         {
             gamerTag = "Anon";
         }
-        miembrosRankingList = new List<MiembroRanking>();
-        RestClient.Get(endpoint + "tabla_clasificaciones/miembrosRanking.json").Then(response => {
-            string texto = response.Text;
-            texto = "{\"miembrosRanking\":" + texto+"}";
-            //print(texto);
-            MiembrosRanking miembrosRankingJson = JsonUtility.FromJson<MiembrosRanking>(texto);
-            foreach (MiembroRanking miembroRanking in miembrosRankingJson.miembrosRanking)
-            {
-                miembrosRankingList.Add(miembroRanking);
-            }
-            jugadorActual = new MiembroRanking { gamerTag = this.gamerTag, puntaje = ConfigFase3Utils.Puntaje };
-            miembrosRankingList.Add(jugadorActual);
-            miembrosRankingList.Sort(OrdenarPorPuntaje);
-            rankJugadorActual = miembrosRankingList.IndexOf(jugadorActual)+1;
-            miembrosRanking = new MiembrosRanking { miembrosRanking = miembrosRankingList.ToArray() };
-            ActualizarRanking();
-        });
+        if(gamerTag.Any(c => char.IsDigit(c)))
+        {
+            feedbackRegistroText.text = "Su nombre no puede contener números.";
+        }
+        else if (FiltroNombres.Obscenidades.Contains(gamerTag.ToLower()) || gamerTag.Any(c => FiltroNombres.CaracteresProhibidos.Contains(c)))
+        {
+            feedbackRegistroText.text = "Nombre inválido.";
+        }
+        else
+        {
+            feedbackRegistroText.text = "";
+            miembrosRankingList = new List<MiembroRanking>();
+            RestClient.Get(endpoint + "tabla_clasificaciones/miembrosRanking.json").Then(response => {
+                string texto = response.Text;
+                texto = "{\"miembrosRanking\":" + texto + "}";
+                //print(texto);
+                MiembrosRanking miembrosRankingJson = JsonUtility.FromJson<MiembrosRanking>(texto);
+                foreach (MiembroRanking miembroRanking in miembrosRankingJson.miembrosRanking)
+                {
+                    miembrosRankingList.Add(miembroRanking);
+                }
+                jugadorActual = new MiembroRanking { gamerTag = this.gamerTag, puntaje = ConfigFase3Utils.Puntaje };
+                miembrosRankingList.Add(jugadorActual);
+                miembrosRankingList.Sort(OrdenarPorPuntaje);
+                rankJugadorActual = miembrosRankingList.IndexOf(jugadorActual) + 1;
+                miembrosRanking = new MiembrosRanking { miembrosRanking = miembrosRankingList.ToArray() };
+                ActualizarRanking();
+            });
+        }
+        
     }
 
     private void ActualizarRanking()
@@ -89,6 +106,7 @@ public class TablaClasificacion : MonoBehaviour
         {
             registro.SetActive(false);
         }
+        GameObject.FindGameObjectWithTag("feedbackRegistro").SetActive(false);
         ArmarTabla();
     }
 
