@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 286618733}
   - component: {fileID: 286618732}
   - component: {fileID: 286618734}
+  - component: {fileID: 286618735}
   m_Layer: 0
   m_Name: Sonido
   m_TagString: musica
@@ -269,6 +270,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &286618735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286618731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c8a9e30f1ef5940a8a96bcbbfea7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 9def1b5d5626cf24ab9d36c64e73496e, type: 2}
 --- !u!1 &453646760
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +599,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -379945723
-  m_SortingLayer: 0
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: df5d2884bf684d84abce0f083e647395, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
