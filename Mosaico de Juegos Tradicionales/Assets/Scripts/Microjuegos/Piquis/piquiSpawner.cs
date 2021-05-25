@@ -22,7 +22,7 @@ public class piquiSpawner : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!state)
+        if (!state && sapo!=null)
         {
             state = true;
             sapo.colDetection();

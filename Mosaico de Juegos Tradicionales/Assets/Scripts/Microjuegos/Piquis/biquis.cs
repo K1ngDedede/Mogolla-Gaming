@@ -20,6 +20,7 @@ public class biquis : MonoBehaviour
     protected BackwardsTimer letimer;
     protected Text temptimer;
     protected int state;
+    protected bool hFlag;
 
     void Start()
     {
@@ -33,8 +34,8 @@ public class biquis : MonoBehaviour
         for (int sapo = 1; sapo < jogo; sapo++)
         {
             binguas[sapo] = Instantiate(biqui);
-            xSigma = Random.Range(-7f, binguas[sapo-1].transform.position.x-1);
-            ySigma = Random.Range(binguas[sapo-1].transform.position.y+1, binguas[sapo-1].transform.position.x-1);
+            xSigma = Random.Range(-7f, binguas[sapo-1].transform.position.x-1.5f);
+            ySigma = Random.Range(binguas[sapo-1].transform.position.y+1.2f, binguas[sapo-1].transform.position.x-1.2f);
             binguas[sapo].transform.position = new Vector3(xSigma, ySigma, 0);
         }
 
@@ -54,8 +55,9 @@ public class biquis : MonoBehaviour
         temptimer = tt.GetComponent<Text>();
         temptimer.text = "lmao";
         lmao = gameObject.GetComponent<Rigidbody2D>();
-        state = 0;
         letimer.Run();
+        hFlag = false;
+        state = 0;
     }
     
     void Update()
@@ -70,6 +72,7 @@ public class biquis : MonoBehaviour
             Vector3 d = (Vector3)(Input.mousePosition-sP);
             d.Normalize();
             state++;
+            hFlag = true;
             sapasso.sprite = handS[1];
             lmao.AddForce((d)*fMod,ForceMode2D.Force);
         }
@@ -83,6 +86,11 @@ public class biquis : MonoBehaviour
         else if (letimer.Finished && state>=0)
         {
             returnDef();
+        }
+        //fiche como arreglo el bug de las potas
+        if (!hFlag && state > 0)
+        {
+            state = 0;
         }
     }
     
