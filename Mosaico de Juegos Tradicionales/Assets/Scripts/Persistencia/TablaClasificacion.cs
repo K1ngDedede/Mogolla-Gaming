@@ -21,7 +21,7 @@ public class TablaClasificacion : MonoBehaviour
     MiembrosRanking miembrosRanking;
     MiembroRanking jugadorActual;
     int rankJugadorActual;
-    float aumentoY = -35;
+    float aumentoY = -30;
     int UILayer = 5;
 
     // Start is called before the first frame update
@@ -153,7 +153,7 @@ public class TablaClasificacion : MonoBehaviour
                 col2.layer = UILayer;
                 textCol2 = col2.AddComponent<Text>();
                 textCol2.alignment = TextAnchor.MiddleCenter;
-                textCol2.text = miembro.gamerTag;
+                textCol2.text = miembro.gamerTag.ToUpper();
                 textCol2.fontSize = 30;
                 textCol2.font = ArialFont;
                 textCol2.color = Color.black;
