@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 1570235194}
   - component: {fileID: 1570235196}
   - component: {fileID: 1570235197}
+  - component: {fileID: 1570235198}
   m_Layer: 5
   m_Name: BotonJueguelo
   m_TagString: Untagged
@@ -812,6 +813,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1570235198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570235192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbf9a2a9f79194590f32f10ce61773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1720298784
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +839,7 @@ GameObject:
   - component: {fileID: 1720298788}
   - component: {fileID: 1720298789}
   - component: {fileID: 1720298790}
+  - component: {fileID: 1720298791}
   m_Layer: 5
   m_Name: BotonSkip
   m_TagString: Untagged
@@ -968,6 +982,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempo: 15
+--- !u!114 &1720298791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720298784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbf9a2a9f79194590f32f10ce61773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1872509830
 GameObject:
   m_ObjectHideFlags: 0

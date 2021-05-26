@@ -6,6 +6,12 @@ public static class ConfigUtils
 {
     static ConfigData configData;
 
+    public static bool MostrarPanelInfo
+    {
+        get { return configData.MostrarPanelInfo; }
+        set { configData.MostrarPanelInfo = value; }
+    }
+
     public static bool JuegoCargado
     {
         get { if (configData == null)

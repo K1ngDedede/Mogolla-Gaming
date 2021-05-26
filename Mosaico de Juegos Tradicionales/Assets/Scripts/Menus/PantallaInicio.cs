@@ -5,6 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class PantallaInicio : MonoBehaviour
 {
+    GameObject panelInfo;
+    private void Start()
+    {
+        panelInfo = GameObject.FindGameObjectWithTag("panelInfo");
+        if (ConfigUtils.MostrarPanelInfo)
+        {
+            MostrarPopup();
+        }
+        else
+        {
+            CerrarPopup();
+        }
+    }
+
     public void Salir()
     {
         Application.Quit();
@@ -18,5 +32,16 @@ public class PantallaInicio : MonoBehaviour
     public void Creditos()
     {
         SceneManager.LoadScene("creditos");
+    }
+
+    public void CerrarPopup()
+    {
+        panelInfo.SetActive(false);
+        ConfigUtils.MostrarPanelInfo = false;
+    }
+
+    public void MostrarPopup()
+    {
+        panelInfo.SetActive(true);
     }
 }

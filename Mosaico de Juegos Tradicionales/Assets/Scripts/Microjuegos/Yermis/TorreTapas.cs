@@ -27,11 +27,17 @@ public class TorreTapas : MonoBehaviour
     {
         set { torreTumbada = value; }
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         GameObject musica = GameObject.FindGameObjectWithTag("musica");
         DontDestroyOnLoad(musica);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
 
         timer = gameObject.AddComponent<BackwardsTimer>();
         timer.Duration = duracion;

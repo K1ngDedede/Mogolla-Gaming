@@ -8,6 +8,7 @@ public class EscenaIntermediaFase3 : MonoBehaviour
 {
     string nombreSiguienteMicrojuego;
     Text texto;
+    Text textoPuntaje;
     string escenaACargar;
     Timer timerCambioEscena;
     string ubicacion = "Cutscene/Fase2/";
@@ -36,6 +37,9 @@ public class EscenaIntermediaFase3 : MonoBehaviour
         DatosSiguienteMicrojuego(siguienteMicrojuego);
         texto = GameObject.FindGameObjectWithTag("TextoPirinola").GetComponent<Text>();
         texto.text = nombreSiguienteMicrojuego;
+
+        texto = GameObject.FindGameObjectWithTag("textoPuntaje").GetComponent<Text>();
+        texto.text = ConfigFase3Utils.Puntaje+"";
 
         //GameObject[] chulos = GameObject.FindGameObjectsWithTag("chulo");
         //Chulo chuloScript;
@@ -70,7 +74,7 @@ public class EscenaIntermediaFase3 : MonoBehaviour
 
 
 
-        
+
 
     }
 

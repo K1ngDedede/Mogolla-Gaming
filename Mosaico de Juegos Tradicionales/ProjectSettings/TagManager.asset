@@ -53,6 +53,7 @@ TagManager:
   - chulo
   - feedbackRegistro
   - musicaMenu
+  - panelInfo
   layers:
   - Default
   - TransparentFX

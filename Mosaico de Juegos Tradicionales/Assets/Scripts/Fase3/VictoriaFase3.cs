@@ -10,7 +10,16 @@ public class VictoriaFase3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindGameObjectWithTag("botonJueguelo").GetComponent<Text>().text = "Le quedan " + ConfigFase3Utils.VidasRestantes + " vidas, puede continuar";
+        int vidas = ConfigFase3Utils.VidasRestantes;
+        string plural = "vidas";
+        string quedan = "quedan";
+        if (vidas == 1)
+        {
+            plural = "vida";
+            quedan = "queda";
+        }
+        string texto = "Le " + quedan + " " + vidas + " " + plural + ".";
+        GameObject.FindGameObjectWithTag("botonJueguelo").GetComponent<Text>().text = texto;
     }
 
     // Update is called once per frame

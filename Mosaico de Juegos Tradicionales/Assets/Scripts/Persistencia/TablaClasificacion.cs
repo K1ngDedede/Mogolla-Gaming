@@ -120,7 +120,7 @@ public class TablaClasificacion : MonoBehaviour
         headerPosText.text = "Posicion";
         headerNombreText.text = "Nombre";
         headerPuntajeText.text = "Puntaje";
-        rankText.text = "Su posicion en la tabla: " + rankJugadorActual;
+        rankText.text = "Su posicion en la tabla: " + rankJugadorActual+", con "+jugadorActual.puntaje + " puntos.";
         GameObject col1;
         GameObject col2;
         GameObject col3;

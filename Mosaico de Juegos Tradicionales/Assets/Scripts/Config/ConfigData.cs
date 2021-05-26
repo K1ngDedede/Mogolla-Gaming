@@ -11,11 +11,18 @@ public class ConfigData
     static Microjuego microjuegoActual;
     static bool juegoCargado = false;
     static bool primerIntentoFase = true;
+    static bool mostrarPanelInfo = true;
 
     TextAsset juegosJson;
 
     //persistencia
     static string fecha;
+
+    public bool MostrarPanelInfo
+    {
+        get { return mostrarPanelInfo; }
+        set { mostrarPanelInfo = value; }
+    }
 
     public bool PrimerIntentoFase
     {
