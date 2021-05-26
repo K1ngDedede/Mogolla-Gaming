@@ -476,8 +476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 0, y: -87.379}
+  m_SizeDelta: {x: 300, y: 85.24231}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893551609
 MonoBehaviour:
@@ -557,8 +557,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000003812, y: 6.4417}
-  m_SizeDelta: {x: 232.84674, y: 80}
+  m_AnchoredPosition: {x: 0.000003812, y: 6}
+  m_SizeDelta: {x: 232.84674, y: 101.51538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948420011
 MonoBehaviour:
@@ -592,7 +592,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "con m\xFAsica de:\n\nAlejandro Cuevas\nProductor y Compositor"
+  m_Text: "con m\xFAsica de:\n\nAlejandro Cuevas\nProductor y Compositor\nMiguel
+    \xC1ngel Hoyos\nClarinete"
 --- !u!222 &948420012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -983,6 +984,7 @@ GameObject:
   - component: {fileID: 1978424129}
   - component: {fileID: 1978424128}
   - component: {fileID: 1978424131}
+  - component: {fileID: 1978424132}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1065,5 +1067,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3e669516f2c3e041b3efcbcac2831e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1978424132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978424127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecff331ff9bbc348bd5565e7aefa056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
