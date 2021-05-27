@@ -78,8 +78,8 @@ public static class TrompoUtils
 
     public static void loop()
     {
-        torqueR *= 1.2f;
-        torqueP *= 0.8f;
+        torqueR *= 1.1f;
+        torqueP *= 0.9f;
         mov += 1;
     }
 

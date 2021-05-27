@@ -154,7 +154,7 @@ public class Oya : MonoBehaviour
                     speedBol*2.5f* Time.deltaTime);
                 bol.transform.localScale = Vector3.Lerp(bol.transform.localScale, targetS, Time.deltaTime);
             }
-            else if(Vector3.Distance(sFlag, transform.position)<1.2f)
+            else if(Vector3.Distance(sFlag, transform.position)<1.3f)
             {
                 returnVic();
                state++;

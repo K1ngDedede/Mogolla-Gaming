@@ -14,6 +14,10 @@ public class MusicaMenu : MonoBehaviour
             musica = Resources.Load<GameObject>(ubicacionPrefabs + "MusicaMenu");
             Instantiate(musica);
             DontDestroyOnLoad(GameObject.FindGameObjectWithTag("musicaMenu"));
+            if (HManager.Cogote)
+            {
+                HManager.pMusic();
+            }
         }
     }
 

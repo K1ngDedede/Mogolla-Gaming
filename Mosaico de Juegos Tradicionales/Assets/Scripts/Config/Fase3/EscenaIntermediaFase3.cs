@@ -39,7 +39,7 @@ public class EscenaIntermediaFase3 : MonoBehaviour
         texto.text = nombreSiguienteMicrojuego;
 
         texto = GameObject.FindGameObjectWithTag("textoPuntaje").GetComponent<Text>();
-        texto.text = ConfigFase3Utils.Puntaje+"";
+        texto.text = (ConfigFase3Utils.Puntaje+1)+"";
 
         //GameObject[] chulos = GameObject.FindGameObjectsWithTag("chulo");
         //Chulo chuloScript;
