@@ -44,7 +44,16 @@ public class TejoMov : MonoBehaviour
 		
         if (thrown && !MenuPausa.pausado)
         {
-            transform.localScale = transform.localScale * 0.997f;
+            float escalaMinima = 0.05f;
+            Vector3 escalaActual = gameObject.transform.localScale;
+            if (escalaActual.x > escalaMinima)
+            {
+                escalaActual.x -= 0.09f * Time.deltaTime;
+                escalaActual.y -= 0.09f * Time.deltaTime;
+                //escalaActual -= transform.localScale * 0.997f * Time.deltaTime;
+                gameObject.transform.localScale = escalaActual;
+            }
+            //transform.localScale = transform.localScale * 0.997f;
             diffInSeconds = (Time.time - dateTime1);
             if (diffInSeconds >= 1.5)
             {
@@ -53,6 +62,7 @@ public class TejoMov : MonoBehaviour
                 Vector3 pos = transform.position;
                 if (pos.x < x1 && pos.x > x2 && pos.y < y1 && pos.y > y2)
                 {
+                    GameObject.FindGameObjectWithTag("efectoSonido").GetComponent<AudioSource>().Play();
 					ganaTejo(); 
 					Debug.Log("Mecha");
 					PowerBar.gana = true;

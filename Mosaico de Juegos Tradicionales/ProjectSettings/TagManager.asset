@@ -54,6 +54,7 @@ TagManager:
   - feedbackRegistro
   - musicaMenu
   - panelInfo
+  - efectoSonido
   layers:
   - Default
   - TransparentFX

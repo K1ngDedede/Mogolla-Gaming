@@ -51,7 +51,6 @@ public class AroRana : MonoBehaviour
 
     private void ReducirEscala()
     {
-        print(GetComponent<Rigidbody2D>().velocity.y);
         Vector3 escalaActual = gameObject.transform.localScale;
         if (escalaActual.x > escalaMinima)
         {
