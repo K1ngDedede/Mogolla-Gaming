@@ -21,12 +21,15 @@ public class TablaClasificacion : MonoBehaviour
     MiembrosRanking miembrosRanking;
     MiembroRanking jugadorActual;
     int rankJugadorActual;
-    float aumentoY = -30;
+    float aumentoY = -32;
     int UILayer = 5;
+    GameObject table;
 
     // Start is called before the first frame update
     void Start()
     {
+        table = GameObject.FindGameObjectWithTag("lmao");
+        table.SetActive(false);
         gamerTagText = GameObject.FindGameObjectWithTag("textoJuego").GetComponent<Text>();
         puntaje = ConfigFase3Utils.Puntaje;
         headerPosText = GameObject.FindGameObjectWithTag("posicion").GetComponent<Text>();
@@ -117,6 +120,7 @@ public class TablaClasificacion : MonoBehaviour
 
     private void ArmarTabla()
     {
+        table.SetActive(true);
         headerPosText.text = "Posicion";
         headerNombreText.text = "Nombre";
         headerPuntajeText.text = "Puntaje";

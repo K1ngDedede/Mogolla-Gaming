@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,16 +26,30 @@ public class GBGScroller : MonoBehaviour
     private int state;
     void Start()
     {
+        
         bgm = gameObject.GetComponent<Renderer>().material;
         bgm.mainTexture = vic;
         bgm.mainTextureScale = new Vector2(2f, 2f);
         vic.wrapMode = TextureWrapMode.Repeat;
-        offX = 0;
-        offY = 0;
+        offX = HManager.OffX;
+        offY = HManager.OffY;
         state = 0;
     }
 
-    
+    private void Awake()
+    {
+        if (HManager.Cogote)
+        {
+            vic = Resources.Load<Texture2D>("Utils/Sprites/cogote");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        HManager.OffX = offX;
+        HManager.OffY = offY;
+    }
+
     void Update()
     {
         offX += Time.deltaTime * sX;
@@ -52,10 +67,12 @@ public class GBGScroller : MonoBehaviour
             }
             if (state == cogote.Length)
             {
+                HManager.Cogote = true;
                 state++;
                 vic = Resources.Load<Texture2D>("Utils/Sprites/cogote");
                 vic.wrapMode = TextureWrapMode.Repeat;
                 bgm.mainTexture = vic;
+                HManager.pMusic();
             }
         }
         
