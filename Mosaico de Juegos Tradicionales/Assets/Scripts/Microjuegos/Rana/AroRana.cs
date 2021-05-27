@@ -84,6 +84,7 @@ public class AroRana : MonoBehaviour
 
     public void EntrarHueco(Vector2 posicionEntrada)
     {
+        GameObject.FindGameObjectWithTag("efectoSonido").GetComponent<AudioSource>().Play();
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = Vector2.zero;
         rb2d.gravityScale = 0;

@@ -44,6 +44,7 @@ public class HuecoRana : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         GameObject aroRana = collision.gameObject;
         Rigidbody2D rb2d = aroRana.GetComponent<Rigidbody2D>();
         Vector2 velocidad = rb2d.velocity;
@@ -51,6 +52,7 @@ public class HuecoRana : MonoBehaviour
         //if(velocidad.magnitude<rangoVelocidad && velocidad.magnitude > -rangoVelocidad && escala>escalaApropiada-errorEscala && escala<escalaApropiada+errorEscala)
         if (velocidad.y < rangoMaxVelocidad && velocidad.y > rangoMinVelocidad && escala > escalaApropiada - errorEscala && escala < escalaApropiada + errorEscala)
         {
+            
             AroRana aroRanaScript = aroRana.GetComponent<AroRana>();
             aroRanaScript.EntrarHueco(posicionEntrada);
             HUDRana.ActualizarPuntaje(puntaje);

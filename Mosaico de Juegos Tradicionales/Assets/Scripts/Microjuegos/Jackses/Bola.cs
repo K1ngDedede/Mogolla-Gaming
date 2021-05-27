@@ -72,6 +72,7 @@ public class Bola : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        GameObject.FindGameObjectWithTag("efectoSonido").GetComponent<AudioSource>().Play();
         numeroRebotes++;
         if(numeroRebotes == 1)
         {

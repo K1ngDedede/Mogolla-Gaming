@@ -37,6 +37,7 @@ public class Coca : MonoBehaviour
 
     public void Encholar()
     {
+        GameObject.FindGameObjectWithTag("efectoSonido").GetComponent<AudioSource>().Play();
         float segundosRestantes = timer.SecondsRemaining;
         timer.Stop();
         if (segundosRestantes > 3)

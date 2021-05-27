@@ -202,6 +202,7 @@ public class YermisDefensa : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bolaYermis"))
         {
+            GameObject.FindGameObjectWithTag("efectoSonido").GetComponent<AudioSource>().Play();
             timer.Stop();
             Color color = gameObject.GetComponent<SpriteRenderer>().color;
             color.a = 0.5f;

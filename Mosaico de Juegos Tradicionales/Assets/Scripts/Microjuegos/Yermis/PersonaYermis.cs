@@ -56,6 +56,7 @@ public class PersonaYermis : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bolaYermis"))
         {
+            GameObject.FindGameObjectWithTag("efectoSonido").GetComponent<AudioSource>().Play();
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
             Color color = spriteRenderer.color;
             color.a = 0.5f;
