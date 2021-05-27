@@ -9,7 +9,11 @@ using System.Runtime.InteropServices;
 public class EscenaDetalleMicrojuego : MonoBehaviour
 {
     Microjuego microjuego;
-    GameObject botonJueguelo, botonRealidad;
+    GameObject botonInstrucciones;
+    bool mostrandoRealidad = true;
+    Sprite botonRealidad, botonJueguelo;
+    string ubicacionSprites = "Misc/UI/";
+    Text instruccionesText;
 
     public void OpenLinkJSPlugin(string link)
     {
@@ -23,9 +27,12 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        botonRealidad = Resources.Load<Sprite>(ubicacionSprites + "realidad");
+        botonJueguelo = Resources.Load<Sprite>(ubicacionSprites + "iJueguelo");
+        instruccionesText = GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>();
         microjuego = ConfigUtils.MicrojuegoActual;
-        botonJueguelo = GameObject.FindGameObjectWithTag("botonJueguelo");
-        botonRealidad = GameObject.FindGameObjectWithTag("botonRealidad");
+        instruccionesText.text = microjuego.instruccionesVidaReal;
+        botonInstrucciones = GameObject.FindGameObjectWithTag("botonJueguelo");
         GameObject.FindGameObjectWithTag("textoJuego").GetComponent<Text>().text = microjuego.nombre;
         string descripcion = "";
         if(microjuego.nombresAlternativos != "")
@@ -34,34 +41,25 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
         }
         descripcion += microjuego.descripcion;
         GameObject.FindGameObjectWithTag("descripcion").GetComponent<Text>().text = descripcion;
-        CambiarInstruccionesRealidad();
         Image imagenJuego = GameObject.FindGameObjectWithTag("imagenMicrojuego").GetComponent<Image>();
         Sprite imagen = Resources.Load<Sprite>(microjuego.pathImagen);
         imagenJuego.sprite = imagen;
         imagenJuego.preserveAspect = true;
     }
 
-    public void CambiarInstruccionesRealidad()
+    public void CambiarInstrucciones()
     {
-        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text = microjuego.instruccionesVidaReal;
-        Color colorBotonJueguelo = botonJueguelo.GetComponent<Image>().color;
-        colorBotonJueguelo.a = 0;
-        botonJueguelo.GetComponent<Image>().color = colorBotonJueguelo;
-        Color colorBotonRealidad = botonRealidad.GetComponent<Image>().color;
-        colorBotonRealidad.a = 1;
-        botonRealidad.GetComponent<Image>().color = colorBotonRealidad;
-
-    }
-
-    public void CambiarInstruccionesJueguelo()
-    {
-        GameObject.FindGameObjectWithTag("instrucciones").GetComponent<Text>().text = microjuego.instruccionesJuego;
-        Color colorBotonJueguelo = botonJueguelo.GetComponent<Image>().color;
-        colorBotonJueguelo.a = 1;
-        botonJueguelo.GetComponent<Image>().color = colorBotonJueguelo;
-        Color colorBotonRealidad = botonRealidad.GetComponent<Image>().color;
-        colorBotonRealidad.a = 0;
-        botonRealidad.GetComponent<Image>().color = colorBotonRealidad;
+        if (mostrandoRealidad)
+        {
+            botonInstrucciones.GetComponent<Image>().sprite = botonJueguelo;
+            instruccionesText.text = microjuego.instruccionesJuego;
+        }
+        else
+        {
+            botonInstrucciones.GetComponent<Image>().sprite = botonRealidad;
+            instruccionesText.text = microjuego.instruccionesVidaReal;
+        }
+        mostrandoRealidad = !mostrandoRealidad;
     }
 
     // Update is called once per frame

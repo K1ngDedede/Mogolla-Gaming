@@ -16,7 +16,7 @@
       "descripcion": "Este juego de equipo se juega con tapas de botellas, una bola y, en algunos casos, elementos que se asemejen a un bate.",
       "pathImagen": "Data/Imagenes/Yermis",
       "instruccionesJuego": "Hacer clic para disparar la bola hacia la torre de tapas. Si la torre es derribada, ponche a las personas apuntando y disparando con el mouse sin que se le acaben los lanzamientos. En caso contrario, debera esquivar las bolas lanzadas hacia usted.",
-      "instruccionesVidaReal": "Se arma una torre de tapas en el piso. Los jugadores de un equipo se tomaran turnos para intentar derribarla. Si es derribada, el equipo lanzador debe ponchar al otro equipo mientras este intenta construir la torre nuevamente. Si el equipo defensor logra construir la torre, gritaran \"Yermis\" y ganaran un punto. De lo contrario, el equipo ofensivo pasara a defender y viceversa.",
+      "instruccionesVidaReal": "Se arma una torre de tapas en el piso. Los jugadores de un equipo se tomaran turnos para intentar derribarla. Si es derribada, el equipo lanzador debe ponchar al otro equipo con la bola mientras este intenta construir la torre nuevamente. El equipo defensivo puede usar un elemento similar a un bate para desviar los lanzamientos. Si el equipo defensor logra construir la torre, gritaran \"Yermis\" y ganaran un punto. De lo contrario, el equipo ofensivo pasara a defender y viceversa.",
       "escena": "yermisTorre",
       "urlVideo": "https://youtu.be/J0Qq7vO5R78"
     },
