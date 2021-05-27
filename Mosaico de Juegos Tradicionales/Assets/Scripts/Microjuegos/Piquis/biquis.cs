@@ -7,6 +7,7 @@ public class biquis : MonoBehaviour
 {
     protected const string sPath = "Microjuegos/Piquis/Sprites/";
     protected const string pPath = "Microjuegos/Piquis/Prefabs/";
+    protected const string ePath = "Microjuegos/Piquis/Effects/";
     protected int jogo = piquisUtils.Jogo;
     protected int fMod = piquisUtils.FMod;
     protected int d = piquisUtils.D;
