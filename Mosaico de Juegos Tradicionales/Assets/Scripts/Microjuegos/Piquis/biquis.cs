@@ -116,9 +116,10 @@ public class biquis : MonoBehaviour
         }
     }
 
-    public void colDetection()
+    public bool colDetection()
     {
         state++;
+        return true;
     }
     
     private void FadeVolumen(float duracionFade)

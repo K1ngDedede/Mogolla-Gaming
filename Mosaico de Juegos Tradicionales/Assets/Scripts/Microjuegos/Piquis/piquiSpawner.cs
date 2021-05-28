@@ -35,10 +35,14 @@ public class piquiSpawner : MonoBehaviour
         print(pBody.velocity.magnitude);
         bicPotas.volume *= pBody.velocity.magnitude/3;
         bicPotas.Play();
+        if (sapo == null)
+        {
+            sapo = GameObject.FindGameObjectWithTag("lmao").GetComponent<biquis>();
+        }
         if (!state && sapo!=null)
         {
             state = true;
             sapo.colDetection();
-        }
+        } 
     }
 }
