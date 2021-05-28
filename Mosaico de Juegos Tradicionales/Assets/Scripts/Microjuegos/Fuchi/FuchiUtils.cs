@@ -7,7 +7,7 @@ public static class FuchiUtils
 	public static float thrust = 12.0f;
     public static int counter = 0;
 	public static float currentTime = 0f;
-	public static float startingTime = 11f;
+	public static float startingTime = 12f;
 	//GameObject objectToDisable = GameControlScript.objectToDisable;
     //static float rot = 0.0f;
 	public static float x0 = -3.0f;
