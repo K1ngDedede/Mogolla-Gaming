@@ -31,7 +31,7 @@ public class PowerBar : MonoBehaviour
         powerIsIncreasing = true;
         PowerBarON = true;
 		n = gameObject.AddComponent<BackwardsTimer>();
-		n.Duration = FuchiUtils.startingTime;
+		n.Duration = TejoUtils.startingTime;
 		GameObject tt = GameObject.FindGameObjectWithTag("RelojitoTimer");
         temptimer = tt.GetComponent<Text>();
 		n.Run();
@@ -54,13 +54,7 @@ public class PowerBar : MonoBehaviour
             StopCoroutine(UpdatePowerBar());
             StartCoroutine(TurnOffPowerBar());
         }
-		//gana = TejoMov.gana;
-		//if (gana){
-		//	Invoke("Ganar()",n.SecondsRemaining);
-		//}
-		//if (n.Finished){
-		//	Perder();
-		//}
+		
     }
 
     public void startPowerBar(float angle, GameObject o)
@@ -139,7 +133,7 @@ public class PowerBar : MonoBehaviour
         switch (fase)
         {
             case Fase.FASE1:
-				ManejadorFase1.RegistrarPerdidaMicrojuego("Fuchi");
+				ManejadorFase1.RegistrarPerdidaMicrojuego("Tejo");
 				ManejadorFase1.PerderVida();
                 ManejadorFase1.AumentarMicrojuegosJugados();
                 ManejadorFase1.RevisarFinFase();

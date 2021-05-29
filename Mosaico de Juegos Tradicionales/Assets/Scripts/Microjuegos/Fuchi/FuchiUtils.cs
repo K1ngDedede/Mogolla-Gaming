@@ -61,12 +61,28 @@ public static class FuchiUtils
     public static void medio()
     {
         fase = Fase.FASE2;
+		counter = 0;
+		currentTime = 0f;
+        startingTime = 9;
+        tutorial = false;
+		thrust = 13.5f;
+		x0 = -3.0f;
+		x1 = 3.0f;
+		y0 = 1.5f;
+		y1 = 5.0f;
+        fase = Fase.FASE3;
     }
 
     public static void IncrementarDificultad()
     {
-
-    }
+		counter = 0;
+		thrust = thrust + 0.5f;
+		currentTime = 0f;
+		x0 = x0 - 0.2f;
+		x1 = x1 + 0.2f;
+		y0 = y0 + 0.2f;
+		y1 = y1 + 0.2f;
+	}
 
     public static void dificil()
     {
