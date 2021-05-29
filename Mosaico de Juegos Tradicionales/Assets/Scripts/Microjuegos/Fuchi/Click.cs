@@ -69,12 +69,8 @@ public class Click : MonoBehaviour
 					//Debug.Log(currentTime);
 					GameControlScript.disabled = false;
 					Debug.Log("GameControlScript.disabled");
-					Invoke("Ganar",n.SecondsRemaining);
-					//Invoke("Ganar",n.SecondsRemaining());
-					//if(n.Finished()){
-					//if(currentTime <= 0f){
-						//Ganar();
-					
+					Invoke("Ganar",2);
+
 					Debug.Log("Victoria");
 					//
 					//}

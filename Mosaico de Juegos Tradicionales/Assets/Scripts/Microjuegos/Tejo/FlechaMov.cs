@@ -53,19 +53,6 @@ public class FlechaMov : MonoBehaviour
         
     }
 
-    public void DispararBola()
-    {
-        rotando = false;
-        Camera.main.GetComponent<TorreTapas>().BolaDisparada = true;
-        GameObject bolaYermis = Resources.Load<GameObject>("Microjuegos/Yermis/Prefabs/BolaYermis");
-        bolaYermis.transform.position = new Vector3(0, -4.5f, 0);
-        Instantiate(bolaYermis);
-        
-        
-        bolaYermis = GameObject.FindGameObjectWithTag("bolaYermis");
-        BolaYermis bolaScript = bolaYermis.GetComponent<BolaYermis>();
-        bolaScript.Disparar(rotacion);
-    }
 
     public void Res()
     {
