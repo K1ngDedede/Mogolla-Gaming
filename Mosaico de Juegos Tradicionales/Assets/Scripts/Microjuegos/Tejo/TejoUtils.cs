@@ -80,7 +80,7 @@ public static class TejoUtils
 		x1 = 0.4f;
 		x2 = -0.4f;
 		y1 = 1.6f;
-		y2 = 0.5f;
+		y2 = 0.3f;
 		
     }
 
