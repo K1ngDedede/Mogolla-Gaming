@@ -22,6 +22,7 @@ public class TejoMov : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		GameControl.disabled = true;
     }
 
     public void setBar(GameObject go)
@@ -64,10 +65,9 @@ public class TejoMov : MonoBehaviour
                 {
                     GameObject.FindGameObjectWithTag("efectoSonido").GetComponent<AudioSource>().Play();
 					ganaTejo(); 
-					Debug.Log("Mecha");
 					PowerBar.gana = true;
 					GameControl.disabled = false;
-                    Invoke("Ganar", PowerBar.n.SecondsRemaining);
+                    Invoke("Ganar", 2);
                 }
                 else
                 {

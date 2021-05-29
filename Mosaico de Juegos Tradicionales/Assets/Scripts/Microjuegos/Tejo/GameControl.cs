@@ -26,19 +26,19 @@ public class GameControl : MonoBehaviour
 			objectToDisable4.SetActive(true);
 			objectToDisable5.SetActive(true);
 		}
-		if(TejoUtils.counter == 4){
-			objectToDisable.SetActive(true);
-			objectToDisable2.SetActive(true);
+		if(TejoUtils.counter == 3){
+			objectToDisable.SetActive(false);
+			objectToDisable2.SetActive(false);
 			objectToDisable3.SetActive(true);
 			objectToDisable4.SetActive(true);
-			objectToDisable5.SetActive(false);
+			objectToDisable5.SetActive(true);
 		}
 		if(TejoUtils.counter == 2){
 			objectToDisable.SetActive(true);
-			objectToDisable2.SetActive(true);
+			objectToDisable2.SetActive(false);
 			objectToDisable3.SetActive(false);
 			objectToDisable4.SetActive(false);
-			objectToDisable5.SetActive(false);
+			objectToDisable5.SetActive(true);
 		}
     }
 
@@ -47,6 +47,9 @@ public class GameControl : MonoBehaviour
     {
 		if(!disabled){
 			objectToDisable6.SetActive(true);
+		}
+		else{
+			objectToDisable6.SetActive(false);
 		}
 
     }

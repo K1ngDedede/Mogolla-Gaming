@@ -44,11 +44,11 @@
       "nombre": "Fuchi",
       "nombresAlternativos": "Hacky sack, Fuchi ball",
       "descripcion": "Es un juego colombiano de pies que se juega con una pelota tejida",
-      "pathImagen": "",
+      "pathImagen": "Data/Imagenes/Fuchi",
       "instruccionesJuego": "Evite que la pelota toque el suelo. Deje caer la pelota y pateela haciendo clic sobre esta. Debe patearla al menos 6 veces antes de que el tiempo acabe para ganar. ",
       "instruccionesVidaReal": "Consiste en realizar trucos con una pelota chica de tela o con una hacky sack sin dejarla caer al suelo.",
       "escena": "Fuchi",
-      "urlVideo": ""
+      "urlVideo": "https://youtu.be/wFM0Xkx2ewQ?t=57"
     },
     {
       "nombre": "Rana",
@@ -64,11 +64,11 @@
       "nombre": "Tejo",
       "nombresAlternativos": "Turmequé",
       "descripcion": "Es un deporte, que consiste en lanzar un disco metálico a unas canchas de embocinada para hacer estallar una mecha",
-      "pathImagen": "",
+      "pathImagen": "Data/Imagenes/Tejo",
       "instruccionesJuego": "Has clic en la flecha para fijar la dirección y otro clic en la pantalla para fijar la fuerza.",
       "instruccionesVidaReal": "Se realiza el lanzamiento de un tejocon la finalidad de introducirlo en un bocín, en el cual se coloca una mecha",
       "escena": "Tejo",
-      "urlVideo": ""
+      "urlVideo": "https://www.youtube.com/watch?v=Vh9MBdVqAXU"
     },
     {
       "nombre": "Coca",
