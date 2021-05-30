@@ -6,7 +6,7 @@ using System;
 public class ConfigData
 {
 
-    static int fase = 3;
+    static int fase = 1;
     static List<Microjuego> microjuegos;
     static Microjuego microjuegoActual;
     static bool juegoCargado = false;

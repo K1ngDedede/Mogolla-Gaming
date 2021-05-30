@@ -23,6 +23,7 @@ public class Click : MonoBehaviour
 	float currentTime = FuchiUtils.currentTime;
 
 	bool fuchiHabilitado = true;
+    bool juegoGanado = false;
 
 	//Texto toques
 	Text textoToques;
@@ -32,8 +33,8 @@ public class Click : MonoBehaviour
 		//texto toques
 		textoToques = GameObject.FindGameObjectWithTag("textoToques").GetComponent<Text>();
 		textoToques.text = "Toques: " + counter + "/" + toquesMinimos;
-
-		GameControlScript.disabled2 = false;
+        GameControlScript.disabled = true;
+        GameControlScript.disabled2 = false;
 		GameControlScript.disabled = true;
 		//n = GameObject.FindGameObjectWithTag("ttimer").GetComponent<LeTimer>();
 		n = gameObject.AddComponent<BackwardsTimer>();
@@ -57,15 +58,16 @@ public class Click : MonoBehaviour
 			GameControlScript.disabled2 = true;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-			GameControlScript.disabled = true;
+			
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
                 counter++;
 				textoToques = GameObject.FindGameObjectWithTag("textoToques").GetComponent<Text>();
 				textoToques.text = "Toques: " + counter + "/" + toquesMinimos;
-				if (counter >= toquesMinimos)
+				if (counter >= toquesMinimos && !juegoGanado)
                 {
+                    juegoGanado = true;
 					//Debug.Log(currentTime);
 					GameControlScript.disabled = false;
 					Debug.Log("GameControlScript.disabled");
