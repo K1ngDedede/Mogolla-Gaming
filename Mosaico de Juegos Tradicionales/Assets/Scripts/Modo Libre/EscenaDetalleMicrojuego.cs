@@ -157,6 +157,10 @@ public class EscenaDetalleMicrojuego : MonoBehaviour
                 piquisUtils.medio();
                 piquisUtils._Fase = Fase.MODOLIBRE;
                 break;
+            case NombreMicrojuego.Fuchi:
+                FuchiUtils.medio();
+                FuchiUtils.Fase = Fase.MODOLIBRE;
+                break;
             default:
                 break;
         }

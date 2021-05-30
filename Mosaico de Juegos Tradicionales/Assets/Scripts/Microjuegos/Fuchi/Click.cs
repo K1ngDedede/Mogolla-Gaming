@@ -72,7 +72,7 @@ public class Click : MonoBehaviour
 					GameControlScript.disabled = false;
 					Debug.Log("GameControlScript.disabled");
 					Invoke("Ganar",2);
-
+                    FadeVolumen(2);
 					Debug.Log("Victoria");
 					//
 					//}
