@@ -85,7 +85,7 @@ public class Click : MonoBehaviour
                 hit.collider.attachedRigidbody.angularVelocity = Random.Range(-350.5f, 350.0f);
             }
         }
-		if(n.Finished && counter == 0)
+        if (n.Finished && counter< toquesMinimos)
         {
 			Perder();
         }

@@ -43,7 +43,6 @@ public class SplashText : MonoBehaviour
     {
         promptsTextAsset = Resources.Load<TextAsset>("Data/prompts");
         string[] datos = promptsTextAsset.text.Split('\n');
-        print(datos.Length);
         foreach(string dato in datos)
         {
             prompts.Add(dato);
