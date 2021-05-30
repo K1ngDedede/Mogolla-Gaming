@@ -81,7 +81,7 @@ public static class piquisUtils
             fMod = (int) (fMod*1.1f);
             sMod *= 0.95f;
         }
-        if (d > 4)
+        if (d > 6 && iterator%2==0)
         {
             d--;
         }

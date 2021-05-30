@@ -59,7 +59,7 @@ public static class OllaUtils
 
     public static void loop()
     {
-        speedMax *= 1.3f;
+        speedMax *= 1.2f;
         speedBol *= 1.2f;
     }
 

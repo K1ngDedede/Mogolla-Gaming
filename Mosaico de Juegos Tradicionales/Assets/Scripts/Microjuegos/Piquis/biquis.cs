@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class biquis : MonoBehaviour
 {
@@ -25,18 +27,23 @@ public class biquis : MonoBehaviour
 
     void Start()
     {
+        /*
+        piquisUtils.difisil();
+        jogo = 3;
+        */
+        //DEBUG ^
         transform.position = new Vector3(3.6f,0.4f,0);
         binguas = new GameObject[jogo];
         GameObject biqui = Resources.Load<GameObject>(pPath + "piqui");
         binguas[0] = Instantiate(biqui);
-        float xSigma = Random.Range(-4f, 0f);
+        float xSigma = Random.Range(-3f, 0f);
         float ySigma = Random.Range(3f, -3f);
         binguas[0].transform.position = new Vector3(xSigma, ySigma, 0);
         for (int sapo = 1; sapo < jogo; sapo++)
         {
             binguas[sapo] = Instantiate(biqui);
-            xSigma = Random.Range(-7f, binguas[sapo-1].transform.position.x-1.5f);
-            ySigma = Random.Range(binguas[sapo-1].transform.position.y+1.2f, binguas[sapo-1].transform.position.x-1.2f);
+            xSigma = Random.Range(-8f,  Math.Max(-7.5f, binguas[0].transform.position.x-1.5f));
+            ySigma = Random.Range(Math.Max(binguas[sapo-1].transform.position.y-1.8f, -4.3f), Math.Min(binguas[sapo-1].transform.position.y+1.8f,4.3f));
             binguas[sapo].transform.position = new Vector3(xSigma, ySigma, 0);
         }
 
