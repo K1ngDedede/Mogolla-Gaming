@@ -65,6 +65,7 @@ public static class piquisUtils
         fMod = 1500;
         sMod = 0.75f;
         d = 12;
+		iterator = 1;
         fase = Fase.FASE3;
     }
 
