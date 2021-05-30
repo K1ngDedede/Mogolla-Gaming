@@ -61,7 +61,11 @@ public static class ManejadorFase3
         //revisar si gano la fase
         else if (ConfigFase3Utils.NumMicrojuegosJugados == ConfigFase3Utils.MicrojuegosAJugar.Count)
         {
-            
+            ConfigUtils.PrimerIntentoFase = true;
+            if (ConfigUtils.Fase == 3)
+            {
+                ConfigUtils.Fase = 4;
+            }
             //persistir sesion
             ConfigFase3Utils.SesionFase3Terminada = true;
             //ManejadorPersistencia.PersistirSesionFase1();

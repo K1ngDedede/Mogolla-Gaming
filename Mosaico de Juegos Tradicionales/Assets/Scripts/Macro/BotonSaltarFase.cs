@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class BotonSaltarFase2 : MonoBehaviour
+public class BotonSaltarFase : MonoBehaviour
 {
-    
+    [SerializeField]
+    int numeroFase;
     // Start is called before the first frame update
     void Start()
     {
         Image imageComponent = gameObject.GetComponent<Image>();
-        if (ConfigUtils.Fase == 2 && ConfigUtils.PrimerIntentoFase)
+        if (ConfigUtils.Fase == numeroFase && ConfigUtils.PrimerIntentoFase)
         {
             gameObject.SetActive(false);
         }

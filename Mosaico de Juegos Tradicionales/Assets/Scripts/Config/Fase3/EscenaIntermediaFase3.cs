@@ -11,13 +11,20 @@ public class EscenaIntermediaFase3 : MonoBehaviour
     Text textoPuntaje;
     string escenaACargar;
     Timer timerCambioEscena;
-    string ubicacion = "Cutscene/Fase2/";
+    string ubicacion = "Cutscene/Fase3/";
+    Sprite cuatroVidas, tresVidas, dosVidas, unaVida;
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         timerCambioEscena = Camera.main.gameObject.AddComponent<Timer>();
         timerCambioEscena.Duration = 5;
         timerCambioEscena.Run();
+        cuatroVidas = Resources.Load<Sprite>(ubicacion + "Gradas1");
+        tresVidas = Resources.Load<Sprite>(ubicacion + "Gradas2");
+        dosVidas = Resources.Load<Sprite>(ubicacion + "Gradas3");
+        unaVida = Resources.Load<Sprite>(ubicacion + "Gradas4");
+        spriteRenderer = GameObject.FindGameObjectWithTag("barraPaciencia").GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -41,40 +48,20 @@ public class EscenaIntermediaFase3 : MonoBehaviour
         texto = GameObject.FindGameObjectWithTag("textoPuntaje").GetComponent<Text>();
         texto.text = (ConfigFase3Utils.Puntaje+1)+"";
 
-        //GameObject[] chulos = GameObject.FindGameObjectsWithTag("chulo");
-        //Chulo chuloScript;
 
-        //switch (vidasRestantes)
-        //{
-        //    case 2:
-        //        chuloScript = chulos[0].GetComponent<Chulo>();
-        //        if (ConfigFase2Utils.AcabaDePerder)
-        //        {
-        //            chuloScript.Perder();
-        //        }
-        //        else
-        //        {
-        //            chuloScript.CambiarAEquis();
-        //        }
-        //        break;
-        //    case 1:
-        //        if (ConfigFase2Utils.AcabaDePerder)
-        //        {
-        //            chulos[2].GetComponent<Chulo>().Perder();
-        //            chulos[0].GetComponent<Chulo>().CambiarAEquis();
-        //        }
-        //        else
-        //        {
-        //            chulos[2].GetComponent<Chulo>().CambiarAEquis();
-        //            chulos[0].GetComponent<Chulo>().CambiarAEquis();
-        //        }
-        //        break;
-        //}
+        switch (vidasRestantes)
+        {
+            case 3:
+                spriteRenderer.sprite = tresVidas;
+                break;
+            case 2:
+                spriteRenderer.sprite = dosVidas;
+                break;
+            case 1:
+                spriteRenderer.sprite = unaVida;
+                break;
 
-
-
-
-
+        }
 
     }
 
